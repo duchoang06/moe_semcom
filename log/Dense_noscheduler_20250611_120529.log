@@ -1,0 +1,241 @@
+nohup: ignoring input
+Training started at 2025-06-11 12:05:34
+Training detail: learning rate: 1e-4, weight decay: 5e-3, total epochs: 230, batch size: 128, seed: 2231
+Starting training...
+
+ --- Epoch 1
+Mutual Information | Avg Loss: -0.00076
+Time elapsed: 0:00:41.805749
+
+ --- Epoch 2
+Mutual Information | Avg Loss: -0.01327
+Time elapsed: 0:01:23.261858
+
+ --- Epoch 3
+Mutual Information | Avg Loss: -0.03098
+Time elapsed: 0:02:04.605380
+
+ --- Epoch 4
+Mutual Information | Avg Loss: -0.04480
+Time elapsed: 0:02:46.250674
+
+ --- Epoch 5
+Mutual Information | Avg Loss: -0.05570
+Time elapsed: 0:03:27.880537
+
+ --- Epoch 6
+Mutual Information | Avg Loss: -0.06280
+Time elapsed: 0:04:09.524568
+
+ --- Epoch 7
+Mutual Information | Avg Loss: -0.06943
+Time elapsed: 0:04:51.233936
+
+ --- Epoch 8
+Mutual Information | Avg Loss: -0.07588
+Time elapsed: 0:05:32.857220
+
+ --- Epoch 9
+Mutual Information | Avg Loss: -0.08061
+Time elapsed: 0:06:14.368773
+
+ --- Epoch 10
+Mutual Information | Avg Loss: -0.08516
+Time elapsed: 0:06:55.894420
+
+ --- Epoch 11
+Mutual Information | Avg Loss: -0.08924
+Time elapsed: 0:07:37.462772
+
+ --- Epoch 12
+Mutual Information | Avg Loss: -0.09251
+Time elapsed: 0:08:19.160987
+
+ --- Epoch 13
+Mutual Information | Avg Loss: -0.09524
+Time elapsed: 0:09:00.703148
+
+ --- Epoch 14
+Mutual Information | Avg Loss: -0.09799
+Time elapsed: 0:09:42.129722
+
+ --- Epoch 15
+Mutual Information | Avg Loss: -0.10112
+Time elapsed: 0:10:23.649316
+
+ --- Epoch 16
+Mutual Information | Avg Loss: -0.10284
+Time elapsed: 0:11:05.329114
+
+ --- Epoch 17
+Mutual Information | Avg Loss: -0.10497
+Time elapsed: 0:11:47.121126
+
+ --- Epoch 18
+Mutual Information | Avg Loss: -0.10741
+Time elapsed: 0:12:28.694216
+
+ --- Epoch 19
+Mutual Information | Avg Loss: -0.10906
+Time elapsed: 0:13:10.405001
+
+ --- Epoch 20
+Mutual Information | Avg Loss: -0.11151
+Time elapsed: 0:13:52.026772
+
+ --- Epoch 21
+Mutual Information | Avg Loss: -0.11319
+Time elapsed: 0:14:33.805062
+
+ --- Epoch 22
+Mutual Information | Avg Loss: -0.11251
+Time elapsed: 0:15:15.645921
+
+ --- Epoch 23
+Mutual Information | Avg Loss: -0.11473
+Time elapsed: 0:15:57.609682
+
+ --- Epoch 24
+Mutual Information | Avg Loss: -0.11614
+Time elapsed: 0:16:39.320994
+
+ --- Epoch 25
+Mutual Information | Avg Loss: -0.11722
+Time elapsed: 0:17:21.180214
+
+ --- Epoch 26
+Mutual Information | Avg Loss: -0.11906
+Time elapsed: 0:18:02.909867
+
+ --- Epoch 27
+Mutual Information | Avg Loss: -0.12030
+Time elapsed: 0:18:44.681786
+
+ --- Epoch 28
+Mutual Information | Avg Loss: -0.12142
+Time elapsed: 0:19:26.319872
+
+ --- Epoch 29
+Mutual Information | Avg Loss: -0.12222
+Time elapsed: 0:20:07.969859
+
+ --- Epoch 30
+Mutual Information | Avg Loss: -0.12366
+Time elapsed: 0:20:49.687674
+
+ --- Epoch 31
+Mutual Information | Avg Loss: -0.12468
+Time elapsed: 0:21:31.275760
+
+ --- Epoch 32
+Mutual Information | Avg Loss: -0.12427
+Time elapsed: 0:22:12.889445
+
+ --- Epoch 33
+Mutual Information | Avg Loss: -0.12748
+Time elapsed: 0:22:54.661311
+
+ --- Epoch 34
+Mutual Information | Avg Loss: -0.12630
+Time elapsed: 0:23:36.363373
+
+ --- Epoch 35
+Mutual Information | Avg Loss: -0.12800
+Time elapsed: 0:24:18.009484
+
+ --- Epoch 36
+Mutual Information | Avg Loss: -0.12824
+Time elapsed: 0:24:59.753072
+
+ --- Epoch 37
+Mutual Information | Avg Loss: -0.12842
+Time elapsed: 0:25:41.607190
+
+ --- Epoch 38
+Mutual Information | Avg Loss: -0.12960
+Time elapsed: 0:26:23.198021
+
+ --- Epoch 39
+Mutual Information | Avg Loss: -0.13037
+Time elapsed: 0:27:05.014648
+
+ --- Epoch 40
+Mutual Information | Avg Loss: -0.13201
+Time elapsed: 0:27:46.770164
+
+ --- Epoch 41
+Mutual Information | Avg Loss: -0.13174
+Time elapsed: 0:28:28.280743
+
+ --- Epoch 42
+Mutual Information | Avg Loss: -0.13249
+Time elapsed: 0:29:10.042936
+
+ --- Epoch 43
+Mutual Information | Avg Loss: -0.13365
+Time elapsed: 0:29:51.843493
+
+ --- Epoch 44
+Mutual Information | Avg Loss: -0.13452
+Time elapsed: 0:30:33.627486
+
+ --- Epoch 45
+Mutual Information | Avg Loss: -0.13425
+Time elapsed: 0:31:15.347580
+
+ --- Epoch 46
+Mutual Information | Avg Loss: -0.13420
+Time elapsed: 0:31:57.205765
+
+ --- Epoch 47
+Mutual Information | Avg Loss: -0.13375
+Time elapsed: 0:32:39.056321
+
+ --- Epoch 48
+Mutual Information | Avg Loss: -0.13529
+Time elapsed: 0:33:20.883789
+
+ --- Epoch 49
+Mutual Information | Avg Loss: -0.13607
+Time elapsed: 0:34:02.444353
+
+ --- Epoch 50
+Mutual Information | Avg Loss: -0.13743
+Time elapsed: 0:34:43.866275
+
+ --- Epoch 1
+Task: Classification | Acc: 53.59% | Avg Loss: 0.723
+Task: Reconstruction | Avg Loss: 6.648 
+Mutual Information | Avg Loss: -0.38964
+Total Loss | Avg Loss: 1.709
+Time elapsed: 0:35:40.877581
+
+ --- Epoch 2
+Task: Classification | Acc: 54.80% | Avg Loss: 0.690
+Task: Reconstruction | Avg Loss: 6.513 
+Mutual Information | Avg Loss: -0.50819
+Total Loss | Avg Loss: 1.055
+Time elapsed: 0:36:37.863679
+
+ --- Epoch 3
+Task: Classification | Acc: 60.22% | Avg Loss: 0.660
+Task: Reconstruction | Avg Loss: 6.478 
+Mutual Information | Avg Loss: -0.51880
+Total Loss | Avg Loss: 1.091
+Time elapsed: 0:37:35.283950
+
+ --- Epoch 4
+Task: Classification | Acc: 69.30% | Avg Loss: 0.581
+Task: Reconstruction | Avg Loss: 6.456 
+Mutual Information | Avg Loss: -0.51936
+Total Loss | Avg Loss: 1.094
+Time elapsed: 0:38:32.741580
+
+ --- Epoch 5
+Task: Classification | Acc: 70.21% | Avg Loss: 0.570
+Task: Reconstruction | Avg Loss: 6.475 
+Mutual Information | Avg Loss: -0.52479
+Total Loss | Avg Loss: 0.904
+Time elapsed: 0:39:30.405935
+
+ --- Epoch 6
