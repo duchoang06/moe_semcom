@@ -30,33 +30,41 @@ class Critic(nn.Module):
     def __init__(self, input_dim, hidden_dim=256):
         super().__init__()
         self.net = nn.Sequential(
-            nn.Linear(input_dim, hidden_dim),
+            self.linear(input_dim, hidden_dim),
             nn.ReLU(),
-            nn.Linear(hidden_dim, 1)
+            self.linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            self.linear(hidden_dim, 1),
         )
 
-    def forward(self, x, y):
-        # x: (N, d), y: (N, d)
-        inp = torch.cat([x, y], dim=-1)
-        return self.net(inp)
+    def linear(self, in_dim, out_dim, bias=True):
+        lin = nn.Linear(in_dim, out_dim, bias=bias)
+        nn.init.normal_(lin.weight, mean=0.0, std=0.02)
+        if bias:
+            nn.init.zeros_(lin.bias)
+        return lin
+
+    def forward(self, inputs):
+        return self.net(inputs)
 
 def mutual_information_loss(tx_signal, rx_signal, critic):
-    # Collapse batch and sequence dims for simplicity
-    B, T, d = tx_signal.shape
-    x = tx_signal.reshape(-1, d)
-    y = rx_signal.reshape(-1, d)
+    joint, marginal = sample_batch(tx_signal, rx_signal)
 
-    # Positive samples: joint distribution
-    joint_score = critic(x, y)   # (B*T, 1)
+    t = critic(joint)
+    et = torch.exp(critic(marginal)) 
 
-    # Negative samples: shuffle y to break the correspondence
-    y_perm = y[torch.randperm(y.size(0))]
-    marg_score = critic(x, y_perm)  # (B*T, 1)
+    mi_loss = torch.mean(t) - torch.log(torch.mean(et) + 1e-8)
 
-    # Donsker-Varadhan lower bound
-    mi_estimate = joint_score.mean() - torch.log(torch.exp(marg_score).mean() + 1e-8)
-    # For loss (minimize), use negative MI
-    return -mi_estimate
+    return -mi_loss
+
+def sample_batch(rec, noise):
+    rec = torch.reshape(rec, shape=(-1, 1))
+    noise = torch.reshape(noise, shape=(-1, 1))
+    rec_sample1, rec_sample2 = torch.split(rec, int(rec.shape[0]/2), dim=0)
+    noise_sample1, noise_sample2 = torch.split(noise, int(noise.shape[0]/2), dim=0)
+    joint = torch.cat((rec_sample1, noise_sample1), 1)
+    marg = torch.cat((rec_sample1, noise_sample2), 1)
+    return joint, marg
 
 
 def moe_balancing_loss_p_penalty(all_gate_scores, all_expert_masks, expert_sizes):
@@ -95,7 +103,6 @@ def moe_balancing_loss(all_gate_scores, all_expert_masks, expert_sizes):
         loss += torch.nn.functional.kl_div(actual_load.log(), ideal_load, reduction='batchmean')
 
     return loss
-
 
 
 class SST2Dataset(Dataset):
@@ -157,13 +164,6 @@ def fix_seed(seed=0):
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
     os.environ["PYTHONHASHSEED"] = str(seed)
-
-
-def sample_batch(data, batch_size=8):
-    batch = random.sample(list(data), batch_size)
-    texts = [sample['sentence'] for sample in batch]
-    labels = torch.tensor([sample['label'] for sample in batch])
-    return texts, labels
 
 def sample_mixed_task_batch(data, batch_size=8):
     batch = random.sample(list(data), batch_size)

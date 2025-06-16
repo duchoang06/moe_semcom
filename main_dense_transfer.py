@@ -42,30 +42,40 @@ if __name__ == "__main__":
 
     model = Transformer_SemCom(num_tasks=2, embed_dim=412, task_dim=8, num_encd_layer=4, transmit_dim=128).to(device)
 
-    mi_critic = Critic(input_dim=2, hidden_dim=12).to(device)
-    lambda_mi = 10 #to-do: revert to 10 for possibly better performance
+    model.load_state_dict(torch.load("checkpoints/Dense_newMI_20250613_142628.pt", weights_only=True))
 
-    lr_main = 1e-4
+    for name, param in model.named_parameters():
+        if 'channel_encoder' in name or 'channel_decoder' in name:
+            param.requires_grad = True
+        else:
+            param.requires_grad = False
+
+
+    mi_critic = Critic(input_dim=2, hidden_dim=32).to(device)
+    lambda_mi = 1e2 #to-do: revert to 10 for possibly better performance
+
+    lr_main = 3e-4
     optimizer_main = torch.optim.AdamW(
-        model.parameters(),
+        # model.parameters(),
+        filter(lambda p: p.requires_grad, model.parameters()),
         lr=lr_main,
         weight_decay=5e-4,
-        betas=(0.9, 0.98),
-        eps=1e-8,
+        # betas=(0.9, 0.98),
+        # eps=1e-8,
     )
 
-    lr_mi = 1e-4
+    lr_mi = 2e-3
     optimizer_mi = torch.optim.AdamW(
         mi_critic.parameters(),
         lr=lr_mi,
-        # weight_decay=5e-3,
+        # weight_decay=5e-3
     )
     
     # lr_gamma = 0.95
     log_val = True
 
     # max_steps_per_epoch = 500
-    total_epoch_1 = 250
+    total_epoch_1 = 150
     total_epoch_2 = 0
     total_epoch = total_epoch_1 + total_epoch_2
 
@@ -78,17 +88,17 @@ if __name__ == "__main__":
     #     num_training_steps=num_training_steps_1,
     # )
 
-    # num_training_steps_2 = len(train_loader) * (total_epoch_2)
-    # num_warmup_steps_2 = int(0.1 * num_training_steps_2)
-    # scheduler_main = get_cosine_schedule_with_warmup(
-    #     optimizer_main,
-    #     num_warmup_steps=num_warmup_steps_2,
-    #     num_training_steps=num_training_steps_2,
-    # )
+    num_training_steps_2 = len(train_loader) * (total_epoch_1)
+    num_warmup_steps_2 = int(0.3 * num_training_steps_2)
+    scheduler_main = get_cosine_schedule_with_warmup(
+        optimizer_main,
+        num_warmup_steps=num_warmup_steps_2,
+        num_training_steps=num_training_steps_2,
+    )
 
     time_start = datetime.datetime.now()
     print(f"Training started at {time_start.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f'Training detail: learning rate: 2e-4, weight decay: 5e-3, total epochs: {total_epoch}, batch size: {batch_size}, seed: {rand_seed}')
+    print(f'Training detail: learning rate: {lr_main}, weight decay: 5e-3, total epochs: {total_epoch}, batch size: {batch_size}, seed: {rand_seed}')
 
     
     # ------ training phase 1 with perfect channel
@@ -109,20 +119,13 @@ if __name__ == "__main__":
             chosen_task = random.choice([0, 1])
             # chosen_task = 1
             fading = 'none'  # 'none', 'rayleigh', 'rician'
-            snr = 12.0
+            snr = 8.0
 
             # snr = random.uniform(15, 25) # dB
             # fading = random.choice(['none', 'rayleigh', 'rician'])
 
             outputs, input_ids, input_lengths, x_complex, y_noisy = model(texts, chosen_task, snr, fading) 
 
-            # phase 1: Mutual Information Loss
-            mi_loss = mutual_information_loss(x_complex.detach(), y_noisy.detach(), mi_critic) 
-            optimizer_mi.zero_grad()
-            mi_loss.backward()
-            optimizer_mi.step()
-
-            # phase 2: Total Loss
             task_loss = text_loss(
                 outputs,
                 labels.to(device),
@@ -130,10 +133,20 @@ if __name__ == "__main__":
                 input_ids.to(device),
                 input_lengths.to(device)
             )
-            total_loss = task_loss + lambda_mi*mi_loss.detach()
-            optimizer_main.zero_grad()
+
+            mi_loss = mutual_information_loss(x_complex, y_noisy, mi_critic) # should be more negative to be better
+
+            total_loss = task_loss + lambda_mi*mi_loss
+
             total_loss.backward()
+
+            optimizer_mi.step()
             optimizer_main.step()
+
+            scheduler_main.step()
+            optimizer_mi.zero_grad()
+            optimizer_main.zero_grad()
+
 
             if chosen_task == 0:  # Classification
                 logits = outputs
@@ -171,7 +184,7 @@ if __name__ == "__main__":
             test_loader = get_test_loader_for_epoch(epoch, dataset['validation'], seed=rand_seed, num_samples=3) # return 3 batches, each batch has 1 sample
 
             for test_step, (texts, labels) in enumerate(test_loader):
-                snr = 12.0
+                snr = 8.0
                 fading = 'none'
                 chosen_task = 1
 
@@ -328,7 +341,7 @@ if __name__ == "__main__":
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints/Dense_grad_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints/Dense_transfer_snr8_{timestamp}.pt")
 
     # --------------------
     # Testing (BLEU Score for Reconstruction)
@@ -373,4 +386,4 @@ if __name__ == "__main__":
     print(f'Training lasted {datetime.datetime.now() - time_start}')
 
 
-# nohup python -u main_dense.py > ./log/Dense_grad_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_dense_transfer.py > ./log/Dense_transfer_snr8_$(date +%Y%m%d_%H%M%S).log 2>&1 &
