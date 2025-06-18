@@ -58,39 +58,38 @@ if __name__ == "__main__":
     optimizer_mi = torch.optim.AdamW(
         mi_critic.parameters(),
         lr=lr_mi,
-        # weight_decay=5e-3,
+        weight_decay=5e-4,
     )
     
     # lr_gamma = 0.95
     log_val = True
 
     # max_steps_per_epoch = 500
-    total_epoch_1 = 250
+    total_epoch_1 = 400
     total_epoch_2 = 0
     total_epoch = total_epoch_1 + total_epoch_2
 
     # num_training_steps_1 = len(train_loader) * (total_epoch_1)
     # num_warmup_steps_1 = int(0.1 * num_training_steps_1)
-
     # scheduler_mi = get_cosine_schedule_with_warmup(
     #     optimizer_mi,
-    #     num_warmup_steps=num_warmup_steps_1,
+    #     num_warmup_steps=0,
     #     num_training_steps=num_training_steps_1,
     # )
 
-    # num_training_steps_2 = len(train_loader) * (total_epoch_2)
-    # num_warmup_steps_2 = int(0.1 * num_training_steps_2)
+    # num_training_steps_2 = len(train_loader) * (total_epoch_1)
+    # num_warmup_steps_2 = int(0.2 * num_training_steps_2)
     # scheduler_main = get_cosine_schedule_with_warmup(
     #     optimizer_main,
-    #     num_warmup_steps=num_warmup_steps_2,
+    #     num_warmup_steps=0,
     #     num_training_steps=num_training_steps_2,
     # )
 
     time_start = datetime.datetime.now()
     print(f"Training started at {time_start.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f'Training detail: learning rate: 2e-4, weight decay: 5e-3, total epochs: {total_epoch}, batch size: {batch_size}, seed: {rand_seed}')
+    print(f'Training detail: learning rate: 2e-4, weight decay: 5e-4, total epochs: {total_epoch}, batch size: {batch_size}, seed: {rand_seed}')
 
-    
+
     # ------ training phase 1 with perfect channel
     print("Starting training...")
     for epoch in range(total_epoch_1):
@@ -121,6 +120,7 @@ if __name__ == "__main__":
             optimizer_mi.zero_grad()
             mi_loss.backward()
             optimizer_mi.step()
+            # scheduler_mi.step()
 
             # phase 2: Total Loss
             task_loss = text_loss(
@@ -134,6 +134,7 @@ if __name__ == "__main__":
             optimizer_main.zero_grad()
             total_loss.backward()
             optimizer_main.step()
+            # scheduler_main.step()
 
             if chosen_task == 0:  # Classification
                 logits = outputs
@@ -328,7 +329,7 @@ if __name__ == "__main__":
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints/Dense_grad_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints/Dense_400_{timestamp}.pt")
 
     # --------------------
     # Testing (BLEU Score for Reconstruction)
@@ -373,4 +374,4 @@ if __name__ == "__main__":
     print(f'Training lasted {datetime.datetime.now() - time_start}')
 
 
-# nohup python -u main_dense.py > ./log/Dense_grad_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_dense.py > ./log/Dense_400_$(date +%Y%m%d_%H%M%S).log 2>&1 &

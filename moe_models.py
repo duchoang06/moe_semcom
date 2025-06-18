@@ -177,14 +177,22 @@ class HetereoExpertFFN(nn.Module):
             self.expert_sizes.fill_(hidden_dim)
             
         elif size_distribution == 'arithmetic':
+            gap = int(hidden_dim * 0.125)
+            a = hidden_dim - ((num_experts - 1) * gap) // 2
+
+            # Ensure all expert sizes are >= 1
+            self.expert_sizes = torch.tensor(
+                [max(1, a + i * gap) for i in range(num_experts)],
+                dtype=torch.int32
+            )
+
             self.experts = nn.ModuleList([
                 nn.Sequential(
-                    nn.Linear(input_dim, hidden_dim + i * 256),
+                    nn.Linear(input_dim, expert_dim),
                     nn.ReLU(),
-                    nn.Linear(hidden_dim + i * 256, input_dim)
-                ) for i in range(num_experts)
+                    nn.Linear(expert_dim, input_dim)
+                ) for expert_dim in self.expert_sizes
             ])
-            self.expert_sizes = torch.arange(hidden_dim, hidden_dim + num_experts * 256, 256, dtype=torch.int32)
 
         # elif size_distribution == 'arithmetic':
             # self.experts = nn.ModuleList([
