@@ -21,6 +21,28 @@ from semcom_model import Transformer_SemCom
 from utils import text_loss, fix_seed, sample_mixed_task_batch, sample_single_task_batch, collate_fn, SST2Dataset, get_test_loader_for_epoch, moe_balancing_loss_p_penalty, mutual_information_loss, Critic
 
 
+# MAIN TRAINING PARAS:
+# SMALL Dense:
+# MODEL_SIZE = 'S'  # 'S', 'M', 'L'
+# NUM_LAYERS = 2
+# D_TRANSFORMER = 232
+# N_HEADS = 4
+# NUM_EXPERTS = 1
+
+# M Dense:
+# MODEL_SIZE = 'M'  # 'S', 'M', 'L'
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 1
+
+# L Dense:
+MODEL_SIZE = 'L'  # 'S', 'M', 'L'
+NUM_LAYERS = 6
+D_TRANSFORMER = 632
+N_HEADS = 8
+NUM_EXPERTS = 1
+
 
 if __name__ == "__main__":
     # data and model preparation
@@ -40,14 +62,15 @@ if __name__ == "__main__":
     # test_dataset = SST2Dataset(dataset['validation'])
     # test_loader = DataLoader(test_dataset, batch_size=1, shuffle=True, collate_fn=collate_fn)
 
-    model = Transformer_SemCom(num_tasks=2, embed_dim=412, task_dim=8, num_encd_layer=4, transmit_dim=128).to(device)
+    model = Transformer_SemCom(num_tasks=2, embed_dim=D_TRANSFORMER, task_dim=8, num_encd_layer=NUM_LAYERS, transmit_dim=128, num_heads=N_HEADS).to(device)
 
     mi_critic = Critic(input_dim=2, hidden_dim=12).to(device)
     lambda_mi = 10 #to-do: revert to 10 for possibly better performance
 
-    lr_main = 1e-4
+    lr_main = 0.3e-4
     optimizer_main = torch.optim.AdamW(
-        model.parameters(),
+        # model.parameters(),
+        filter(lambda p: p.requires_grad, model.parameters()),
         lr=lr_main,
         weight_decay=5e-4,
         betas=(0.9, 0.98),
@@ -65,7 +88,7 @@ if __name__ == "__main__":
     log_val = True
 
     # max_steps_per_epoch = 500
-    total_epoch_1 = 400
+    total_epoch_1 = 350
     total_epoch_2 = 0
     total_epoch = total_epoch_1 + total_epoch_2
 
@@ -130,6 +153,7 @@ if __name__ == "__main__":
                 input_ids.to(device),
                 input_lengths.to(device)
             )
+
             total_loss = task_loss + lambda_mi*mi_loss.detach()
             optimizer_main.zero_grad()
             total_loss.backward()
@@ -329,7 +353,7 @@ if __name__ == "__main__":
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints/Dense_400_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints/Dense_size{MODEL_SIZE}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
 
     # --------------------
     # Testing (BLEU Score for Reconstruction)
@@ -374,4 +398,4 @@ if __name__ == "__main__":
     print(f'Training lasted {datetime.datetime.now() - time_start}')
 
 
-# nohup python -u main_dense.py > ./log/Dense_400_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_dense.py > ./log/Dense_sizeL_$(date +%Y%m%d_%H%M%S).log 2>&1 &

@@ -10,6 +10,10 @@ class BERTTextEncoder(nn.Module):
         
         # Load pretrained BERT model and tokenizer
         self.bert_model = BertModel.from_pretrained(bert_model_name)
+
+        for param in self.bert_model.parameters():
+            param.requires_grad = False
+
         self.tokenizer = BertTokenizer.from_pretrained(bert_model_name) # detault embedding size is 768
         
         self.projection = nn.Linear(self.bert_model.config.hidden_size, output_dim) # 768 to output_dim=256

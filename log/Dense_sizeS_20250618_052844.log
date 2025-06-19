@@ -1,0 +1,2208 @@
+nohup: ignoring input
+Training started at 2025-06-18 05:28:49
+Training detail: learning rate: 2e-4, weight decay: 5e-4, total epochs: 250, batch size: 128, seed: 2231
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 73.80% | Avg Loss: 0.497
+Task: Reconstruction | Avg Loss: 6.963 
+Mutual Information | Avg Loss: -0.00001
+Total Loss | Avg Loss: 3.589
+Time elapsed: 0:00:41.185970
+
+ --- Epoch 2
+Task: Classification | Acc: 85.11% | Avg Loss: 0.352
+Task: Reconstruction | Avg Loss: 5.853 
+Mutual Information | Avg Loss: -0.00017
+Total Loss | Avg Loss: 3.127
+Time elapsed: 0:01:22.554972
+
+ --- Epoch 3
+Task: Classification | Acc: 85.91% | Avg Loss: 0.337
+Task: Reconstruction | Avg Loss: 5.648 
+Mutual Information | Avg Loss: -0.00069
+Total Loss | Avg Loss: 3.071
+Time elapsed: 0:02:04.123285
+
+ --- Epoch 4
+Task: Classification | Acc: 86.76% | Avg Loss: 0.317
+Task: Reconstruction | Avg Loss: 5.513 
+Mutual Information | Avg Loss: -0.00149
+Total Loss | Avg Loss: 2.856
+Time elapsed: 0:02:45.359248
+
+ --- Epoch 5
+Task: Classification | Acc: 87.23% | Avg Loss: 0.304
+Task: Reconstruction | Avg Loss: 5.419 
+Mutual Information | Avg Loss: -0.00232
+Total Loss | Avg Loss: 2.882
+Time elapsed: 0:03:26.609298
+
+ --- Epoch 6
+Task: Classification | Acc: 87.97% | Avg Loss: 0.290
+Task: Reconstruction | Avg Loss: 5.303 
+Mutual Information | Avg Loss: -0.00306
+Total Loss | Avg Loss: 2.875
+Time elapsed: 0:04:08.407370
+
+ --- Epoch 7
+Task: Classification | Acc: 88.20% | Avg Loss: 0.283
+Task: Reconstruction | Avg Loss: 5.204 
+Mutual Information | Avg Loss: -0.00368
+Total Loss | Avg Loss: 2.777
+Time elapsed: 0:04:49.928793
+
+ --- Epoch 8
+Task: Classification | Acc: 88.56% | Avg Loss: 0.273
+Task: Reconstruction | Avg Loss: 5.087 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 2.698
+Time elapsed: 0:05:31.526422
+
+ --- Epoch 9
+Task: Classification | Acc: 88.91% | Avg Loss: 0.263
+Task: Reconstruction | Avg Loss: 5.003 
+Mutual Information | Avg Loss: -0.00440
+Total Loss | Avg Loss: 2.432
+Time elapsed: 0:06:12.548953
+
+ --- Epoch 10
+Task: Classification | Acc: 89.38% | Avg Loss: 0.255
+Task: Reconstruction | Avg Loss: 4.935 
+Mutual Information | Avg Loss: -0.00465
+Total Loss | Avg Loss: 2.482
+Time elapsed: 0:06:53.750430
+Example 1 ---
+Original text: at once half - baked and overheated.
+Reconstructed text: is is is of ` and s (ly..
+Original IDs: [101, 2012, 2320, 2431, 1011, 17776, 1998, 2058, 20192, 3064, 1012, 102]
+Predicted IDs: [101, 2003, 2003, 2003, 1997, 1036, 1998, 1055, 1006, 2135, 1012, 1012]
+BLEU Score: 0.1000
+Example 2 ---
+Original text: the story and the friendship proceeds in such a way that you're watching a soap opera rather than a chronicle of the ups and downs that accompany lifelong friendships.
+Reconstructed text: the film's a movie - - film n, s, that - the - film - - the film of the film. the..
+Original IDs: [101, 1996, 2466, 1998, 1996, 6860, 10951, 1999, 2107, 1037, 2126, 2008, 2017, 1005, 2128, 3666, 1037, 7815, 3850, 2738, 2084, 1037, 9519, 1997, 1996, 11139, 1998, 12482, 2008, 12673, 13506, 28956, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 1005, 1055, 1037, 3185, 1011, 1011, 2143, 1050, 1010, 1055, 1010, 2008, 1011, 1996, 1011, 2143, 1011, 1011, 1996, 2143, 1997, 1996, 2143, 1012, 102, 102, 1996, 1012, 102, 1012, 102]
+BLEU Score: 0.2236
+Example 3 ---
+Original text: for movie lovers as well as opera lovers, tosca is a real treat.
+Reconstructed text: the film is is a unys, s film in of the film,.
+Original IDs: [101, 2005, 3185, 10205, 2004, 2092, 2004, 3850, 10205, 1010, 2000, 15782, 2003, 1037, 2613, 7438, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 2003, 2003, 1037, 4895, 2100, 2015, 1010, 1055, 2143, 1999, 1997, 1996, 2143, 1010, 1012]
+BLEU Score: 0.2667
+
+ --- Epoch 11
+Task: Classification | Acc: 89.96% | Avg Loss: 0.246
+Task: Reconstruction | Avg Loss: 4.888 
+Mutual Information | Avg Loss: -0.00469
+Total Loss | Avg Loss: 2.568
+Time elapsed: 0:07:35.292547
+
+ --- Epoch 12
+Task: Classification | Acc: 90.25% | Avg Loss: 0.238
+Task: Reconstruction | Avg Loss: 4.841 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.557
+Time elapsed: 0:08:16.725957
+
+ --- Epoch 13
+Task: Classification | Acc: 90.44% | Avg Loss: 0.235
+Task: Reconstruction | Avg Loss: 4.801 
+Mutual Information | Avg Loss: -0.00483
+Total Loss | Avg Loss: 2.534
+Time elapsed: 0:08:58.266217
+
+ --- Epoch 14
+Task: Classification | Acc: 90.92% | Avg Loss: 0.228
+Task: Reconstruction | Avg Loss: 4.761 
+Mutual Information | Avg Loss: -0.00486
+Total Loss | Avg Loss: 2.562
+Time elapsed: 0:09:39.856869
+
+ --- Epoch 15
+Task: Classification | Acc: 91.31% | Avg Loss: 0.218
+Task: Reconstruction | Avg Loss: 4.719 
+Mutual Information | Avg Loss: -0.00483
+Total Loss | Avg Loss: 2.262
+Time elapsed: 0:10:20.963185
+
+ --- Epoch 16
+Task: Classification | Acc: 91.47% | Avg Loss: 0.217
+Task: Reconstruction | Avg Loss: 4.702 
+Mutual Information | Avg Loss: -0.00490
+Total Loss | Avg Loss: 2.270
+Time elapsed: 0:11:01.782720
+
+ --- Epoch 17
+Task: Classification | Acc: 91.67% | Avg Loss: 0.212
+Task: Reconstruction | Avg Loss: 4.680 
+Mutual Information | Avg Loss: -0.00487
+Total Loss | Avg Loss: 2.452
+Time elapsed: 0:11:43.500929
+
+ --- Epoch 18
+Task: Classification | Acc: 91.85% | Avg Loss: 0.205
+Task: Reconstruction | Avg Loss: 4.649 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.366
+Time elapsed: 0:12:24.873009
+
+ --- Epoch 19
+Task: Classification | Acc: 92.23% | Avg Loss: 0.199
+Task: Reconstruction | Avg Loss: 4.614 
+Mutual Information | Avg Loss: -0.00480
+Total Loss | Avg Loss: 2.245
+Time elapsed: 0:13:05.899989
+
+ --- Epoch 20
+Task: Classification | Acc: 92.50% | Avg Loss: 0.191
+Task: Reconstruction | Avg Loss: 4.604 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.421
+Time elapsed: 0:13:47.525612
+Example 1 ---
+Original text: even if you don't think ( kissinger's ) any more guilty of criminal activity than most contemporary statesmen, he'd sure make a courtroom trial great fun to watch.
+Reconstructed text: is to be the n's ` ` ` `'t ` ` `s, s and'the ` cas'n's buts a ` -. it '
+Original IDs: [101, 2130, 2065, 2017, 2079, 1050, 1005, 1056, 2228, 1006, 7618, 2121, 1005, 1055, 1007, 2151, 2062, 5905, 1997, 4735, 4023, 2084, 2087, 3824, 2163, 3549, 1010, 2002, 1005, 1040, 2469, 2191, 1037, 20747, 3979, 2307, 4569, 2000, 3422, 1012, 102]
+Predicted IDs: [101, 2003, 2000, 2022, 1996, 1050, 1005, 1055, 1036, 1036, 1036, 1036, 1005, 1056, 1036, 1036, 1036, 2015, 1010, 1055, 1998, 1005, 1996, 1036, 6187, 2015, 1005, 1050, 1005, 1055, 2021, 2015, 102, 1037, 1036, 1011, 1012, 102, 2009, 1005, 102]
+BLEU Score: 0.1494
+Example 2 ---
+Original text: reggio's continual visual barrage is absorbing as well as thought - provoking.
+Reconstructed text: the it's good is is the self - is the all - new comedy,.
+Original IDs: [101, 19723, 11411, 1005, 1055, 27222, 5107, 19359, 2003, 20998, 2004, 2092, 2004, 2245, 1011, 4013, 22776, 1012, 102]
+Predicted IDs: [101, 1996, 2009, 1005, 1055, 2204, 2003, 2003, 1996, 2969, 1011, 2003, 1996, 2035, 1011, 2047, 4038, 1010, 1012]
+BLEU Score: 0.2353
+Example 3 ---
+Original text: outer - space buffs might love this film, but others will find its pleasures intermittent.
+Reconstructed text: self - director - -, is a movie, a all - self - - -.,
+Original IDs: [101, 6058, 1011, 2686, 23176, 2015, 2453, 2293, 2023, 2143, 1010, 2021, 2500, 2097, 2424, 2049, 26552, 23852, 1012, 102]
+Predicted IDs: [101, 2969, 1011, 2472, 1011, 1011, 1010, 2003, 1037, 3185, 1010, 1037, 2035, 1011, 2969, 1011, 1011, 1011, 1012, 1010]
+BLEU Score: 0.1111
+
+ --- Epoch 21
+Task: Classification | Acc: 92.45% | Avg Loss: 0.191
+Task: Reconstruction | Avg Loss: 4.574 
+Mutual Information | Avg Loss: -0.00485
+Total Loss | Avg Loss: 2.188
+Time elapsed: 0:14:28.416906
+
+ --- Epoch 22
+Task: Classification | Acc: 92.91% | Avg Loss: 0.183
+Task: Reconstruction | Avg Loss: 4.552 
+Mutual Information | Avg Loss: -0.00479
+Total Loss | Avg Loss: 2.175
+Time elapsed: 0:15:09.432503
+
+ --- Epoch 23
+Task: Classification | Acc: 93.15% | Avg Loss: 0.174
+Task: Reconstruction | Avg Loss: 4.535 
+Mutual Information | Avg Loss: -0.00468
+Total Loss | Avg Loss: 2.237
+Time elapsed: 0:15:50.565003
+
+ --- Epoch 24
+Task: Classification | Acc: 93.24% | Avg Loss: 0.177
+Task: Reconstruction | Avg Loss: 4.510 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.135
+Time elapsed: 0:16:31.474580
+
+ --- Epoch 25
+Task: Classification | Acc: 93.44% | Avg Loss: 0.168
+Task: Reconstruction | Avg Loss: 4.487 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.341
+Time elapsed: 0:17:12.805895
+
+ --- Epoch 26
+Task: Classification | Acc: 93.43% | Avg Loss: 0.169
+Task: Reconstruction | Avg Loss: 4.475 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.172
+Time elapsed: 0:17:53.787646
+
+ --- Epoch 27
+Task: Classification | Acc: 93.62% | Avg Loss: 0.168
+Task: Reconstruction | Avg Loss: 4.447 
+Mutual Information | Avg Loss: -0.00483
+Total Loss | Avg Loss: 2.295
+Time elapsed: 0:18:35.095791
+
+ --- Epoch 28
+Task: Classification | Acc: 93.91% | Avg Loss: 0.160
+Task: Reconstruction | Avg Loss: 4.425 
+Mutual Information | Avg Loss: -0.00470
+Total Loss | Avg Loss: 2.177
+Time elapsed: 0:19:16.477076
+
+ --- Epoch 29
+Task: Classification | Acc: 93.97% | Avg Loss: 0.157
+Task: Reconstruction | Avg Loss: 4.410 
+Mutual Information | Avg Loss: -0.00467
+Total Loss | Avg Loss: 2.120
+Time elapsed: 0:19:57.676459
+
+ --- Epoch 30
+Task: Classification | Acc: 94.01% | Avg Loss: 0.157
+Task: Reconstruction | Avg Loss: 4.389 
+Mutual Information | Avg Loss: -0.00482
+Total Loss | Avg Loss: 2.318
+Time elapsed: 0:20:39.113739
+Example 1 ---
+Original text: a coda in every sense, the pinochet case splits time between a minute - by - minute account of the british court's extradition chess game and the regime's talking - head survivors.
+Reconstructed text: ( `berg '..'s more'of movie, but's a -, as the - of the, n's most, did.'s film's self - best..
+Original IDs: [101, 1037, 19429, 2050, 1999, 2296, 3168, 1010, 1996, 9231, 23555, 2102, 2553, 19584, 2051, 2090, 1037, 3371, 1011, 2011, 1011, 3371, 4070, 1997, 1996, 2329, 2457, 1005, 1055, 4469, 20562, 7433, 2208, 1998, 1996, 6939, 1005, 1055, 3331, 1011, 2132, 8643, 1012, 102]
+Predicted IDs: [101, 1006, 1036, 4059, 1005, 1012, 1012, 1005, 1055, 2062, 1005, 1997, 3185, 1010, 2021, 1005, 1055, 1037, 1011, 1010, 2004, 1996, 1011, 1997, 1996, 1010, 1050, 1005, 1055, 2087, 1010, 2106, 1012, 1005, 1055, 2143, 1005, 1055, 2969, 1011, 2190, 1012, 1012, 102]
+BLEU Score: 0.3044
+Example 2 ---
+Original text: a strangely compelling and brilliantly acted psychological drama.
+Reconstructed text: ` ` director, `ly ` ` film..
+Original IDs: [101, 1037, 13939, 17075, 1998, 8235, 2135, 6051, 8317, 3689, 1012, 102]
+Predicted IDs: [101, 1036, 1036, 2472, 1010, 1036, 2135, 1036, 1036, 2143, 1012, 1012]
+BLEU Score: 0.0000
+Example 3 ---
+Original text: because of an unnecessary and clumsy last scene, ` swimfan'left me with a very bad feeling.
+Reconstructed text: is the the director, s -, ` ` ca n's not is ` ` `. `
+Original IDs: [101, 2138, 1997, 2019, 14203, 1998, 22902, 2197, 3496, 1010, 1036, 9880, 15143, 1005, 2187, 2033, 2007, 1037, 2200, 2919, 3110, 1012, 102]
+Predicted IDs: [101, 2003, 1996, 1996, 2472, 1010, 1055, 1011, 1010, 1036, 1036, 6187, 1050, 1005, 1055, 2025, 2003, 1036, 1036, 1036, 1012, 102, 1036]
+BLEU Score: 0.1500
+
+ --- Epoch 31
+Task: Classification | Acc: 93.92% | Avg Loss: 0.156
+Task: Reconstruction | Avg Loss: 4.384 
+Mutual Information | Avg Loss: -0.00475
+Total Loss | Avg Loss: 2.259
+Time elapsed: 0:21:20.707149
+
+ --- Epoch 32
+Task: Classification | Acc: 94.14% | Avg Loss: 0.151
+Task: Reconstruction | Avg Loss: 4.356 
+Mutual Information | Avg Loss: -0.00480
+Total Loss | Avg Loss: 2.265
+Time elapsed: 0:22:02.198008
+
+ --- Epoch 33
+Task: Classification | Acc: 94.32% | Avg Loss: 0.145
+Task: Reconstruction | Avg Loss: 4.344 
+Mutual Information | Avg Loss: -0.00470
+Total Loss | Avg Loss: 2.201
+Time elapsed: 0:22:43.664908
+
+ --- Epoch 34
+Task: Classification | Acc: 94.36% | Avg Loss: 0.148
+Task: Reconstruction | Avg Loss: 4.320 
+Mutual Information | Avg Loss: -0.00473
+Total Loss | Avg Loss: 2.119
+Time elapsed: 0:23:25.017813
+
+ --- Epoch 35
+Task: Classification | Acc: 94.39% | Avg Loss: 0.145
+Task: Reconstruction | Avg Loss: 4.305 
+Mutual Information | Avg Loss: -0.00472
+Total Loss | Avg Loss: 2.222
+Time elapsed: 0:24:06.415115
+
+ --- Epoch 36
+Task: Classification | Acc: 94.60% | Avg Loss: 0.142
+Task: Reconstruction | Avg Loss: 4.288 
+Mutual Information | Avg Loss: -0.00462
+Total Loss | Avg Loss: 2.070
+Time elapsed: 0:24:47.425851
+
+ --- Epoch 37
+Task: Classification | Acc: 94.77% | Avg Loss: 0.136
+Task: Reconstruction | Avg Loss: 4.256 
+Mutual Information | Avg Loss: -0.00464
+Total Loss | Avg Loss: 2.154
+Time elapsed: 0:25:28.721558
+
+ --- Epoch 38
+Task: Classification | Acc: 94.82% | Avg Loss: 0.134
+Task: Reconstruction | Avg Loss: 4.239 
+Mutual Information | Avg Loss: -0.00456
+Total Loss | Avg Loss: 2.207
+Time elapsed: 0:26:10.333634
+
+ --- Epoch 39
+Task: Classification | Acc: 94.90% | Avg Loss: 0.135
+Task: Reconstruction | Avg Loss: 4.225 
+Mutual Information | Avg Loss: -0.00461
+Total Loss | Avg Loss: 2.153
+Time elapsed: 0:26:51.852896
+
+ --- Epoch 40
+Task: Classification | Acc: 95.03% | Avg Loss: 0.133
+Task: Reconstruction | Avg Loss: 4.202 
+Mutual Information | Avg Loss: -0.00450
+Total Loss | Avg Loss: 2.064
+Time elapsed: 0:27:33.203688
+Example 1 ---
+Original text: k - 19 exploits our substantial collective fear of nuclear holocaust to generate cheap hollywood tension.
+Reconstructed text: a - film, its the gags of humanness of the modern screen.
+Original IDs: [101, 1047, 1011, 2539, 20397, 2256, 6937, 7268, 3571, 1997, 4517, 11513, 2000, 9699, 10036, 5365, 6980, 1012, 102]
+Predicted IDs: [101, 1037, 1011, 2143, 1010, 2049, 1996, 18201, 2015, 1997, 2529, 2791, 1997, 1996, 2715, 3898, 1012, 102, 102]
+BLEU Score: 0.1730
+Example 2 ---
+Original text: but what are adults doing in the theater at all?
+Reconstructed text: the it and more enough of the characters as it is,
+Original IDs: [101, 2021, 2054, 2024, 6001, 2725, 1999, 1996, 4258, 2012, 2035, 1029, 102]
+Predicted IDs: [101, 1996, 2009, 1998, 2062, 2438, 1997, 1996, 3494, 2004, 2009, 2003, 1010]
+BLEU Score: 0.0833
+Example 3 ---
+Original text: davis... is so enamored of her own creation that she can't see how insufferable the character is.
+Reconstructed text: ( n... as a - - a - action movie, that can't a the and conid...
+Original IDs: [101, 4482, 1012, 1012, 1012, 2003, 2061, 4372, 22591, 5596, 1997, 2014, 2219, 4325, 2008, 2016, 6187, 1050, 1005, 1056, 2156, 2129, 16021, 16093, 27709, 3468, 1996, 2839, 2003, 1012, 102]
+Predicted IDs: [101, 1006, 1050, 1012, 1012, 1012, 2004, 1037, 1011, 1011, 1037, 1011, 2895, 3185, 1010, 2008, 6187, 1050, 1005, 1056, 1037, 1996, 1998, 9530, 3593, 1012, 102, 102, 1012, 1012, 102]
+BLEU Score: 0.2500
+
+ --- Epoch 41
+Task: Classification | Acc: 95.07% | Avg Loss: 0.130
+Task: Reconstruction | Avg Loss: 4.186 
+Mutual Information | Avg Loss: -0.00461
+Total Loss | Avg Loss: 2.216
+Time elapsed: 0:28:14.913996
+
+ --- Epoch 42
+Task: Classification | Acc: 95.03% | Avg Loss: 0.132
+Task: Reconstruction | Avg Loss: 4.170 
+Mutual Information | Avg Loss: -0.00467
+Total Loss | Avg Loss: 2.131
+Time elapsed: 0:28:56.198063
+
+ --- Epoch 43
+Task: Classification | Acc: 95.10% | Avg Loss: 0.128
+Task: Reconstruction | Avg Loss: 4.148 
+Mutual Information | Avg Loss: -0.00460
+Total Loss | Avg Loss: 2.065
+Time elapsed: 0:29:37.420839
+
+ --- Epoch 44
+Task: Classification | Acc: 95.14% | Avg Loss: 0.126
+Task: Reconstruction | Avg Loss: 4.141 
+Mutual Information | Avg Loss: -0.00452
+Total Loss | Avg Loss: 2.008
+Time elapsed: 0:30:18.564407
+
+ --- Epoch 45
+Task: Classification | Acc: 95.23% | Avg Loss: 0.127
+Task: Reconstruction | Avg Loss: 4.130 
+Mutual Information | Avg Loss: -0.00449
+Total Loss | Avg Loss: 2.026
+Time elapsed: 0:30:59.788291
+
+ --- Epoch 46
+Task: Classification | Acc: 95.30% | Avg Loss: 0.124
+Task: Reconstruction | Avg Loss: 4.122 
+Mutual Information | Avg Loss: -0.00448
+Total Loss | Avg Loss: 1.923
+Time elapsed: 0:31:40.667775
+
+ --- Epoch 47
+Task: Classification | Acc: 95.50% | Avg Loss: 0.120
+Task: Reconstruction | Avg Loss: 4.100 
+Mutual Information | Avg Loss: -0.00449
+Total Loss | Avg Loss: 2.092
+Time elapsed: 0:32:22.117928
+
+ --- Epoch 48
+Task: Classification | Acc: 95.51% | Avg Loss: 0.116
+Task: Reconstruction | Avg Loss: 4.090 
+Mutual Information | Avg Loss: -0.00449
+Total Loss | Avg Loss: 2.145
+Time elapsed: 0:33:03.690226
+
+ --- Epoch 49
+Task: Classification | Acc: 95.45% | Avg Loss: 0.122
+Task: Reconstruction | Avg Loss: 4.059 
+Mutual Information | Avg Loss: -0.00456
+Total Loss | Avg Loss: 2.161
+Time elapsed: 0:33:45.335253
+
+ --- Epoch 50
+Task: Classification | Acc: 95.75% | Avg Loss: 0.114
+Task: Reconstruction | Avg Loss: 4.051 
+Mutual Information | Avg Loss: -0.00446
+Total Loss | Avg Loss: 1.982
+Time elapsed: 0:34:26.658870
+Example 1 ---
+Original text: the movie does a good job of laying out some of the major issues that we encounter as we journey through life.
+Reconstructed text: the film a a the manages to burn in one of the right film to have up in the kind of cinema but
+Original IDs: [101, 1996, 3185, 2515, 1037, 2204, 3105, 1997, 10201, 2041, 2070, 1997, 1996, 2350, 3314, 2008, 2057, 8087, 2004, 2057, 4990, 2083, 2166, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 1037, 1037, 1996, 9020, 2000, 6402, 1999, 2028, 1997, 1996, 2157, 2143, 2000, 2031, 2039, 1999, 1996, 2785, 1997, 5988, 102, 2021]
+BLEU Score: 0.2174
+Example 2 ---
+Original text: a warm but realistic meditation on friendship, family and affection.
+Reconstructed text: a., moving study with suspense, humor and humor,,
+Original IDs: [101, 1037, 4010, 2021, 12689, 13804, 2006, 6860, 1010, 2155, 1998, 12242, 1012, 102]
+Predicted IDs: [101, 1037, 1012, 1010, 3048, 2817, 2007, 23873, 1010, 8562, 1998, 8562, 1010, 1010]
+BLEU Score: 0.1667
+Example 3 ---
+Original text: falls neatly into the category of good stupid fun.
+Reconstructed text: iss in the best of unod story.
+Original IDs: [101, 4212, 15981, 2046, 1996, 4696, 1997, 2204, 5236, 4569, 1012, 102]
+Predicted IDs: [101, 2003, 2015, 1999, 1996, 2190, 1997, 4895, 7716, 2466, 1012, 102]
+BLEU Score: 0.2921
+
+ --- Epoch 51
+Task: Classification | Acc: 95.62% | Avg Loss: 0.117
+Task: Reconstruction | Avg Loss: 4.042 
+Mutual Information | Avg Loss: -0.00450
+Total Loss | Avg Loss: 1.994
+Time elapsed: 0:35:08.029479
+
+ --- Epoch 52
+Task: Classification | Acc: 95.62% | Avg Loss: 0.117
+Task: Reconstruction | Avg Loss: 4.032 
+Mutual Information | Avg Loss: -0.00455
+Total Loss | Avg Loss: 1.966
+Time elapsed: 0:35:49.270194
+
+ --- Epoch 53
+Task: Classification | Acc: 95.76% | Avg Loss: 0.115
+Task: Reconstruction | Avg Loss: 4.017 
+Mutual Information | Avg Loss: -0.00452
+Total Loss | Avg Loss: 2.002
+Time elapsed: 0:36:30.505047
+
+ --- Epoch 54
+Task: Classification | Acc: 95.83% | Avg Loss: 0.112
+Task: Reconstruction | Avg Loss: 4.008 
+Mutual Information | Avg Loss: -0.00445
+Total Loss | Avg Loss: 2.034
+Time elapsed: 0:37:11.835229
+
+ --- Epoch 55
+Task: Classification | Acc: 95.76% | Avg Loss: 0.110
+Task: Reconstruction | Avg Loss: 3.994 
+Mutual Information | Avg Loss: -0.00436
+Total Loss | Avg Loss: 1.916
+Time elapsed: 0:37:53.085581
+
+ --- Epoch 56
+Task: Classification | Acc: 96.12% | Avg Loss: 0.103
+Task: Reconstruction | Avg Loss: 3.980 
+Mutual Information | Avg Loss: -0.00436
+Total Loss | Avg Loss: 2.105
+Time elapsed: 0:38:34.640311
+
+ --- Epoch 57
+Task: Classification | Acc: 95.98% | Avg Loss: 0.107
+Task: Reconstruction | Avg Loss: 3.967 
+Mutual Information | Avg Loss: -0.00444
+Total Loss | Avg Loss: 1.982
+Time elapsed: 0:39:15.914243
+
+ --- Epoch 58
+Task: Classification | Acc: 96.09% | Avg Loss: 0.105
+Task: Reconstruction | Avg Loss: 3.953 
+Mutual Information | Avg Loss: -0.00440
+Total Loss | Avg Loss: 1.945
+Time elapsed: 0:39:57.241090
+
+ --- Epoch 59
+Task: Classification | Acc: 96.07% | Avg Loss: 0.103
+Task: Reconstruction | Avg Loss: 3.945 
+Mutual Information | Avg Loss: -0.00436
+Total Loss | Avg Loss: 2.013
+Time elapsed: 0:40:38.733986
+
+ --- Epoch 60
+Task: Classification | Acc: 96.06% | Avg Loss: 0.106
+Task: Reconstruction | Avg Loss: 3.938 
+Mutual Information | Avg Loss: -0.00451
+Total Loss | Avg Loss: 2.082
+Time elapsed: 0:41:20.383706
+Example 1 ---
+Original text: a smart, witty follow - up.
+Reconstructed text: a thoughtful, cliches...
+Original IDs: [101, 1037, 6047, 1010, 25591, 3582, 1011, 2039, 1012, 102]
+Predicted IDs: [101, 1037, 16465, 1010, 18856, 17322, 2015, 1012, 1012, 1012]
+BLEU Score: 0.2195
+Example 2 ---
+Original text: binoche makes it interesting trying to find out.
+Reconstructed text: director, that you movie out to look this.,
+Original IDs: [101, 8026, 23555, 3084, 2009, 5875, 2667, 2000, 2424, 2041, 1012, 102]
+Predicted IDs: [101, 2472, 1010, 2008, 2017, 3185, 2041, 2000, 2298, 2023, 1012, 1010]
+BLEU Score: 0.2000
+Example 3 ---
+Original text: verbinski implements every hack - artist trick to give us the ooky - spookies.
+Reconstructed text: director ss,'- a of of - - to theum in - ind reiche.,
+Original IDs: [101, 12034, 19880, 22164, 2296, 20578, 1011, 3063, 7577, 2000, 2507, 2149, 1996, 1051, 6559, 2100, 1011, 11867, 14659, 3111, 1012, 102]
+Predicted IDs: [101, 2472, 1055, 2015, 1010, 1005, 1011, 1037, 1997, 1997, 1011, 1011, 2000, 1996, 2819, 1999, 1011, 27427, 2128, 17322, 1012, 1010]
+BLEU Score: 0.1875
+
+ --- Epoch 61
+Task: Classification | Acc: 96.23% | Avg Loss: 0.100
+Task: Reconstruction | Avg Loss: 3.926 
+Mutual Information | Avg Loss: -0.00438
+Total Loss | Avg Loss: 1.900
+Time elapsed: 0:42:01.624297
+
+ --- Epoch 62
+Task: Classification | Acc: 96.15% | Avg Loss: 0.101
+Task: Reconstruction | Avg Loss: 3.909 
+Mutual Information | Avg Loss: -0.00427
+Total Loss | Avg Loss: 1.850
+Time elapsed: 0:42:42.759348
+
+ --- Epoch 63
+Task: Classification | Acc: 96.30% | Avg Loss: 0.098
+Task: Reconstruction | Avg Loss: 3.900 
+Mutual Information | Avg Loss: -0.00436
+Total Loss | Avg Loss: 1.930
+Time elapsed: 0:43:24.137501
+
+ --- Epoch 64
+Task: Classification | Acc: 96.28% | Avg Loss: 0.100
+Task: Reconstruction | Avg Loss: 3.889 
+Mutual Information | Avg Loss: -0.00432
+Total Loss | Avg Loss: 1.926
+Time elapsed: 0:44:05.288387
+
+ --- Epoch 65
+Task: Classification | Acc: 96.36% | Avg Loss: 0.096
+Task: Reconstruction | Avg Loss: 3.882 
+Mutual Information | Avg Loss: -0.00438
+Total Loss | Avg Loss: 2.049
+Time elapsed: 0:44:46.908440
+
+ --- Epoch 66
+Task: Classification | Acc: 96.41% | Avg Loss: 0.096
+Task: Reconstruction | Avg Loss: 3.865 
+Mutual Information | Avg Loss: -0.00440
+Total Loss | Avg Loss: 1.933
+Time elapsed: 0:45:28.177671
+
+ --- Epoch 67
+Task: Classification | Acc: 96.52% | Avg Loss: 0.094
+Task: Reconstruction | Avg Loss: 3.863 
+Mutual Information | Avg Loss: -0.00426
+Total Loss | Avg Loss: 1.926
+Time elapsed: 0:46:09.607262
+
+ --- Epoch 68
+Task: Classification | Acc: 96.31% | Avg Loss: 0.097
+Task: Reconstruction | Avg Loss: 3.838 
+Mutual Information | Avg Loss: -0.00438
+Total Loss | Avg Loss: 1.899
+Time elapsed: 0:46:50.732673
+
+ --- Epoch 69
+Task: Classification | Acc: 96.50% | Avg Loss: 0.093
+Task: Reconstruction | Avg Loss: 3.817 
+Mutual Information | Avg Loss: -0.00429
+Total Loss | Avg Loss: 1.894
+Time elapsed: 0:47:31.947670
+
+ --- Epoch 70
+Task: Classification | Acc: 96.56% | Avg Loss: 0.093
+Task: Reconstruction | Avg Loss: 3.834 
+Mutual Information | Avg Loss: -0.00434
+Total Loss | Avg Loss: 1.810
+Time elapsed: 0:48:12.952107
+Example 1 ---
+Original text: while undisputed isn't exactly a high, it is a gripping, tidy little movie that takes mr. hill higher than he's been in a while.
+Reconstructed text: director soderderberg n's work of funny, it's `,, - s'is not, the of the film's ) is a second.
+Original IDs: [101, 2096, 6151, 2483, 29462, 2003, 1050, 1005, 1056, 3599, 1037, 2152, 1010, 2009, 2003, 1037, 13940, 1010, 29369, 2210, 3185, 2008, 3138, 2720, 1012, 2940, 3020, 2084, 2002, 1005, 1055, 2042, 1999, 1037, 2096, 1012, 102]
+Predicted IDs: [101, 2472, 2061, 4063, 4063, 4059, 1050, 1005, 1055, 2147, 1997, 6057, 1010, 2009, 1005, 1055, 1036, 1010, 1010, 1011, 1055, 1005, 2003, 2025, 1010, 1996, 1997, 1996, 2143, 1005, 1055, 1007, 2003, 1037, 2117, 1012, 102]
+BLEU Score: 0.2407
+Example 2 ---
+Original text: this is wild surreal stuff, but brilliant and the camera just kind of sits there and lets you look at this and its like you're going from one room to the next and none of them have any relation to the other.
+Reconstructed text: this is a a - ', it, such a andal of - film, the the - the it that you that it's - s you - to the it and it to the of the frustration that the life.
+Original IDs: [101, 2023, 2003, 3748, 16524, 4933, 1010, 2021, 8235, 1998, 1996, 4950, 2074, 2785, 1997, 7719, 2045, 1998, 11082, 2017, 2298, 2012, 2023, 1998, 2049, 2066, 2017, 1005, 2128, 2183, 2013, 2028, 2282, 2000, 1996, 2279, 1998, 3904, 1997, 2068, 2031, 2151, 7189, 2000, 1996, 2060, 1012, 102]
+Predicted IDs: [101, 2023, 2003, 1037, 1037, 1011, 1005, 1010, 2009, 1010, 2107, 1037, 1998, 2389, 1997, 1011, 2143, 1010, 1996, 1996, 1011, 1996, 2009, 2008, 2017, 2008, 2009, 1005, 1055, 1011, 1055, 2017, 1011, 2000, 1996, 2009, 1998, 2009, 2000, 1996, 1997, 1996, 9135, 2008, 1996, 2166, 1012, 102]
+BLEU Score: 0.3110
+Example 3 ---
+Original text: an intriguing cinematic omnibus and round - robin that occasionally is more interesting in concept than in execution.
+Reconstructed text: a compelling,s, self - - of the, more -ing characters and the film, but
+Original IDs: [101, 2019, 23824, 21014, 27284, 1998, 2461, 1011, 5863, 2008, 5681, 2003, 2062, 5875, 1999, 4145, 2084, 1999, 7781, 1012, 102]
+Predicted IDs: [101, 1037, 17075, 1010, 2015, 1010, 2969, 1011, 1011, 1997, 1996, 1010, 2062, 1011, 2075, 3494, 1998, 1996, 2143, 1010, 2021]
+BLEU Score: 0.1579
+
+ --- Epoch 71
+Task: Classification | Acc: 96.52% | Avg Loss: 0.092
+Task: Reconstruction | Avg Loss: 3.817 
+Mutual Information | Avg Loss: -0.00432
+Total Loss | Avg Loss: 1.943
+Time elapsed: 0:48:54.450277
+
+ --- Epoch 72
+Task: Classification | Acc: 96.62% | Avg Loss: 0.089
+Task: Reconstruction | Avg Loss: 3.797 
+Mutual Information | Avg Loss: -0.00425
+Total Loss | Avg Loss: 2.023
+Time elapsed: 0:49:36.131614
+
+ --- Epoch 73
+Task: Classification | Acc: 96.58% | Avg Loss: 0.090
+Task: Reconstruction | Avg Loss: 3.787 
+Mutual Information | Avg Loss: -0.00434
+Total Loss | Avg Loss: 1.871
+Time elapsed: 0:50:17.320212
+
+ --- Epoch 74
+Task: Classification | Acc: 96.64% | Avg Loss: 0.090
+Task: Reconstruction | Avg Loss: 3.782 
+Mutual Information | Avg Loss: -0.00425
+Total Loss | Avg Loss: 1.827
+Time elapsed: 0:50:58.405922
+
+ --- Epoch 75
+Task: Classification | Acc: 96.90% | Avg Loss: 0.086
+Task: Reconstruction | Avg Loss: 3.762 
+Mutual Information | Avg Loss: -0.00424
+Total Loss | Avg Loss: 1.662
+Time elapsed: 0:51:39.020326
+
+ --- Epoch 76
+Task: Classification | Acc: 96.60% | Avg Loss: 0.092
+Task: Reconstruction | Avg Loss: 3.762 
+Mutual Information | Avg Loss: -0.00446
+Total Loss | Avg Loss: 1.893
+Time elapsed: 0:52:20.549111
+
+ --- Epoch 77
+Task: Classification | Acc: 96.86% | Avg Loss: 0.084
+Task: Reconstruction | Avg Loss: 3.755 
+Mutual Information | Avg Loss: -0.00422
+Total Loss | Avg Loss: 1.853
+Time elapsed: 0:53:01.847885
+
+ --- Epoch 78
+Task: Classification | Acc: 96.89% | Avg Loss: 0.086
+Task: Reconstruction | Avg Loss: 3.749 
+Mutual Information | Avg Loss: -0.00428
+Total Loss | Avg Loss: 1.857
+Time elapsed: 0:53:43.260079
+
+ --- Epoch 79
+Task: Classification | Acc: 96.73% | Avg Loss: 0.086
+Task: Reconstruction | Avg Loss: 3.727 
+Mutual Information | Avg Loss: -0.00435
+Total Loss | Avg Loss: 2.046
+Time elapsed: 0:54:25.280335
+
+ --- Epoch 80
+Task: Classification | Acc: 96.82% | Avg Loss: 0.086
+Task: Reconstruction | Avg Loss: 3.717 
+Mutual Information | Avg Loss: -0.00421
+Total Loss | Avg Loss: 1.801
+Time elapsed: 0:55:06.562569
+Example 1 ---
+Original text: the second coming of harry potter is a film far superior to its predecessor.
+Reconstructed text: the the process of the to is a story is out of the film, and
+Original IDs: [101, 1996, 2117, 2746, 1997, 4302, 10693, 2003, 1037, 2143, 2521, 6020, 2000, 2049, 8646, 1012, 102]
+Predicted IDs: [101, 1996, 1996, 2832, 1997, 1996, 2000, 2003, 1037, 2466, 2003, 2041, 1997, 1996, 2143, 1010, 1998]
+BLEU Score: 0.3750
+Example 2 ---
+Original text: it is amusing, and that's all it needs to be.
+Reconstructed text: this a funny, but that's it it out to be, and
+Original IDs: [101, 2009, 2003, 19142, 1010, 1998, 2008, 1005, 1055, 2035, 2009, 3791, 2000, 2022, 1012, 102]
+Predicted IDs: [101, 2023, 1037, 6057, 1010, 2021, 2008, 1005, 1055, 2009, 2009, 2041, 2000, 2022, 1010, 1998]
+BLEU Score: 0.5714
+Example 3 ---
+Original text: the fly - on - the - wall method used to document rural french school life is a refreshing departure from the now more prevalent technique of the docu - makers being a visible part of their work.
+Reconstructed text: the gross - - - of the -,, a, the -,,,, theek and sfus the the portrait of the own ofs a the reason of the..
+Original IDs: [101, 1996, 4875, 1011, 2006, 1011, 1996, 1011, 2813, 4118, 2109, 2000, 6254, 3541, 2413, 2082, 2166, 2003, 1037, 27150, 6712, 2013, 1996, 2085, 2062, 15157, 6028, 1997, 1996, 9986, 2226, 1011, 11153, 2108, 1037, 5710, 2112, 1997, 2037, 2147, 1012, 102]
+Predicted IDs: [101, 1996, 7977, 1011, 1011, 1011, 1997, 1996, 1011, 1010, 1010, 1037, 1010, 1996, 1011, 1010, 1010, 1010, 1010, 1996, 5937, 1998, 1055, 25608, 1996, 1996, 6533, 1997, 1996, 2219, 1997, 2015, 102, 102, 1037, 1996, 3114, 1997, 1996, 1012, 1012, 102]
+BLEU Score: 0.3047
+
+ --- Epoch 81
+Task: Classification | Acc: 96.72% | Avg Loss: 0.087
+Task: Reconstruction | Avg Loss: 3.702 
+Mutual Information | Avg Loss: -0.00432
+Total Loss | Avg Loss: 1.999
+Time elapsed: 0:55:48.327057
+
+ --- Epoch 82
+Task: Classification | Acc: 96.99% | Avg Loss: 0.080
+Task: Reconstruction | Avg Loss: 3.696 
+Mutual Information | Avg Loss: -0.00425
+Total Loss | Avg Loss: 1.766
+Time elapsed: 0:56:29.562826
+
+ --- Epoch 83
+Task: Classification | Acc: 96.98% | Avg Loss: 0.081
+Task: Reconstruction | Avg Loss: 3.699 
+Mutual Information | Avg Loss: -0.00434
+Total Loss | Avg Loss: 1.816
+Time elapsed: 0:57:10.883194
+
+ --- Epoch 84
+Task: Classification | Acc: 96.92% | Avg Loss: 0.081
+Task: Reconstruction | Avg Loss: 3.676 
+Mutual Information | Avg Loss: -0.00424
+Total Loss | Avg Loss: 1.826
+Time elapsed: 0:57:52.238891
+
+ --- Epoch 85
+Task: Classification | Acc: 96.94% | Avg Loss: 0.082
+Task: Reconstruction | Avg Loss: 3.674 
+Mutual Information | Avg Loss: -0.00422
+Total Loss | Avg Loss: 1.778
+Time elapsed: 0:58:33.546282
+
+ --- Epoch 86
+Task: Classification | Acc: 97.10% | Avg Loss: 0.079
+Task: Reconstruction | Avg Loss: 3.665 
+Mutual Information | Avg Loss: -0.00422
+Total Loss | Avg Loss: 1.786
+Time elapsed: 0:59:14.861998
+
+ --- Epoch 87
+Task: Classification | Acc: 96.98% | Avg Loss: 0.081
+Task: Reconstruction | Avg Loss: 3.663 
+Mutual Information | Avg Loss: -0.00430
+Total Loss | Avg Loss: 1.867
+Time elapsed: 0:59:56.284003
+
+ --- Epoch 88
+Task: Classification | Acc: 97.15% | Avg Loss: 0.076
+Task: Reconstruction | Avg Loss: 3.647 
+Mutual Information | Avg Loss: -0.00435
+Total Loss | Avg Loss: 1.903
+Time elapsed: 1:00:37.724637
+
+ --- Epoch 89
+Task: Classification | Acc: 96.99% | Avg Loss: 0.081
+Task: Reconstruction | Avg Loss: 3.641 
+Mutual Information | Avg Loss: -0.00429
+Total Loss | Avg Loss: 1.788
+Time elapsed: 1:01:18.944440
+
+ --- Epoch 90
+Task: Classification | Acc: 96.91% | Avg Loss: 0.079
+Task: Reconstruction | Avg Loss: 3.632 
+Mutual Information | Avg Loss: -0.00419
+Total Loss | Avg Loss: 1.838
+Time elapsed: 1:02:00.344288
+Example 1 ---
+Original text: harrison's flowers puts its heart in the right place, but its brains are in no particular place at all.
+Reconstructed text: it's not that the idea in the characters,, but it vivid up in the originalness of it
+Original IDs: [101, 6676, 1005, 1055, 4870, 8509, 2049, 2540, 1999, 1996, 2157, 2173, 1010, 2021, 2049, 14332, 2024, 1999, 2053, 3327, 2173, 2012, 2035, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 2025, 2008, 1996, 2801, 1999, 1996, 3494, 1010, 1010, 2021, 2009, 14954, 2039, 1999, 1996, 2434, 2791, 1997, 2009, 102, 102]
+BLEU Score: 0.2715
+Example 2 ---
+Original text: charles'entertaining film chronicles seinfeld's return to stand - up comedy after the wrap of his legendary sitcom, alongside wannabe comic adams'attempts to get his shot at the big time.
+Reconstructed text: it's not of the the that's various cliches and sequence in the audience as the human precise, the the - - mother the, to to the head in the title.
+Original IDs: [101, 2798, 1005, 14036, 2143, 11906, 7367, 2378, 8151, 1005, 1055, 2709, 2000, 3233, 1011, 2039, 4038, 2044, 1996, 10236, 1997, 2010, 8987, 13130, 1010, 4077, 10587, 4783, 5021, 5922, 1005, 4740, 2000, 2131, 2010, 2915, 2012, 1996, 2502, 2051, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 2025, 1997, 1996, 1996, 2008, 1005, 1055, 2536, 18856, 17322, 2015, 1998, 5537, 1999, 1996, 4378, 2004, 1996, 2529, 10480, 1010, 1996, 1996, 1011, 1011, 2388, 1996, 1010, 2000, 2000, 1996, 2132, 1999, 1996, 2516, 1012, 102, 102]
+BLEU Score: 0.2571
+Example 3 ---
+Original text: a swashbuckling tale of love, betrayal, revenge and above all, faith.
+Reconstructed text: a anthceral sense of love, grief and s meditation with and decades.
+Original IDs: [101, 1037, 25430, 11823, 24204, 2989, 6925, 1997, 2293, 1010, 14583, 1010, 7195, 1998, 2682, 2035, 1010, 4752, 1012, 102]
+Predicted IDs: [101, 1037, 2019, 2705, 19357, 2140, 3168, 1997, 2293, 1010, 9940, 1998, 1055, 102, 13804, 2007, 1998, 5109, 1012, 102]
+BLEU Score: 0.3990
+
+ --- Epoch 91
+Task: Classification | Acc: 97.07% | Avg Loss: 0.080
+Task: Reconstruction | Avg Loss: 3.620 
+Mutual Information | Avg Loss: -0.00425
+Total Loss | Avg Loss: 1.777
+Time elapsed: 1:02:41.597006
+
+ --- Epoch 92
+Task: Classification | Acc: 97.16% | Avg Loss: 0.077
+Task: Reconstruction | Avg Loss: 3.603 
+Mutual Information | Avg Loss: -0.00420
+Total Loss | Avg Loss: 1.728
+Time elapsed: 1:03:22.764291
+
+ --- Epoch 93
+Task: Classification | Acc: 97.20% | Avg Loss: 0.076
+Task: Reconstruction | Avg Loss: 3.601 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.741
+Time elapsed: 1:04:03.909158
+
+ --- Epoch 94
+Task: Classification | Acc: 97.20% | Avg Loss: 0.076
+Task: Reconstruction | Avg Loss: 3.597 
+Mutual Information | Avg Loss: -0.00419
+Total Loss | Avg Loss: 1.805
+Time elapsed: 1:04:45.393782
+
+ --- Epoch 95
+Task: Classification | Acc: 97.17% | Avg Loss: 0.074
+Task: Reconstruction | Avg Loss: 3.585 
+Mutual Information | Avg Loss: -0.00413
+Total Loss | Avg Loss: 1.612
+Time elapsed: 1:05:26.242517
+
+ --- Epoch 96
+Task: Classification | Acc: 97.23% | Avg Loss: 0.074
+Task: Reconstruction | Avg Loss: 3.575 
+Mutual Information | Avg Loss: -0.00416
+Total Loss | Avg Loss: 1.700
+Time elapsed: 1:06:07.242553
+
+ --- Epoch 97
+Task: Classification | Acc: 97.11% | Avg Loss: 0.074
+Task: Reconstruction | Avg Loss: 3.570 
+Mutual Information | Avg Loss: -0.00422
+Total Loss | Avg Loss: 1.803
+Time elapsed: 1:06:48.751118
+
+ --- Epoch 98
+Task: Classification | Acc: 97.40% | Avg Loss: 0.070
+Task: Reconstruction | Avg Loss: 3.567 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.787
+Time elapsed: 1:07:30.248569
+
+ --- Epoch 99
+Task: Classification | Acc: 97.31% | Avg Loss: 0.072
+Task: Reconstruction | Avg Loss: 3.561 
+Mutual Information | Avg Loss: -0.00418
+Total Loss | Avg Loss: 1.705
+Time elapsed: 1:08:11.493611
+
+ --- Epoch 100
+Task: Classification | Acc: 97.26% | Avg Loss: 0.073
+Task: Reconstruction | Avg Loss: 3.538 
+Mutual Information | Avg Loss: -0.00413
+Total Loss | Avg Loss: 1.794
+Time elapsed: 1:08:52.964257
+Example 1 ---
+Original text: it's a much more emotional journey than what shyamalan has given us in his past two movies, and gibson, stepping in for bruce willis, is the perfect actor to take us on the trip.
+Reconstructed text: it's not a the movie, had the the a minutes,, in in the - star,, but it'ss and etrek, `,'or much of the time.
+Original IDs: [101, 2009, 1005, 1055, 1037, 2172, 2062, 6832, 4990, 2084, 2054, 11004, 8067, 5802, 2038, 2445, 2149, 1999, 2010, 2627, 2048, 5691, 1010, 1998, 9406, 1010, 9085, 1999, 2005, 5503, 12688, 1010, 2003, 1996, 3819, 3364, 2000, 2202, 2149, 2006, 1996, 4440, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 2025, 1037, 1996, 3185, 1010, 2018, 1996, 1996, 1037, 2781, 1010, 1010, 1999, 1999, 1996, 1011, 2732, 1010, 1010, 2021, 2009, 1005, 1055, 2015, 1998, 3802, 16816, 1010, 102, 102, 1036, 1010, 1005, 2030, 2172, 1997, 1996, 2051, 1012, 102]
+BLEU Score: 0.3301
+Example 2 ---
+Original text: allows us to hope that nolan is poised to embark a major career as a commercial yet inventive filmmaker.
+Reconstructed text: ... is of a, the tos in,, with the emptiness and unventive vision.
+Original IDs: [101, 4473, 2149, 2000, 3246, 2008, 13401, 2003, 22303, 2000, 28866, 1037, 2350, 2476, 2004, 1037, 3293, 2664, 1999, 15338, 3512, 12127, 1012, 102]
+Predicted IDs: [101, 1012, 1012, 1012, 2003, 1997, 1037, 1010, 1996, 2000, 2015, 1999, 1010, 1010, 2007, 1996, 23397, 1998, 4895, 15338, 3512, 4432, 1012, 102]
+BLEU Score: 0.1479
+Example 3 ---
+Original text: uncommonly stylish but equally silly... the picture fails to generate much suspense, nor does it ask searching enough questions to justify its pretensions.
+Reconstructed text: the is a - to - the,,, and the - - a - - - and the, - - and nearly willing to keep its own sadcy.
+Original IDs: [101, 13191, 2135, 2358, 8516, 4509, 2021, 8053, 10021, 1012, 1012, 1012, 1996, 3861, 11896, 2000, 9699, 2172, 23873, 1010, 4496, 2515, 2009, 3198, 6575, 2438, 3980, 2000, 16114, 2049, 3653, 29048, 2015, 1012, 102]
+Predicted IDs: [101, 1996, 2003, 1037, 1011, 2000, 1011, 1996, 1010, 1010, 1010, 1998, 1996, 1011, 1011, 1037, 1011, 1011, 1011, 1998, 1996, 1010, 1011, 1011, 1998, 3053, 5627, 2000, 2562, 2049, 2219, 6517, 5666, 1012, 102]
+BLEU Score: 0.1875
+
+ --- Epoch 101
+Task: Classification | Acc: 97.34% | Avg Loss: 0.073
+Task: Reconstruction | Avg Loss: 3.542 
+Mutual Information | Avg Loss: -0.00423
+Total Loss | Avg Loss: 1.723
+Time elapsed: 1:09:34.246602
+
+ --- Epoch 102
+Task: Classification | Acc: 97.37% | Avg Loss: 0.071
+Task: Reconstruction | Avg Loss: 3.530 
+Mutual Information | Avg Loss: -0.00416
+Total Loss | Avg Loss: 1.729
+Time elapsed: 1:10:15.558623
+
+ --- Epoch 103
+Task: Classification | Acc: 97.31% | Avg Loss: 0.071
+Task: Reconstruction | Avg Loss: 3.517 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.645
+Time elapsed: 1:10:56.632155
+
+ --- Epoch 104
+Task: Classification | Acc: 97.37% | Avg Loss: 0.069
+Task: Reconstruction | Avg Loss: 3.511 
+Mutual Information | Avg Loss: -0.00420
+Total Loss | Avg Loss: 1.778
+Time elapsed: 1:11:38.123560
+
+ --- Epoch 105
+Task: Classification | Acc: 97.31% | Avg Loss: 0.073
+Task: Reconstruction | Avg Loss: 3.506 
+Mutual Information | Avg Loss: -0.00419
+Total Loss | Avg Loss: 1.699
+Time elapsed: 1:12:19.261631
+
+ --- Epoch 106
+Task: Classification | Acc: 97.46% | Avg Loss: 0.068
+Task: Reconstruction | Avg Loss: 3.490 
+Mutual Information | Avg Loss: -0.00430
+Total Loss | Avg Loss: 1.869
+Time elapsed: 1:13:01.098660
+
+ --- Epoch 107
+Task: Classification | Acc: 97.51% | Avg Loss: 0.070
+Task: Reconstruction | Avg Loss: 3.489 
+Mutual Information | Avg Loss: -0.00419
+Total Loss | Avg Loss: 1.708
+Time elapsed: 1:13:42.509179
+
+ --- Epoch 108
+Task: Classification | Acc: 97.44% | Avg Loss: 0.067
+Task: Reconstruction | Avg Loss: 3.476 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.578
+Time elapsed: 1:14:23.491174
+
+ --- Epoch 109
+Task: Classification | Acc: 97.54% | Avg Loss: 0.066
+Task: Reconstruction | Avg Loss: 3.476 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.668
+Time elapsed: 1:15:04.554242
+
+ --- Epoch 110
+Task: Classification | Acc: 97.56% | Avg Loss: 0.066
+Task: Reconstruction | Avg Loss: 3.472 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.647
+Time elapsed: 1:15:45.564997
+Example 1 ---
+Original text: leigh's film is full of memorable performances from top to bottom.
+Reconstructed text: children's direction and qui of a men and j....
+Original IDs: [101, 11797, 1005, 1055, 2143, 2003, 2440, 1997, 13432, 4616, 2013, 2327, 2000, 3953, 1012, 102]
+Predicted IDs: [101, 2336, 1005, 1055, 3257, 1998, 21864, 1997, 1037, 2273, 1998, 1046, 1012, 1012, 1012, 1012]
+BLEU Score: 0.1516
+Example 2 ---
+Original text: deliriously funny, fast and loose, accessible to the uninitiated, and full of surprises
+Reconstructed text: a capely just doesn't, one of its preiocreble its - romantic comedy
+Original IDs: [101, 3972, 15735, 13453, 6057, 1010, 3435, 1998, 6065, 1010, 7801, 2000, 1996, 4895, 5498, 10711, 3064, 1010, 1998, 2440, 1997, 20096, 102]
+Predicted IDs: [101, 1037, 4880, 2135, 2074, 2515, 1050, 1005, 1056, 1010, 2028, 1997, 2049, 3653, 3695, 16748, 3468, 102, 2049, 1011, 6298, 4038, 102]
+BLEU Score: 0.1238
+Example 3 ---
+Original text: the character of zigzag is not sufficiently developed to support a film constructed around him.
+Reconstructed text: the kind of de nieet, and so also enough to be a new bone in it.
+Original IDs: [101, 1996, 2839, 1997, 1062, 8004, 4143, 2290, 2003, 2025, 12949, 2764, 2000, 2490, 1037, 2143, 3833, 2105, 2032, 1012, 102]
+Predicted IDs: [101, 1996, 2785, 1997, 2139, 9152, 15558, 1010, 1998, 2061, 2036, 2438, 2000, 2022, 1037, 2047, 5923, 1999, 2009, 1012, 102]
+BLEU Score: 0.2778
+
+ --- Epoch 111
+Task: Classification | Acc: 97.58% | Avg Loss: 0.067
+Task: Reconstruction | Avg Loss: 3.470 
+Mutual Information | Avg Loss: -0.00420
+Total Loss | Avg Loss: 1.807
+Time elapsed: 1:16:27.155956
+
+ --- Epoch 112
+Task: Classification | Acc: 97.59% | Avg Loss: 0.066
+Task: Reconstruction | Avg Loss: 3.448 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.661
+Time elapsed: 1:17:08.409422
+
+ --- Epoch 113
+Task: Classification | Acc: 97.50% | Avg Loss: 0.068
+Task: Reconstruction | Avg Loss: 3.448 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.694
+Time elapsed: 1:17:49.659107
+
+ --- Epoch 114
+Task: Classification | Acc: 97.67% | Avg Loss: 0.064
+Task: Reconstruction | Avg Loss: 3.442 
+Mutual Information | Avg Loss: -0.00413
+Total Loss | Avg Loss: 1.715
+Time elapsed: 1:18:31.028113
+
+ --- Epoch 115
+Task: Classification | Acc: 97.58% | Avg Loss: 0.066
+Task: Reconstruction | Avg Loss: 3.431 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.673
+Time elapsed: 1:19:12.337581
+
+ --- Epoch 116
+Task: Classification | Acc: 97.56% | Avg Loss: 0.065
+Task: Reconstruction | Avg Loss: 3.433 
+Mutual Information | Avg Loss: -0.00424
+Total Loss | Avg Loss: 1.863
+Time elapsed: 1:19:54.066652
+
+ --- Epoch 117
+Task: Classification | Acc: 97.61% | Avg Loss: 0.066
+Task: Reconstruction | Avg Loss: 3.412 
+Mutual Information | Avg Loss: -0.00421
+Total Loss | Avg Loss: 1.744
+Time elapsed: 1:20:35.410239
+
+ --- Epoch 118
+Task: Classification | Acc: 97.54% | Avg Loss: 0.067
+Task: Reconstruction | Avg Loss: 3.411 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.587
+Time elapsed: 1:21:16.414985
+
+ --- Epoch 119
+Task: Classification | Acc: 97.56% | Avg Loss: 0.065
+Task: Reconstruction | Avg Loss: 3.411 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.694
+Time elapsed: 1:21:57.709067
+
+ --- Epoch 120
+Task: Classification | Acc: 97.68% | Avg Loss: 0.062
+Task: Reconstruction | Avg Loss: 3.390 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.713
+Time elapsed: 1:22:39.284865
+Example 1 ---
+Original text: instead, he shows them the respect they are due.
+Reconstructed text: this, it wearss its artss and derivative,
+Original IDs: [101, 2612, 1010, 2002, 3065, 2068, 1996, 4847, 2027, 2024, 2349, 1012, 102]
+Predicted IDs: [101, 2023, 1010, 2009, 11651, 2015, 2049, 2840, 2015, 1998, 13819, 1010, 102]
+BLEU Score: 0.0890
+Example 2 ---
+Original text: this is an egotistical endeavor from the daughter of horror director dario argento ( a producer here ), but her raw performance and utter fearlessness make it strangely magnetic.
+Reconstructed text: it is a spodnt of the that creating a film that is toils, theiches, and a, the impact and inadequate that motivated as - own..
+Original IDs: [101, 2023, 2003, 2019, 13059, 16774, 7476, 23855, 2013, 1996, 2684, 1997, 5469, 2472, 26800, 23157, 2080, 1006, 1037, 3135, 2182, 1007, 1010, 2021, 2014, 6315, 2836, 1998, 14395, 22518, 2791, 2191, 2009, 13939, 8060, 1012, 102]
+Predicted IDs: [101, 2009, 2003, 1037, 11867, 7716, 3372, 1997, 1996, 2008, 4526, 1037, 2143, 2008, 2003, 2000, 12146, 1010, 1996, 17322, 2015, 1010, 1998, 1037, 1010, 1996, 4254, 1998, 14710, 2008, 12774, 2004, 1011, 2219, 1012, 1012, 102]
+BLEU Score: 0.2253
+Example 3 ---
+Original text: an unclassifiably awful study in self - and audience - abuse.
+Reconstructed text: a unnogannicly and meditation of self - and self - - a
+Original IDs: [101, 2019, 4895, 26266, 10128, 2401, 6321, 9643, 2817, 1999, 2969, 1011, 1998, 4378, 1011, 6905, 1012, 102]
+Predicted IDs: [101, 1037, 4895, 3630, 5289, 8713, 2135, 1998, 13804, 1997, 2969, 1011, 1998, 2969, 1011, 1011, 102, 1037]
+BLEU Score: 0.3333
+
+ --- Epoch 121
+Task: Classification | Acc: 97.62% | Avg Loss: 0.065
+Task: Reconstruction | Avg Loss: 3.397 
+Mutual Information | Avg Loss: -0.00416
+Total Loss | Avg Loss: 1.743
+Time elapsed: 1:23:21.061725
+
+ --- Epoch 122
+Task: Classification | Acc: 97.78% | Avg Loss: 0.060
+Task: Reconstruction | Avg Loss: 3.392 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.537
+Time elapsed: 1:24:02.086115
+
+ --- Epoch 123
+Task: Classification | Acc: 97.76% | Avg Loss: 0.065
+Task: Reconstruction | Avg Loss: 3.370 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.660
+Time elapsed: 1:24:43.425965
+
+ --- Epoch 124
+Task: Classification | Acc: 97.70% | Avg Loss: 0.063
+Task: Reconstruction | Avg Loss: 3.375 
+Mutual Information | Avg Loss: -0.00403
+Total Loss | Avg Loss: 1.657
+Time elapsed: 1:25:24.714519
+
+ --- Epoch 125
+Task: Classification | Acc: 97.93% | Avg Loss: 0.060
+Task: Reconstruction | Avg Loss: 3.362 
+Mutual Information | Avg Loss: -0.00417
+Total Loss | Avg Loss: 1.742
+Time elapsed: 1:26:06.339831
+
+ --- Epoch 126
+Task: Classification | Acc: 97.69% | Avg Loss: 0.062
+Task: Reconstruction | Avg Loss: 3.362 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.699
+Time elapsed: 1:26:47.902570
+
+ --- Epoch 127
+Task: Classification | Acc: 97.71% | Avg Loss: 0.062
+Task: Reconstruction | Avg Loss: 3.354 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.633
+Time elapsed: 1:27:29.213433
+
+ --- Epoch 128
+Task: Classification | Acc: 97.73% | Avg Loss: 0.061
+Task: Reconstruction | Avg Loss: 3.342 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.701
+Time elapsed: 1:28:10.631245
+
+ --- Epoch 129
+Task: Classification | Acc: 97.71% | Avg Loss: 0.062
+Task: Reconstruction | Avg Loss: 3.326 
+Mutual Information | Avg Loss: -0.00398
+Total Loss | Avg Loss: 1.453
+Time elapsed: 1:28:51.260655
+
+ --- Epoch 130
+Task: Classification | Acc: 97.69% | Avg Loss: 0.063
+Task: Reconstruction | Avg Loss: 3.337 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.749
+Time elapsed: 1:29:32.871395
+Example 1 ---
+Original text: involves two mysteries - - one it gives away and the other featuring such badly drawn characters that its outcome hardly matters.
+Reconstructed text: is the funny - - the,, it, the dramatic is is too too insight of its own and.
+Original IDs: [101, 7336, 2048, 15572, 1011, 1011, 2028, 2009, 3957, 2185, 1998, 1996, 2060, 3794, 2107, 6649, 4567, 3494, 2008, 2049, 9560, 6684, 5609, 1012, 102]
+Predicted IDs: [101, 2003, 1996, 6057, 1011, 1011, 1996, 1010, 1010, 2009, 1010, 1996, 6918, 2003, 2003, 2205, 2205, 12369, 1997, 2049, 2219, 1998, 1012, 102, 102]
+BLEU Score: 0.3040
+Example 2 ---
+Original text: inside the film's conflict - powered plot there is a decent moral trying to get out, but it's not that, it's the tension that keeps you in your seat.
+Reconstructed text: is the film - -, unwaristic, and a new it trying to looks, but it's, the'and s sight anything
+Original IDs: [101, 2503, 1996, 2143, 1005, 1055, 4736, 1011, 6113, 5436, 2045, 2003, 1037, 11519, 7191, 2667, 2000, 2131, 2041, 1010, 2021, 2009, 1005, 1055, 2025, 2008, 1010, 2009, 1005, 1055, 1996, 6980, 2008, 7906, 2017, 1999, 2115, 2835, 1012, 102]
+Predicted IDs: [101, 2003, 1996, 2143, 1011, 1011, 1010, 4895, 9028, 6553, 1010, 1998, 1037, 2047, 2009, 2667, 2000, 2298, 2015, 1010, 2021, 2009, 1005, 1055, 102, 102, 1010, 1996, 1005, 1998, 1055, 4356, 102, 102, 2505, 102, 102, 102, 102, 102]
+BLEU Score: 0.3425
+Example 3 ---
+Original text: a working class ` ` us vs. them'' opera that leaves no heartstring untugged and no liberal cause unplundered.
+Reconstructed text: , a's ` - - `.'' s is a a, that more as yielded as a welcome, and - reallt.
+Original IDs: [101, 1037, 2551, 2465, 1036, 1036, 2149, 5443, 1012, 2068, 1005, 1005, 3850, 2008, 3727, 2053, 8072, 18886, 3070, 4895, 8525, 15567, 1998, 2053, 4314, 3426, 4895, 24759, 20824, 2098, 1012, 102]
+Predicted IDs: [101, 1010, 1037, 1005, 1055, 1036, 1011, 1011, 1036, 1012, 1005, 1005, 1055, 2003, 1037, 1037, 1010, 2008, 2062, 2004, 17544, 2004, 1037, 6160, 1010, 1998, 1011, 2128, 8095, 2102, 1012, 102]
+BLEU Score: 0.2692
+
+ --- Epoch 131
+Task: Classification | Acc: 97.90% | Avg Loss: 0.059
+Task: Reconstruction | Avg Loss: 3.317 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.656
+Time elapsed: 1:30:14.246223
+
+ --- Epoch 132
+Task: Classification | Acc: 97.83% | Avg Loss: 0.058
+Task: Reconstruction | Avg Loss: 3.324 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.629
+Time elapsed: 1:30:55.481084
+
+ --- Epoch 133
+Task: Classification | Acc: 97.79% | Avg Loss: 0.061
+Task: Reconstruction | Avg Loss: 3.314 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.612
+Time elapsed: 1:31:36.782791
+
+ --- Epoch 134
+Task: Classification | Acc: 97.93% | Avg Loss: 0.057
+Task: Reconstruction | Avg Loss: 3.308 
+Mutual Information | Avg Loss: -0.00407
+Total Loss | Avg Loss: 1.725
+Time elapsed: 1:32:18.669062
+
+ --- Epoch 135
+Task: Classification | Acc: 97.68% | Avg Loss: 0.061
+Task: Reconstruction | Avg Loss: 3.306 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.676
+Time elapsed: 1:33:00.232455
+
+ --- Epoch 136
+Task: Classification | Acc: 97.76% | Avg Loss: 0.059
+Task: Reconstruction | Avg Loss: 3.293 
+Mutual Information | Avg Loss: -0.00398
+Total Loss | Avg Loss: 1.646
+Time elapsed: 1:33:41.500590
+
+ --- Epoch 137
+Task: Classification | Acc: 97.92% | Avg Loss: 0.058
+Task: Reconstruction | Avg Loss: 3.288 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.611
+Time elapsed: 1:34:22.776986
+
+ --- Epoch 138
+Task: Classification | Acc: 97.97% | Avg Loss: 0.059
+Task: Reconstruction | Avg Loss: 3.282 
+Mutual Information | Avg Loss: -0.00420
+Total Loss | Avg Loss: 1.631
+Time elapsed: 1:35:04.135742
+
+ --- Epoch 139
+Task: Classification | Acc: 97.92% | Avg Loss: 0.056
+Task: Reconstruction | Avg Loss: 3.280 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.655
+Time elapsed: 1:35:45.657131
+
+ --- Epoch 140
+Task: Classification | Acc: 97.94% | Avg Loss: 0.057
+Task: Reconstruction | Avg Loss: 3.268 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.661
+Time elapsed: 1:36:27.170534
+Example 1 ---
+Original text: a very well - made, funny and entertaining picture.
+Reconstructed text: a a - - -, charming and compelling tale that,
+Original IDs: [101, 1037, 2200, 2092, 1011, 2081, 1010, 6057, 1998, 14036, 3861, 1012, 102]
+Predicted IDs: [101, 1037, 1037, 1011, 1011, 1011, 1010, 11951, 1998, 17075, 6925, 2008, 1010]
+BLEU Score: 0.3333
+Example 2 ---
+Original text: feels too formulaic and too familiar to produce the transgressive thrills of early underground work.
+Reconstructed text: is s de momentum, is the to the theexam shenticugs of the big device
+Original IDs: [101, 5683, 2205, 5675, 2594, 1998, 2205, 5220, 2000, 3965, 1996, 9099, 17603, 18719, 3726, 16959, 2015, 1997, 2220, 5230, 2147, 1012, 102]
+Predicted IDs: [101, 2003, 1055, 2139, 11071, 1010, 2003, 1996, 2000, 1996, 1996, 10288, 3286, 21882, 4588, 15916, 2015, 1997, 1996, 2502, 5080, 102, 102]
+BLEU Score: 0.1871
+Example 3 ---
+Original text: a gorgeous, high - spirited musical from india that exquisitely blends music, dance, song, and high drama.
+Reconstructed text: the compassion, - - ofs of history, film, art with color, tragedy, and gentle and chaotic,. of
+Original IDs: [101, 1037, 9882, 1010, 2152, 1011, 24462, 3315, 2013, 2634, 2008, 19401, 2135, 12586, 2015, 2189, 1010, 3153, 1010, 2299, 1010, 1998, 2152, 3689, 1012, 102]
+Predicted IDs: [101, 1996, 15398, 1010, 1011, 1011, 1997, 2015, 1997, 2381, 1010, 2143, 1010, 2396, 2007, 3609, 1010, 10576, 1010, 1998, 7132, 1998, 19633, 1010, 1012, 1997]
+BLEU Score: 0.2917
+
+ --- Epoch 141
+Task: Classification | Acc: 97.88% | Avg Loss: 0.057
+Task: Reconstruction | Avg Loss: 3.272 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.675
+Time elapsed: 1:37:08.901104
+
+ --- Epoch 142
+Task: Classification | Acc: 98.01% | Avg Loss: 0.056
+Task: Reconstruction | Avg Loss: 3.250 
+Mutual Information | Avg Loss: -0.00416
+Total Loss | Avg Loss: 1.730
+Time elapsed: 1:37:50.662019
+
+ --- Epoch 143
+Task: Classification | Acc: 97.84% | Avg Loss: 0.057
+Task: Reconstruction | Avg Loss: 3.245 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.548
+Time elapsed: 1:38:32.008466
+
+ --- Epoch 144
+Task: Classification | Acc: 98.04% | Avg Loss: 0.056
+Task: Reconstruction | Avg Loss: 3.255 
+Mutual Information | Avg Loss: -0.00403
+Total Loss | Avg Loss: 1.636
+Time elapsed: 1:39:13.498934
+
+ --- Epoch 145
+Task: Classification | Acc: 98.00% | Avg Loss: 0.055
+Task: Reconstruction | Avg Loss: 3.253 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.646
+Time elapsed: 1:39:55.053346
+
+ --- Epoch 146
+Task: Classification | Acc: 97.99% | Avg Loss: 0.054
+Task: Reconstruction | Avg Loss: 3.240 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.639
+Time elapsed: 1:40:36.588542
+
+ --- Epoch 147
+Task: Classification | Acc: 97.95% | Avg Loss: 0.057
+Task: Reconstruction | Avg Loss: 3.230 
+Mutual Information | Avg Loss: -0.00418
+Total Loss | Avg Loss: 1.683
+Time elapsed: 1:41:18.329507
+
+ --- Epoch 148
+Task: Classification | Acc: 97.84% | Avg Loss: 0.059
+Task: Reconstruction | Avg Loss: 3.230 
+Mutual Information | Avg Loss: -0.00419
+Total Loss | Avg Loss: 1.696
+Time elapsed: 1:42:00.019030
+
+ --- Epoch 149
+Task: Classification | Acc: 97.96% | Avg Loss: 0.055
+Task: Reconstruction | Avg Loss: 3.218 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.562
+Time elapsed: 1:42:41.147342
+
+ --- Epoch 150
+Task: Classification | Acc: 98.05% | Avg Loss: 0.054
+Task: Reconstruction | Avg Loss: 3.211 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.588
+Time elapsed: 1:43:22.433735
+Example 1 ---
+Original text: an exhilarating futuristic thriller - noir, minority report twists the best of technology around a gripping story, delivering a riveting, pulse intensifying escapist adventure of the first order
+Reconstructed text: a a of of, self - age, a, - - age of as of a., it, the,ming, un unflible, mor the examination of the loss.
+Original IDs: [101, 2019, 4654, 26415, 15172, 28971, 10874, 1011, 15587, 1010, 7162, 3189, 21438, 1996, 2190, 1997, 2974, 2105, 1037, 13940, 2466, 1010, 12771, 1037, 15544, 19510, 2075, 1010, 8187, 20014, 6132, 11787, 9686, 17695, 2923, 6172, 1997, 1996, 2034, 2344, 102]
+Predicted IDs: [101, 1037, 1037, 1997, 1997, 1010, 2969, 1011, 2287, 1010, 1037, 1010, 1011, 1011, 2287, 1997, 1037, 2015, 1997, 1037, 1012, 1010, 2009, 1010, 1996, 1010, 6562, 1010, 4895, 4895, 10258, 7028, 1010, 22822, 1996, 7749, 1997, 1996, 3279, 1012, 102]
+BLEU Score: 0.2857
+Example 2 ---
+Original text: it's a beautiful madness.
+Reconstructed text: it's a visual adventure, and
+Original IDs: [101, 2009, 1005, 1055, 1037, 3376, 12013, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 1037, 5107, 6172, 1010, 1998]
+BLEU Score: 0.4286
+Example 3 ---
+Original text: for starters, the story is just too slim.
+Reconstructed text: a wonderful, the film is all your interest a
+Original IDs: [101, 2005, 29400, 1010, 1996, 2466, 2003, 2074, 2205, 11754, 1012, 102]
+Predicted IDs: [101, 1037, 6919, 1010, 1996, 2143, 2003, 2035, 2115, 3037, 102, 1037]
+BLEU Score: 0.3000
+
+ --- Epoch 151
+Task: Classification | Acc: 97.96% | Avg Loss: 0.054
+Task: Reconstruction | Avg Loss: 3.208 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.618
+Time elapsed: 1:44:03.987155
+
+ --- Epoch 152
+Task: Classification | Acc: 97.93% | Avg Loss: 0.054
+Task: Reconstruction | Avg Loss: 3.205 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.616
+Time elapsed: 1:44:45.469657
+
+ --- Epoch 153
+Task: Classification | Acc: 98.02% | Avg Loss: 0.054
+Task: Reconstruction | Avg Loss: 3.200 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.613
+Time elapsed: 1:45:27.016808
+
+ --- Epoch 154
+Task: Classification | Acc: 98.07% | Avg Loss: 0.055
+Task: Reconstruction | Avg Loss: 3.195 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.587
+Time elapsed: 1:46:08.510739
+
+ --- Epoch 155
+Task: Classification | Acc: 98.00% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.175 
+Mutual Information | Avg Loss: -0.00421
+Total Loss | Avg Loss: 1.688
+Time elapsed: 1:46:50.328968
+
+ --- Epoch 156
+Task: Classification | Acc: 98.13% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.196 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.540
+Time elapsed: 1:47:31.602294
+
+ --- Epoch 157
+Task: Classification | Acc: 98.11% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.177 
+Mutual Information | Avg Loss: -0.00423
+Total Loss | Avg Loss: 1.694
+Time elapsed: 1:48:13.460277
+
+ --- Epoch 158
+Task: Classification | Acc: 98.08% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.191 
+Mutual Information | Avg Loss: -0.00396
+Total Loss | Avg Loss: 1.478
+Time elapsed: 1:48:54.602922
+
+ --- Epoch 159
+Task: Classification | Acc: 98.10% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.166 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.571
+Time elapsed: 1:49:35.893941
+
+ --- Epoch 160
+Task: Classification | Acc: 98.09% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.172 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.569
+Time elapsed: 1:50:17.331541
+Example 1 ---
+Original text: the overall effect is less like a children's movie than a recruitment film for future hollywood sellouts.
+Reconstructed text: the the film is a `.n's film is a good excuse with a dark can is and fun
+Original IDs: [101, 1996, 3452, 3466, 2003, 2625, 2066, 1037, 2336, 1005, 1055, 3185, 2084, 1037, 15680, 2143, 2005, 2925, 5365, 5271, 12166, 1012, 102]
+Predicted IDs: [101, 1996, 1996, 2143, 2003, 1037, 1036, 1012, 2078, 1005, 1055, 2143, 2003, 1037, 2204, 8016, 2007, 1037, 2601, 2064, 2003, 1998, 4569]
+BLEU Score: 0.3000
+Example 2 ---
+Original text: a great ensemble cast can't lift this heartfelt enterprise out of the familiar.
+Reconstructed text: is - - film doesn't lost and the fight of members of the characters,.
+Original IDs: [101, 1037, 2307, 7241, 3459, 6187, 1050, 1005, 1056, 6336, 2023, 2540, 26675, 6960, 2041, 1997, 1996, 5220, 1012, 102]
+Predicted IDs: [101, 2003, 1011, 1011, 2143, 2515, 1050, 1005, 1056, 2439, 1998, 1996, 2954, 1997, 2372, 1997, 1996, 3494, 1010, 1012]
+BLEU Score: 0.2353
+Example 3 ---
+Original text: exquisitely nuanced in mood tics and dialogue, this chamber drama is superbly acted by the deeply appealing veteran bouquet and the chilling but quite human berling.
+Reconstructed text: the a isly the a elegant of jaw - -, and intelligent, with a young, with the, twisted comic, and poorly subtle, and inff..
+Original IDs: [101, 19401, 2135, 16371, 6651, 2094, 1999, 6888, 14841, 6169, 1998, 7982, 1010, 2023, 4574, 3689, 2003, 21688, 2135, 6051, 2011, 1996, 6171, 16004, 8003, 26700, 1998, 1996, 27017, 2021, 3243, 2529, 4068, 2290, 1012, 102]
+Predicted IDs: [101, 1996, 1037, 2003, 2135, 1996, 1037, 11552, 1997, 5730, 1011, 1011, 1010, 1998, 9414, 1010, 2007, 1037, 2402, 1010, 2007, 1996, 1010, 6389, 5021, 1010, 1998, 9996, 11259, 1010, 1998, 1999, 4246, 1012, 1012, 102]
+BLEU Score: 0.1613
+
+ --- Epoch 161
+Task: Classification | Acc: 98.12% | Avg Loss: 0.052
+Task: Reconstruction | Avg Loss: 3.160 
+Mutual Information | Avg Loss: -0.00402
+Total Loss | Avg Loss: 1.480
+Time elapsed: 1:50:58.645950
+
+ --- Epoch 162
+Task: Classification | Acc: 98.11% | Avg Loss: 0.052
+Task: Reconstruction | Avg Loss: 3.161 
+Mutual Information | Avg Loss: -0.00397
+Total Loss | Avg Loss: 1.493
+Time elapsed: 1:51:39.892449
+
+ --- Epoch 163
+Task: Classification | Acc: 98.03% | Avg Loss: 0.051
+Task: Reconstruction | Avg Loss: 3.154 
+Mutual Information | Avg Loss: -0.00396
+Total Loss | Avg Loss: 1.507
+Time elapsed: 1:52:21.125216
+
+ --- Epoch 164
+Task: Classification | Acc: 98.20% | Avg Loss: 0.050
+Task: Reconstruction | Avg Loss: 3.154 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.482
+Time elapsed: 1:53:02.256313
+
+ --- Epoch 165
+Task: Classification | Acc: 98.30% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.144 
+Mutual Information | Avg Loss: -0.00407
+Total Loss | Avg Loss: 1.500
+Time elapsed: 1:53:43.395407
+
+ --- Epoch 166
+Task: Classification | Acc: 98.10% | Avg Loss: 0.053
+Task: Reconstruction | Avg Loss: 3.151 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.541
+Time elapsed: 1:54:24.766252
+
+ --- Epoch 167
+Task: Classification | Acc: 98.21% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.136 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.538
+Time elapsed: 1:55:06.163295
+
+ --- Epoch 168
+Task: Classification | Acc: 98.16% | Avg Loss: 0.050
+Task: Reconstruction | Avg Loss: 3.131 
+Mutual Information | Avg Loss: -0.00405
+Total Loss | Avg Loss: 1.623
+Time elapsed: 1:55:47.764588
+
+ --- Epoch 169
+Task: Classification | Acc: 98.20% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.128 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.608
+Time elapsed: 1:56:29.465395
+
+ --- Epoch 170
+Task: Classification | Acc: 98.27% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.121 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.587
+Time elapsed: 1:57:10.976905
+Example 1 ---
+Original text: you wonder why enough wasn't just a music video rather than a full - length movie.
+Reconstructed text: the home that i didn't lost, it the paxton as a first - minute director
+Original IDs: [101, 2017, 4687, 2339, 2438, 2001, 1050, 1005, 1056, 2074, 1037, 2189, 2678, 2738, 2084, 1037, 2440, 1011, 3091, 3185, 1012, 102]
+Predicted IDs: [101, 1996, 2188, 2008, 1045, 2106, 1050, 1005, 1056, 2439, 1010, 2009, 1996, 27765, 2004, 1037, 2034, 1011, 3371, 2472, 102, 102]
+BLEU Score: 0.1664
+Example 2 ---
+Original text: it's one pussy - ass world when even killer - thrillers revolve around group therapy sessions.
+Reconstructed text: it's now self - jaed pairing a soft - footed enogycr,,,ism and an
+Original IDs: [101, 2009, 1005, 1055, 2028, 22418, 1011, 4632, 2088, 2043, 2130, 6359, 1011, 10874, 2015, 7065, 4747, 3726, 2105, 2177, 7242, 6521, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 2085, 2969, 1011, 14855, 2098, 22778, 1037, 3730, 1011, 28856, 4372, 15707, 26775, 102, 1010, 1010, 1010, 2964, 1998, 2019]
+BLEU Score: 0.2222
+Example 3 ---
+Original text: the minor figures surrounding ( bobby )... form a gritty urban mosaic.
+Reconstructed text: the color'bearly..... is a astonishingly hu cast..
+Original IDs: [101, 1996, 3576, 4481, 4193, 1006, 6173, 1007, 1012, 1012, 1012, 2433, 1037, 24842, 3723, 3923, 16061, 1012, 102]
+Predicted IDs: [101, 1996, 3609, 1005, 4562, 2135, 1012, 1012, 1012, 1012, 1012, 2003, 1037, 26137, 2135, 15876, 3459, 1012, 1012]
+BLEU Score: 0.1275
+
+ --- Epoch 171
+Task: Classification | Acc: 98.21% | Avg Loss: 0.050
+Task: Reconstruction | Avg Loss: 3.121 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.495
+Time elapsed: 1:57:52.369722
+
+ --- Epoch 172
+Task: Classification | Acc: 98.20% | Avg Loss: 0.051
+Task: Reconstruction | Avg Loss: 3.118 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.443
+Time elapsed: 1:58:33.368291
+
+ --- Epoch 173
+Task: Classification | Acc: 98.17% | Avg Loss: 0.050
+Task: Reconstruction | Avg Loss: 3.106 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.528
+Time elapsed: 1:59:14.752317
+
+ --- Epoch 174
+Task: Classification | Acc: 98.21% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.106 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.477
+Time elapsed: 1:59:56.072767
+
+ --- Epoch 175
+Task: Classification | Acc: 98.16% | Avg Loss: 0.051
+Task: Reconstruction | Avg Loss: 3.103 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.550
+Time elapsed: 2:00:37.541662
+
+ --- Epoch 176
+Task: Classification | Acc: 98.28% | Avg Loss: 0.048
+Task: Reconstruction | Avg Loss: 3.097 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.431
+Time elapsed: 2:01:18.543269
+
+ --- Epoch 177
+Task: Classification | Acc: 98.30% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.097 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.574
+Time elapsed: 2:02:00.130791
+
+ --- Epoch 178
+Task: Classification | Acc: 98.34% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.090 
+Mutual Information | Avg Loss: -0.00422
+Total Loss | Avg Loss: 1.645
+Time elapsed: 2:02:42.080755
+
+ --- Epoch 179
+Task: Classification | Acc: 98.16% | Avg Loss: 0.050
+Task: Reconstruction | Avg Loss: 3.082 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.361
+Time elapsed: 2:03:22.856462
+
+ --- Epoch 180
+Task: Classification | Acc: 98.18% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.085 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.397
+Time elapsed: 2:04:03.645728
+Example 1 ---
+Original text: a gripping movie, played with performances that are all understated and touching.
+Reconstructed text: a a film of a the movierops between btrirous and loath,
+Original IDs: [101, 1037, 13940, 3185, 1010, 2209, 2007, 4616, 2008, 2024, 2035, 2104, 9153, 3064, 1998, 7244, 1012, 102]
+Predicted IDs: [101, 1037, 1037, 2143, 1997, 1037, 1996, 3185, 18981, 2015, 2090, 1038, 18886, 13288, 1998, 8840, 8988, 1010]
+BLEU Score: 0.2116
+Example 2 ---
+Original text: is the time really ripe for a warmed - over james bond adventure, with a village idiot as the 007 clone?
+Reconstructed text: is ', have to be a pg - off, i, but in a $, leaving the plenty of chan will have
+Original IDs: [101, 2003, 1996, 2051, 2428, 22503, 2005, 1037, 17336, 1011, 2058, 2508, 5416, 6172, 1010, 2007, 1037, 2352, 10041, 2004, 1996, 4002, 2581, 17598, 1029, 102]
+Predicted IDs: [101, 2003, 1005, 1010, 2031, 2000, 2022, 1037, 18720, 1011, 2125, 1010, 1045, 1010, 2021, 1999, 1037, 1002, 1010, 2975, 1996, 7564, 1997, 9212, 2097, 2031]
+BLEU Score: 0.2400
+Example 3 ---
+Original text: it treats women like idiots.
+Reconstructed text: it is stay in e..
+Original IDs: [101, 2009, 18452, 2308, 2066, 28781, 1012, 102]
+Predicted IDs: [101, 2009, 2003, 2994, 1999, 1041, 1012, 1012]
+BLEU Score: 0.1667
+
+ --- Epoch 181
+Task: Classification | Acc: 98.17% | Avg Loss: 0.049
+Task: Reconstruction | Avg Loss: 3.082 
+Mutual Information | Avg Loss: -0.00395
+Total Loss | Avg Loss: 1.477
+Time elapsed: 2:04:44.997171
+
+ --- Epoch 182
+Task: Classification | Acc: 98.38% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 3.060 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.532
+Time elapsed: 2:05:26.405707
+
+ --- Epoch 183
+Task: Classification | Acc: 98.22% | Avg Loss: 0.048
+Task: Reconstruction | Avg Loss: 3.063 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.638
+Time elapsed: 2:06:08.217037
+
+ --- Epoch 184
+Task: Classification | Acc: 98.32% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.063 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.562
+Time elapsed: 2:06:49.783396
+
+ --- Epoch 185
+Task: Classification | Acc: 98.25% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.054 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.519
+Time elapsed: 2:07:31.373829
+
+ --- Epoch 186
+Task: Classification | Acc: 98.38% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.048 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.566
+Time elapsed: 2:08:13.027802
+
+ --- Epoch 187
+Task: Classification | Acc: 98.23% | Avg Loss: 0.048
+Task: Reconstruction | Avg Loss: 3.052 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.433
+Time elapsed: 2:08:54.240444
+
+ --- Epoch 188
+Task: Classification | Acc: 98.26% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.041 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.494
+Time elapsed: 2:09:35.547602
+
+ --- Epoch 189
+Task: Classification | Acc: 98.41% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 3.046 
+Mutual Information | Avg Loss: -0.00403
+Total Loss | Avg Loss: 1.610
+Time elapsed: 2:10:17.410074
+
+ --- Epoch 190
+Task: Classification | Acc: 98.41% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 3.048 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.526
+Time elapsed: 2:10:58.773860
+Example 1 ---
+Original text: having had the good sense to cast actors who are, generally speaking, adored by the movie - going public, khouri then gets terrific performances from them all.
+Reconstructed text: it, the the's a it can be, as themselves, descends as the high - minute, violent &nipes and engaging documentary of.
+Original IDs: [101, 2383, 2018, 1996, 2204, 3168, 2000, 3459, 5889, 2040, 2024, 1010, 3227, 4092, 1010, 28456, 2011, 1996, 3185, 1011, 2183, 2270, 1010, 1047, 6806, 9496, 2059, 4152, 27547, 4616, 2013, 2068, 2035, 1012, 102]
+Predicted IDs: [101, 2009, 1010, 1996, 1996, 1005, 1055, 1037, 2009, 2064, 2022, 1010, 2004, 3209, 1010, 23328, 2004, 1996, 2152, 1011, 3371, 1010, 6355, 1004, 3490, 10374, 1998, 102, 11973, 4516, 1997, 102, 1012, 102, 102]
+BLEU Score: 0.2246
+Example 2 ---
+Original text: is the time really ripe for a warmed - over james bond adventure, with a village idiot as the 007 clone?
+Reconstructed text: is the the of attraction of a 90 - core videotre,, not a more ) in a large eyelids...
+Original IDs: [101, 2003, 1996, 2051, 2428, 22503, 2005, 1037, 17336, 1011, 2058, 2508, 5416, 6172, 1010, 2007, 1037, 2352, 10041, 2004, 1996, 4002, 2581, 17598, 1029, 102]
+Predicted IDs: [101, 2003, 1996, 1996, 1997, 8432, 1997, 1037, 3938, 1011, 4563, 2678, 7913, 1010, 1010, 2025, 1037, 2062, 1007, 1999, 1037, 2312, 16544, 1012, 1012, 1012]
+BLEU Score: 0.3040
+Example 3 ---
+Original text: one of the best films of the year with its exploration of the obstacles to happiness faced by five contemporary individuals... a psychological masterpiece.
+Reconstructed text: is a the that, in the film of the,, of the people,, of the chaoticness, and, of chaotic ceremonies,
+Original IDs: [101, 2028, 1997, 1996, 2190, 3152, 1997, 1996, 2095, 2007, 2049, 8993, 1997, 1996, 15314, 2000, 8404, 4320, 2011, 2274, 3824, 3633, 1012, 1012, 1012, 1037, 8317, 17743, 1012, 102]
+Predicted IDs: [101, 2003, 1037, 1996, 2008, 1010, 1999, 1996, 2143, 1997, 1996, 1010, 1010, 1997, 1996, 2111, 1010, 1010, 1997, 1996, 19633, 2791, 1010, 1998, 1010, 1997, 19633, 10912, 1010, 102]
+BLEU Score: 0.2593
+
+ --- Epoch 191
+Task: Classification | Acc: 98.32% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.038 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.465
+Time elapsed: 2:11:39.929102
+
+ --- Epoch 192
+Task: Classification | Acc: 98.34% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 3.028 
+Mutual Information | Avg Loss: -0.00403
+Total Loss | Avg Loss: 1.572
+Time elapsed: 2:12:21.692132
+
+ --- Epoch 193
+Task: Classification | Acc: 98.41% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.022 
+Mutual Information | Avg Loss: -0.00407
+Total Loss | Avg Loss: 1.530
+Time elapsed: 2:13:03.288501
+
+ --- Epoch 194
+Task: Classification | Acc: 98.34% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.027 
+Mutual Information | Avg Loss: -0.00402
+Total Loss | Avg Loss: 1.420
+Time elapsed: 2:13:44.433516
+
+ --- Epoch 195
+Task: Classification | Acc: 98.30% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.008 
+Mutual Information | Avg Loss: -0.00413
+Total Loss | Avg Loss: 1.517
+Time elapsed: 2:14:25.834249
+
+ --- Epoch 196
+Task: Classification | Acc: 98.38% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.021 
+Mutual Information | Avg Loss: -0.00407
+Total Loss | Avg Loss: 1.467
+Time elapsed: 2:15:07.137088
+
+ --- Epoch 197
+Task: Classification | Acc: 98.27% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.005 
+Mutual Information | Avg Loss: -0.00417
+Total Loss | Avg Loss: 1.583
+Time elapsed: 2:15:49.013874
+
+ --- Epoch 198
+Task: Classification | Acc: 98.30% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 3.003 
+Mutual Information | Avg Loss: -0.00394
+Total Loss | Avg Loss: 1.382
+Time elapsed: 2:16:29.916929
+
+ --- Epoch 199
+Task: Classification | Acc: 98.28% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 3.022 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.508
+Time elapsed: 2:17:11.479262
+
+ --- Epoch 200
+Task: Classification | Acc: 98.37% | Avg Loss: 0.045
+Task: Reconstruction | Avg Loss: 3.006 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.572
+Time elapsed: 2:17:53.190641
+Example 1 ---
+Original text: it haunts you, you can't forget it, you admire its conception and are able to resolve some of the confusions you had while watching it.
+Reconstructed text: the of the editing,. don't be one that the film it's also enough to be, in the that - pretends of the beautifully.
+Original IDs: [101, 2009, 24542, 2015, 2017, 1010, 2017, 6187, 1050, 1005, 1056, 5293, 2009, 1010, 2017, 19837, 2049, 13120, 1998, 2024, 2583, 2000, 10663, 2070, 1997, 1996, 6724, 2015, 2017, 2018, 2096, 3666, 2009, 1012, 102]
+Predicted IDs: [101, 1996, 1997, 1996, 9260, 1010, 1012, 2079, 1050, 1005, 1056, 2022, 2028, 2008, 1996, 2143, 2009, 1005, 1055, 2036, 2438, 2000, 2022, 1010, 1999, 1996, 2008, 1011, 9811, 2015, 1997, 1996, 17950, 1012, 102]
+BLEU Score: 0.2759
+Example 2 ---
+Original text: how do you spell cliche?
+Reconstructed text: the first - minute drgo, and
+Original IDs: [101, 2129, 2079, 2017, 6297, 18856, 17322, 1029, 102]
+Predicted IDs: [101, 1996, 2034, 1011, 3371, 2852, 3995, 1010, 1998]
+BLEU Score: 0.0000
+Example 3 ---
+Original text: looks and feels like a project better suited for the small screen.
+Reconstructed text: it and funny of the little - - in the same theaters, but
+Original IDs: [101, 3504, 1998, 5683, 2066, 1037, 2622, 2488, 10897, 2005, 1996, 2235, 3898, 1012, 102]
+Predicted IDs: [101, 2009, 1998, 6057, 1997, 1996, 2210, 1011, 1011, 1999, 1996, 2168, 12370, 1010, 2021]
+BLEU Score: 0.1429
+
+ --- Epoch 201
+Task: Classification | Acc: 98.35% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 2.994 
+Mutual Information | Avg Loss: -0.00405
+Total Loss | Avg Loss: 1.471
+Time elapsed: 2:18:34.526701
+
+ --- Epoch 202
+Task: Classification | Acc: 98.46% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 3.008 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.510
+Time elapsed: 2:19:16.014869
+
+ --- Epoch 203
+Task: Classification | Acc: 98.30% | Avg Loss: 0.048
+Task: Reconstruction | Avg Loss: 3.002 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.481
+Time elapsed: 2:19:57.420148
+
+ --- Epoch 204
+Task: Classification | Acc: 98.34% | Avg Loss: 0.046
+Task: Reconstruction | Avg Loss: 2.986 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.489
+Time elapsed: 2:20:38.882353
+
+ --- Epoch 205
+Task: Classification | Acc: 98.40% | Avg Loss: 0.045
+Task: Reconstruction | Avg Loss: 2.989 
+Mutual Information | Avg Loss: -0.00399
+Total Loss | Avg Loss: 1.440
+Time elapsed: 2:21:20.100402
+
+ --- Epoch 206
+Task: Classification | Acc: 98.35% | Avg Loss: 0.047
+Task: Reconstruction | Avg Loss: 2.990 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.591
+Time elapsed: 2:22:01.899129
+
+ --- Epoch 207
+Task: Classification | Acc: 98.36% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 2.988 
+Mutual Information | Avg Loss: -0.00402
+Total Loss | Avg Loss: 1.350
+Time elapsed: 2:22:42.794707
+
+ --- Epoch 208
+Task: Classification | Acc: 98.47% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 2.985 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.526
+Time elapsed: 2:23:24.328613
+
+ --- Epoch 209
+Task: Classification | Acc: 98.45% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.981 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.457
+Time elapsed: 2:24:05.963608
+
+ --- Epoch 210
+Task: Classification | Acc: 98.40% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 2.968 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.480
+Time elapsed: 2:24:47.479948
+Example 1 ---
+Original text: anchored by friel and williams's exceptional performances, the film's power lies in its complexity.
+Reconstructed text: is a bad set and bullock's hay, the white's maternal,, the part of go
+Original IDs: [101, 14453, 2011, 10424, 9257, 1998, 3766, 1005, 1055, 11813, 4616, 1010, 1996, 2143, 1005, 1055, 2373, 3658, 1999, 2049, 11619, 1012, 102]
+Predicted IDs: [101, 2003, 1037, 2919, 2275, 1998, 25200, 1005, 1055, 5292, 2100, 1010, 1996, 2317, 1005, 1055, 11062, 1010, 1010, 1996, 2112, 1997, 2175]
+BLEU Score: 0.2632
+Example 2 ---
+Original text: it's somewhat clumsy and too lethargically paced - - but its story about a mysterious creature with psychic abilities offers a solid build - up, a terrific climax, and some nice chills along the way.
+Reconstructed text: the film of a - the,, of the thats - - if the way of the way of,, the, a dumbed - -,,, it and captures as the visual men in the work.
+Original IDs: [101, 2009, 1005, 1055, 5399, 22902, 1998, 2205, 2292, 8167, 26715, 2135, 13823, 1011, 1011, 2021, 2049, 2466, 2055, 1037, 8075, 6492, 2007, 12663, 7590, 4107, 1037, 5024, 3857, 1011, 2039, 1010, 1037, 27547, 14463, 1010, 1998, 2070, 3835, 10720, 2015, 2247, 1996, 2126, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 1997, 1037, 1011, 1996, 1010, 1010, 1997, 1996, 2008, 2015, 1011, 1011, 2065, 1996, 2126, 1997, 1996, 2126, 1997, 1010, 1010, 1996, 1010, 1037, 12873, 2098, 1011, 1011, 1010, 1010, 1010, 2009, 1998, 19566, 2004, 1996, 5107, 2273, 1999, 1996, 2147, 1012, 102]
+BLEU Score: 0.2857
+Example 3 ---
+Original text: puts a human face on a land most westerners are unfamiliar with.
+Reconstructed text: is a grand look in a era whose - we is privy here..
+Original IDs: [101, 8509, 1037, 2529, 2227, 2006, 1037, 2455, 2087, 2530, 2545, 2024, 16261, 2007, 1012, 102]
+Predicted IDs: [101, 2003, 1037, 2882, 2298, 1999, 1037, 3690, 3005, 1011, 2057, 2003, 14452, 2182, 1012, 1012]
+BLEU Score: 0.1429
+
+ --- Epoch 211
+Task: Classification | Acc: 98.50% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.960 
+Mutual Information | Avg Loss: -0.00394
+Total Loss | Avg Loss: 1.387
+Time elapsed: 2:25:28.435700
+
+ --- Epoch 212
+Task: Classification | Acc: 98.41% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.969 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.391
+Time elapsed: 2:26:09.563798
+
+ --- Epoch 213
+Task: Classification | Acc: 98.35% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 2.968 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.501
+Time elapsed: 2:26:51.195413
+
+ --- Epoch 214
+Task: Classification | Acc: 98.33% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.954 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.504
+Time elapsed: 2:27:32.612135
+
+ --- Epoch 215
+Task: Classification | Acc: 98.40% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.963 
+Mutual Information | Avg Loss: -0.00403
+Total Loss | Avg Loss: 1.488
+Time elapsed: 2:28:14.108319
+
+ --- Epoch 216
+Task: Classification | Acc: 98.40% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.957 
+Mutual Information | Avg Loss: -0.00394
+Total Loss | Avg Loss: 1.369
+Time elapsed: 2:28:55.183328
+
+ --- Epoch 217
+Task: Classification | Acc: 98.63% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.948 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.473
+Time elapsed: 2:29:36.547035
+
+ --- Epoch 218
+Task: Classification | Acc: 98.41% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.955 
+Mutual Information | Avg Loss: -0.00421
+Total Loss | Avg Loss: 1.554
+Time elapsed: 2:30:18.282355
+
+ --- Epoch 219
+Task: Classification | Acc: 98.48% | Avg Loss: 0.042
+Task: Reconstruction | Avg Loss: 2.952 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.481
+Time elapsed: 2:30:59.737942
+
+ --- Epoch 220
+Task: Classification | Acc: 98.55% | Avg Loss: 0.042
+Task: Reconstruction | Avg Loss: 2.953 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.493
+Time elapsed: 2:31:41.321656
+Example 1 ---
+Original text: it's about following your dreams, no matter what your parents think.
+Reconstructed text: you's part of your face that you you after your to once.
+Original IDs: [101, 2009, 1005, 1055, 2055, 2206, 2115, 5544, 1010, 2053, 3043, 2054, 2115, 3008, 2228, 1012, 102]
+Predicted IDs: [101, 2017, 1005, 1055, 2112, 1997, 2115, 2227, 2008, 2017, 2017, 2044, 2115, 2000, 2320, 1012, 102]
+BLEU Score: 0.2857
+Example 2 ---
+Original text: this is a shameless sham, calculated to cash in on the popularity of its stars.
+Reconstructed text: is is a thoughtful, is a sense to routine through at the members of its own locations,
+Original IDs: [101, 2023, 2003, 1037, 9467, 3238, 25850, 1010, 10174, 2000, 5356, 1999, 2006, 1996, 6217, 1997, 2049, 3340, 1012, 102]
+Predicted IDs: [101, 2003, 2003, 1037, 16465, 1010, 2003, 1037, 3168, 2000, 9410, 2083, 2012, 1996, 2372, 1997, 2049, 2219, 5269, 1010]
+BLEU Score: 0.3684
+Example 3 ---
+Original text: has all the depth of a wading pool.
+Reconstructed text: is all the manner of a porny individual..
+Original IDs: [101, 2038, 2035, 1996, 5995, 1997, 1037, 28380, 3070, 4770, 1012, 102]
+Predicted IDs: [101, 2003, 2035, 1996, 5450, 1997, 1037, 22555, 2100, 3265, 1012, 1012]
+BLEU Score: 0.4444
+
+ --- Epoch 221
+Task: Classification | Acc: 98.39% | Avg Loss: 0.044
+Task: Reconstruction | Avg Loss: 2.941 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.415
+Time elapsed: 2:32:22.772916
+
+ --- Epoch 222
+Task: Classification | Acc: 98.52% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.943 
+Mutual Information | Avg Loss: -0.00414
+Total Loss | Avg Loss: 1.470
+Time elapsed: 2:33:04.089312
+
+ --- Epoch 223
+Task: Classification | Acc: 98.52% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.919 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.382
+Time elapsed: 2:33:45.369896
+
+ --- Epoch 224
+Task: Classification | Acc: 98.50% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.927 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.511
+Time elapsed: 2:34:27.058852
+
+ --- Epoch 225
+Task: Classification | Acc: 98.58% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.925 
+Mutual Information | Avg Loss: -0.00411
+Total Loss | Avg Loss: 1.433
+Time elapsed: 2:35:08.434108
+
+ --- Epoch 226
+Task: Classification | Acc: 98.46% | Avg Loss: 0.042
+Task: Reconstruction | Avg Loss: 2.920 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.416
+Time elapsed: 2:35:49.644056
+
+ --- Epoch 227
+Task: Classification | Acc: 98.50% | Avg Loss: 0.043
+Task: Reconstruction | Avg Loss: 2.920 
+Mutual Information | Avg Loss: -0.00406
+Total Loss | Avg Loss: 1.346
+Time elapsed: 2:36:30.799063
+
+ --- Epoch 228
+Task: Classification | Acc: 98.52% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.914 
+Mutual Information | Avg Loss: -0.00410
+Total Loss | Avg Loss: 1.472
+Time elapsed: 2:37:12.198844
+
+ --- Epoch 229
+Task: Classification | Acc: 98.46% | Avg Loss: 0.042
+Task: Reconstruction | Avg Loss: 2.924 
+Mutual Information | Avg Loss: -0.00412
+Total Loss | Avg Loss: 1.384
+Time elapsed: 2:37:53.349971
+
+ --- Epoch 230
+Task: Classification | Acc: 98.59% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.896 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.500
+Time elapsed: 2:38:35.140381
+Example 1 ---
+Original text: the son's room is a triumph of gentility that earns its moments of pathos.
+Reconstructed text: the film'and the the atable wit of grief that achieves the nature of exploreness.
+Original IDs: [101, 1996, 2365, 1005, 1055, 2282, 2003, 1037, 10911, 1997, 8991, 18724, 2008, 7796, 2015, 2049, 5312, 1997, 4130, 2891, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 1005, 1998, 1996, 1996, 1037, 10880, 15966, 1997, 9940, 2008, 6162, 2015, 1996, 3267, 1997, 8849, 2791, 1012, 102]
+BLEU Score: 0.3118
+Example 2 ---
+Original text: it has charm to spare, and unlike many romantic comedies, it does not alienate either gender in the audience.
+Reconstructed text: the a breadth of the, into the the film, and the un toively the journey of the victorious world,
+Original IDs: [101, 2009, 2038, 11084, 2000, 8622, 1010, 1998, 4406, 2116, 6298, 22092, 1010, 2009, 2515, 2025, 7344, 3686, 2593, 5907, 1999, 1996, 4378, 1012, 102]
+Predicted IDs: [101, 1996, 1037, 25291, 1997, 1996, 1010, 2046, 1996, 1996, 2143, 1010, 1998, 1996, 4895, 2000, 3512, 2135, 1996, 4990, 1997, 1996, 13846, 2088, 1010]
+BLEU Score: 0.1818
+Example 3 ---
+Original text: the movie is beautiful to behold and engages one in a sense of epic struggle - - inner and outer - - that's all too rare in hollywood's hastier productions.
+Reconstructed text: a film andn't, the most of the yiddish, but so - - and especially charming - - that's not the full the women's unique served period.
+Original IDs: [101, 1996, 3185, 2003, 3376, 2000, 27541, 1998, 24255, 2028, 1999, 1037, 3168, 1997, 8680, 5998, 1011, 1011, 5110, 1998, 6058, 1011, 1011, 2008, 1005, 1055, 2035, 2205, 4678, 1999, 5365, 1005, 1055, 2038, 17579, 5453, 1012, 102]
+Predicted IDs: [101, 1037, 2143, 1998, 1050, 1005, 1056, 1010, 1996, 2087, 1997, 1996, 20112, 1010, 2021, 2061, 1011, 1011, 1998, 2926, 11951, 1011, 1011, 2008, 1005, 1055, 2025, 1996, 2440, 1996, 2308, 1005, 1055, 4310, 2366, 2558, 1012, 102]
+BLEU Score: 0.3938
+
+ --- Epoch 231
+Task: Classification | Acc: 98.53% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.902 
+Mutual Information | Avg Loss: -0.00407
+Total Loss | Avg Loss: 1.510
+Time elapsed: 2:39:16.966427
+
+ --- Epoch 232
+Task: Classification | Acc: 98.55% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.896 
+Mutual Information | Avg Loss: -0.00397
+Total Loss | Avg Loss: 1.447
+Time elapsed: 2:39:58.504364
+
+ --- Epoch 233
+Task: Classification | Acc: 98.62% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.901 
+Mutual Information | Avg Loss: -0.00394
+Total Loss | Avg Loss: 1.445
+Time elapsed: 2:40:39.944165
+
+ --- Epoch 234
+Task: Classification | Acc: 98.51% | Avg Loss: 0.042
+Task: Reconstruction | Avg Loss: 2.900 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.493
+Time elapsed: 2:41:21.531755
+
+ --- Epoch 235
+Task: Classification | Acc: 98.61% | Avg Loss: 0.038
+Task: Reconstruction | Avg Loss: 2.900 
+Mutual Information | Avg Loss: -0.00401
+Total Loss | Avg Loss: 1.351
+Time elapsed: 2:42:02.502329
+
+ --- Epoch 236
+Task: Classification | Acc: 98.55% | Avg Loss: 0.042
+Task: Reconstruction | Avg Loss: 2.888 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.443
+Time elapsed: 2:42:43.864727
+
+ --- Epoch 237
+Task: Classification | Acc: 98.46% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.894 
+Mutual Information | Avg Loss: -0.00397
+Total Loss | Avg Loss: 1.414
+Time elapsed: 2:43:25.196783
+
+ --- Epoch 238
+Task: Classification | Acc: 98.52% | Avg Loss: 0.041
+Task: Reconstruction | Avg Loss: 2.891 
+Mutual Information | Avg Loss: -0.00400
+Total Loss | Avg Loss: 1.396
+Time elapsed: 2:44:06.497268
+
+ --- Epoch 239
+Task: Classification | Acc: 98.63% | Avg Loss: 0.038
+Task: Reconstruction | Avg Loss: 2.892 
+Mutual Information | Avg Loss: -0.00404
+Total Loss | Avg Loss: 1.395
+Time elapsed: 2:44:47.803900
+
+ --- Epoch 240
+Task: Classification | Acc: 98.60% | Avg Loss: 0.039
+Task: Reconstruction | Avg Loss: 2.883 
+Mutual Information | Avg Loss: -0.00405
+Total Loss | Avg Loss: 1.445
+Time elapsed: 2:45:29.418245
+Example 1 ---
+Original text: a coda in every sense, the pinochet case splits time between a minute - by - minute account of the british court's extradition chess game and the regime's talking - head survivors.
+Reconstructed text: the all a the manner, a man's ) wide,,, a coming - year - old reviews, built the woman's interests - eyed style and the company's - of interaction.
+Original IDs: [101, 1037, 19429, 2050, 1999, 2296, 3168, 1010, 1996, 9231, 23555, 2102, 2553, 19584, 2051, 2090, 1037, 3371, 1011, 2011, 1011, 3371, 4070, 1997, 1996, 2329, 2457, 1005, 1055, 4469, 20562, 7433, 2208, 1998, 1996, 6939, 1005, 1055, 3331, 1011, 2132, 8643, 1012, 102]
+Predicted IDs: [101, 1996, 2035, 1037, 1996, 5450, 1010, 1037, 2158, 1005, 1055, 1007, 2898, 1010, 1010, 1010, 1037, 2746, 1011, 2095, 1011, 2214, 4391, 1010, 2328, 1996, 2450, 1005, 1055, 5426, 1011, 7168, 2806, 1998, 1996, 2194, 1005, 1055, 102, 1011, 1997, 8290, 1012, 102]
+BLEU Score: 0.3684
+Example 2 ---
+Original text: the movie, directed by mick jackson, leaves no cliche unturned, from the predictable plot to the characters straight out of central casting.
+Reconstructed text: the cast is funnyly personallf, is a fewfully unforceling, as the the out of thes of cellgoing.
+Original IDs: [101, 1996, 3185, 1010, 2856, 2011, 10872, 4027, 1010, 3727, 2053, 18856, 17322, 4895, 22299, 2098, 1010, 2013, 1996, 21425, 5436, 2000, 1996, 3494, 3442, 2041, 1997, 2430, 9179, 1012, 102]
+Predicted IDs: [101, 1996, 3459, 2003, 6057, 2135, 3167, 10270, 1010, 2003, 1037, 2261, 7699, 4895, 14821, 2989, 1010, 2004, 1996, 1996, 2041, 1997, 1996, 102, 102, 2015, 1997, 3526, 26966, 1012, 102]
+BLEU Score: 0.2963
+Example 3 ---
+Original text: try as i may, i can't think of a single good reason to see this movie, even though everyone in my group extemporaneously shouted, ` thank you! '
+Reconstructed text: if the head for, you didn't afraid to for the long way to kill the negative, or with the id idniptive.
+Original IDs: [101, 3046, 2004, 1045, 2089, 1010, 1045, 6187, 1050, 1005, 1056, 2228, 1997, 1037, 2309, 2204, 3114, 2000, 2156, 2023, 3185, 1010, 2130, 2295, 3071, 1999, 2026, 2177, 4654, 18532, 17822, 17191, 2135, 6626, 1010, 1036, 4067, 2017, 999, 1005, 102]
+Predicted IDs: [101, 2065, 1996, 2132, 2005, 1010, 2017, 2106, 1050, 1005, 1056, 4452, 2000, 2005, 1996, 2146, 2126, 2000, 3102, 1996, 4997, 102, 102, 1010, 2030, 2007, 1996, 8909, 8909, 3490, 102, 24971, 1012, 102, 102, 102, 102, 102, 102, 102, 102]
+BLEU Score: 0.1452
+
+ --- Epoch 241
+Task: Classification | Acc: 98.55% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.871 
+Mutual Information | Avg Loss: -0.00407
+Total Loss | Avg Loss: 1.407
+Time elapsed: 2:46:10.795476
+
+ --- Epoch 242
+Task: Classification | Acc: 98.59% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.879 
+Mutual Information | Avg Loss: -0.00394
+Total Loss | Avg Loss: 1.331
+Time elapsed: 2:46:52.012106
+
+ --- Epoch 243
+Task: Classification | Acc: 98.62% | Avg Loss: 0.038
+Task: Reconstruction | Avg Loss: 2.865 
+Mutual Information | Avg Loss: -0.00415
+Total Loss | Avg Loss: 1.434
+Time elapsed: 2:47:33.540238
+
+ --- Epoch 244
+Task: Classification | Acc: 98.57% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.875 
+Mutual Information | Avg Loss: -0.00405
+Total Loss | Avg Loss: 1.419
+Time elapsed: 2:48:15.028044
+
+ --- Epoch 245
+Task: Classification | Acc: 98.56% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.862 
+Mutual Information | Avg Loss: -0.00408
+Total Loss | Avg Loss: 1.381
+Time elapsed: 2:48:56.425801
+
+ --- Epoch 246
+Task: Classification | Acc: 98.63% | Avg Loss: 0.038
+Task: Reconstruction | Avg Loss: 2.883 
+Mutual Information | Avg Loss: -0.00405
+Total Loss | Avg Loss: 1.498
+Time elapsed: 2:49:38.270489
+
+ --- Epoch 247
+Task: Classification | Acc: 98.61% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.876 
+Mutual Information | Avg Loss: -0.00409
+Total Loss | Avg Loss: 1.398
+Time elapsed: 2:50:19.406579
+
+ --- Epoch 248
+Task: Classification | Acc: 98.62% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.856 
+Mutual Information | Avg Loss: -0.00418
+Total Loss | Avg Loss: 1.462
+Time elapsed: 2:51:01.183196
+
+ --- Epoch 249
+Task: Classification | Acc: 98.57% | Avg Loss: 0.040
+Task: Reconstruction | Avg Loss: 2.867 
+Mutual Information | Avg Loss: -0.00422
+Total Loss | Avg Loss: 1.478
+Time elapsed: 2:51:42.743873
+
+ --- Epoch 250
+Task: Classification | Acc: 98.66% | Avg Loss: 0.037
+Task: Reconstruction | Avg Loss: 2.851 
+Mutual Information | Avg Loss: -0.00413
+Total Loss | Avg Loss: 1.480
+Time elapsed: 2:52:24.407558
+Example 1 ---
+Original text: a science - fiction pastiche so lacking in originality that if you stripped away its inspirations there would be precious little left.
+Reconstructed text: is is a the favorite, and and the du us to in your fact of the movies is in first and.
+Original IDs: [101, 1037, 2671, 1011, 4349, 2627, 17322, 2061, 11158, 1999, 2434, 3012, 2008, 2065, 2017, 10040, 2185, 2049, 7780, 2015, 2045, 2052, 2022, 9062, 2210, 2187, 1012, 102]
+Predicted IDs: [101, 2003, 2003, 1037, 1996, 5440, 1010, 1998, 1998, 1996, 4241, 2149, 2000, 1999, 2115, 2755, 1997, 1996, 3185, 2015, 2003, 1999, 2034, 1998, 1012, 102, 102, 102]
+BLEU Score: 0.1304
+Example 2 ---
+Original text: the movie achieves as great an impact by keeping these thoughts hidden as... ( quills ) did by showing them.
+Reconstructed text: , it is notly done,, the contemporary in truely and.... a true,, in all realizes..
+Original IDs: [101, 1996, 3185, 6162, 2015, 2004, 2307, 2019, 4254, 2011, 4363, 2122, 4301, 5023, 2004, 1012, 1012, 1012, 1006, 21864, 12718, 1007, 2106, 2011, 4760, 2068, 1012, 102]
+Predicted IDs: [101, 1010, 2009, 2003, 2025, 2135, 2589, 1010, 1010, 1996, 3824, 1999, 2995, 2135, 1998, 1012, 1012, 1012, 1012, 1037, 2995, 1010, 1010, 1999, 2035, 10919, 1012, 1012]
+BLEU Score: 0.0454
+Example 3 ---
+Original text: schaeffer has to find some hook on which to hang his persistently useless movies, and it might as well be the resuscitation of the middle - aged character.
+Reconstructed text: a to have'the a invention, the service of the theiche in the passages of., which will will leave the conlygate faced to the indie - time.
+Original IDs: [101, 8040, 25293, 12494, 2038, 2000, 2424, 2070, 8103, 2006, 2029, 2000, 6865, 2010, 14516, 2135, 11809, 5691, 1010, 1998, 2009, 2453, 2004, 2092, 2022, 1996, 24501, 2271, 26243, 3370, 1997, 1996, 2690, 1011, 4793, 2839, 1012, 102]
+Predicted IDs: [101, 1037, 2000, 2031, 1005, 1996, 1037, 11028, 1010, 1996, 2326, 1997, 1996, 1996, 17322, 1999, 1996, 13768, 1997, 1012, 1010, 2029, 2097, 2097, 2681, 1996, 9530, 2135, 5867, 4320, 2000, 1996, 10271, 1011, 2051, 1012, 102, 102]
+BLEU Score: 0.2998
+
+--- Final Test BLEU Score ---
+Avg BLEU Score: 0.2667
+Training lasted 2:52:25.877495

@@ -38,7 +38,7 @@ if __name__ == "__main__":
     # test_dataset = SST2Dataset(dataset['validation'])
     # test_loader = DataLoader(test_dataset, batch_size=1, shuffle=True, collate_fn=collate_fn)
 
-    model = HetereoMoE_SemCom(num_tasks=2, embed_dim=380, task_dim=16, num_experts=8, size_distribution='arithmetic', transmit_dim=128, num_encd_layer=4).to(device)
+    model = HetereoMoE_SemCom(num_tasks=2, embed_dim=380, task_dim=8, num_experts=8, size_distribution='arithmetic', transmit_dim=128, num_encd_layer=4).to(device)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=5e-3)
     lr_gamma = 0.95

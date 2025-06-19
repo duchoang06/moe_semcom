@@ -11,15 +11,16 @@ from moe_models import MoETransformer, HetereoMoETransformer
 #considered task: sentiment analysis
 
 class Transformer_SemCom(nn.Module):
-    def __init__(self, num_tasks, embed_dim, task_dim, num_encd_layer, transmit_dim):
+    def __init__(self, num_tasks, embed_dim, task_dim, num_encd_layer, transmit_dim, num_heads=4):
         super().__init__()
         self.text_encoder = BERTTextEncoder(output_dim=embed_dim)
         self.task_prompt = TaskPrompt(num_tasks, task_dim)
 
         self.encoder_transformer = TaskConditionedTransformer(
             input_dim=embed_dim + task_dim,
-            ffn_dim= (embed_dim + task_dim) * 4, num_layers=num_encd_layer,
-            nhead=6,
+            ffn_dim= (embed_dim + task_dim) * 4,
+            num_layers=num_encd_layer,
+            nhead=num_heads,
         )
 
         self.decoder_transformer = SemanticDecoder(
@@ -77,7 +78,7 @@ class Transformer_SemCom(nn.Module):
 
 
 class MoE_SemCom(nn.Module):
-    def __init__(self, num_tasks, embed_dim, task_dim, transmit_dim, num_encd_layer, num_experts=4):
+    def __init__(self, num_tasks, embed_dim, task_dim, transmit_dim, num_encd_layer, num_experts=4, num_heads=4):
         super().__init__()
         self.text_encoder = BERTTextEncoder(output_dim=embed_dim)
         self.task_prompt = TaskPrompt(num_tasks, task_dim)
@@ -87,7 +88,7 @@ class MoE_SemCom(nn.Module):
 
         self.encoder_transformer = MoETransformer(
             input_dim=embed_dim + task_dim,
-            nhead=4,
+            nhead=num_heads,
             num_layers=num_encd_layer,
             num_experts=num_experts,
             top_k=top_k,
@@ -151,7 +152,7 @@ class MoE_SemCom(nn.Module):
 
 
 class HetereoMoE_SemCom(nn.Module):
-    def __init__(self, num_tasks, embed_dim, task_dim, transmit_dim, num_encd_layer, num_experts=4, size_distribution='arithmetic'):
+    def __init__(self, num_tasks, embed_dim, task_dim, transmit_dim, num_encd_layer, num_experts=4, size_distribution='arithmetic', num_heads=4):
         super().__init__()
         self.text_encoder = BERTTextEncoder(output_dim=embed_dim)
         self.task_prompt = TaskPrompt(num_tasks, task_dim)
@@ -161,7 +162,7 @@ class HetereoMoE_SemCom(nn.Module):
 
         self.encoder_transformer = HetereoMoETransformer(
             input_dim=embed_dim + task_dim,
-            nhead=6,
+            nhead=num_heads,
             num_layers=num_encd_layer,
             num_experts=num_experts,
             top_k=top_k,
