@@ -1,6 +1,6 @@
 nohup: ignoring input
 Training started at 2025-06-19 03:54:44
-Training detail: learning rate: 2e-4, weight decay: 5e-4, total epochs: 350, batch size: 128, seed: 2231
+Training detail: learning rate: 0.3e-4, weight decay: 5e-4, total epochs: 350, batch size: 128, seed: 2231
 Starting training...
 
  --- Epoch 1
@@ -2964,3 +2964,125 @@ Total Loss | Avg Loss: 0.994
 Time elapsed: 10:34:14.934778
 
  --- Epoch 339
+Task: Classification | Acc: 99.56% | Avg Loss: 0.012
+Task: Reconstruction | Avg Loss: 2.150 
+Mutual Information | Avg Loss: -0.00326
+Total Loss | Avg Loss: 1.014
+Time elapsed: 10:35:37.809711
+
+ --- Epoch 340
+Task: Classification | Acc: 99.56% | Avg Loss: 0.013
+Task: Reconstruction | Avg Loss: 2.141 
+Mutual Information | Avg Loss: -0.00313
+Total Loss | Avg Loss: 0.938
+Time elapsed: 10:37:00.063726
+Example 1 ---
+Original text: the film is beautifully mounted, but, more to the point, the issues are subtly presented, managing to walk a fine line with regard to the question of joan's madness.
+Reconstructed text: the film is differentish, it is able to be,, but if the the, and it to is its as saving,ddy and the best of them. s hollywood.
+Original IDs: [101, 1996, 2143, 2003, 17950, 5614, 1010, 2021, 1010, 2062, 2000, 1996, 2391, 1010, 1996, 3314, 2024, 28797, 3591, 1010, 6605, 2000, 3328, 1037, 2986, 2240, 2007, 7634, 2000, 1996, 3160, 1997, 7437, 1005, 1055, 12013, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 2003, 2367, 4509, 1010, 2009, 2003, 2583, 2000, 2022, 1010, 1010, 2021, 2065, 1996, 1996, 1010, 1998, 2009, 2000, 2003, 2049, 2004, 7494, 1010, 14968, 1998, 1996, 2190, 1997, 2068, 1012, 1055, 5365, 1012, 102]
+BLEU Score: 0.4286
+Example 2 ---
+Original text: the iditarod lasts for days - this just felt like it did.
+Reconstructed text: the mostal sea slightly so made the film might get under this original.
+Original IDs: [101, 1996, 8909, 6590, 14127, 16180, 2005, 2420, 1011, 2023, 2074, 2371, 2066, 2009, 2106, 1012, 102]
+Predicted IDs: [101, 1996, 2087, 2389, 2712, 3621, 2061, 2081, 1996, 2143, 2453, 2131, 2104, 2023, 2434, 1012, 102]
+BLEU Score: 0.2143
+Example 3 ---
+Original text: for the first time in years, de niro digs deep emotionally, perhaps because he's been stirred by the powerful work of his co - stars.
+Reconstructed text: to be, have to the,, lost lost its,,, to bother if you're expect to of a the pleasures of the ya - ya comedy
+Original IDs: [101, 2005, 1996, 2034, 2051, 1999, 2086, 1010, 2139, 9152, 3217, 10667, 2015, 2784, 14868, 1010, 3383, 2138, 2002, 1005, 1055, 2042, 13551, 2011, 1996, 3928, 2147, 1997, 2010, 2522, 1011, 3340, 1012, 102]
+Predicted IDs: [101, 2000, 2022, 1010, 2031, 2000, 1996, 1010, 1010, 2439, 2439, 2049, 1010, 1010, 1010, 2000, 8572, 2065, 2017, 1005, 2128, 5987, 2000, 1997, 1037, 1996, 26552, 1997, 1996, 8038, 1011, 8038, 4038, 102]
+BLEU Score: 0.1935
+
+ --- Epoch 341
+Task: Classification | Acc: 99.61% | Avg Loss: 0.013
+Task: Reconstruction | Avg Loss: 2.139 
+Mutual Information | Avg Loss: -0.00305
+Total Loss | Avg Loss: 0.882
+Time elapsed: 10:38:21.885425
+
+ --- Epoch 342
+Task: Classification | Acc: 99.60% | Avg Loss: 0.011
+Task: Reconstruction | Avg Loss: 2.133 
+Mutual Information | Avg Loss: -0.00321
+Total Loss | Avg Loss: 0.990
+Time elapsed: 10:39:44.790684
+
+ --- Epoch 343
+Task: Classification | Acc: 99.60% | Avg Loss: 0.011
+Task: Reconstruction | Avg Loss: 2.141 
+Mutual Information | Avg Loss: -0.00332
+Total Loss | Avg Loss: 1.061
+Time elapsed: 10:41:08.260745
+
+ --- Epoch 344
+Task: Classification | Acc: 99.62% | Avg Loss: 0.013
+Task: Reconstruction | Avg Loss: 2.148 
+Mutual Information | Avg Loss: -0.00327
+Total Loss | Avg Loss: 0.993
+Time elapsed: 10:42:30.762356
+
+ --- Epoch 345
+Task: Classification | Acc: 99.58% | Avg Loss: 0.013
+Task: Reconstruction | Avg Loss: 2.139 
+Mutual Information | Avg Loss: -0.00336
+Total Loss | Avg Loss: 1.077
+Time elapsed: 10:43:54.147261
+
+ --- Epoch 346
+Task: Classification | Acc: 99.65% | Avg Loss: 0.011
+Task: Reconstruction | Avg Loss: 2.120 
+Mutual Information | Avg Loss: -0.00344
+Total Loss | Avg Loss: 1.117
+Time elapsed: 10:45:18.018087
+
+ --- Epoch 347
+Task: Classification | Acc: 99.57% | Avg Loss: 0.012
+Task: Reconstruction | Avg Loss: 2.112 
+Mutual Information | Avg Loss: -0.00325
+Total Loss | Avg Loss: 0.980
+Time elapsed: 10:46:40.627988
+
+ --- Epoch 348
+Task: Classification | Acc: 99.60% | Avg Loss: 0.012
+Task: Reconstruction | Avg Loss: 2.117 
+Mutual Information | Avg Loss: -0.00335
+Total Loss | Avg Loss: 1.017
+Time elapsed: 10:48:03.938811
+
+ --- Epoch 349
+Task: Classification | Acc: 99.55% | Avg Loss: 0.011
+Task: Reconstruction | Avg Loss: 2.110 
+Mutual Information | Avg Loss: -0.00336
+Total Loss | Avg Loss: 1.005
+Time elapsed: 10:49:26.834706
+
+ --- Epoch 350
+Task: Classification | Acc: 99.67% | Avg Loss: 0.010
+Task: Reconstruction | Avg Loss: 2.115 
+Mutual Information | Avg Loss: -0.00324
+Total Loss | Avg Loss: 0.984
+Time elapsed: 10:50:50.059065
+Example 1 ---
+Original text: does paint some memorable images..., but makhmalbaf keeps her distance from the characters
+Reconstructed text: to da the about well.... making so rohms, changes are, behind the audience.
+Original IDs: [101, 2515, 6773, 2070, 13432, 4871, 1012, 1012, 1012, 1010, 2021, 5003, 10023, 9067, 3676, 2546, 7906, 2014, 3292, 2013, 1996, 3494, 102]
+Predicted IDs: [101, 2000, 4830, 1996, 2055, 2092, 1012, 1012, 1012, 1012, 2437, 2061, 20996, 14227, 2015, 1010, 3431, 2024, 1010, 2369, 1996, 4378, 1012]
+BLEU Score: 0.1176
+Example 2 ---
+Original text: for starters, the story is just too slim.
+Reconstructed text: the results, the movie are far too real.
+Original IDs: [101, 2005, 29400, 1010, 1996, 2466, 2003, 2074, 2205, 11754, 1012, 102]
+Predicted IDs: [101, 1996, 3463, 1010, 1996, 3185, 2024, 2521, 2205, 2613, 1012, 102]
+BLEU Score: 0.4000
+Example 3 ---
+Original text: the humor is forced and heavy - handed, and occasionally simply unpleasant.
+Reconstructed text: the dialogue is cast and well - edited and, at some good, star
+Original IDs: [101, 1996, 8562, 2003, 3140, 1998, 3082, 1011, 4375, 1010, 1998, 5681, 3432, 16010, 1012, 102]
+Predicted IDs: [101, 1996, 7982, 2003, 3459, 1998, 2092, 1011, 5493, 1998, 1010, 2012, 2070, 2204, 1010, 2732]
+BLEU Score: 0.4000
+
+--- Final Test BLEU Score ---
+Avg BLEU Score: 0.0842
+Training lasted 10:50:51.908977

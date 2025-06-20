@@ -43,6 +43,8 @@ D_TRANSFORMER = 632
 N_HEADS = 8
 NUM_EXPERTS = 1
 
+#learning rate: S, M: 2e-4; L: 0.3e-4, XL: 1e-6
+
 
 if __name__ == "__main__":
     # data and model preparation
@@ -155,6 +157,7 @@ if __name__ == "__main__":
             )
 
             total_loss = task_loss + lambda_mi*mi_loss.detach()
+
             optimizer_main.zero_grad()
             total_loss.backward()
             optimizer_main.step()
@@ -227,129 +230,6 @@ if __name__ == "__main__":
             # avg_bleu = sum(bleu_scores) / len(bleu_scores)
             # print(f"[Eval @ Epoch {epoch+1}] Avg BLEU Score: {avg_bleu:.4f}")
             model.train()
-
-
-    # # ---- training phase 2 
-    # for param in mi_critic.parameters(): # freeze the MI critic model
-    #     param.requires_grad = False 
-
-    # snr_stages = [12.0, 8.0, 6.0]
-    # snr_stage_len = total_epoch_2 // len(snr_stages)
-
-    # for epoch in range(total_epoch_2):
-    #     print(f'\n --- Epoch {epoch+1}')
-    #     model.train()
-
-    #     correct_cls = 0 # correct classification
-    #     total_cls = 0
-    #     recon_loss = []
-    #     cls_loss = []
-    #     mi_loss_arr = []
-    #     total_loss_arr = []
-    #     const_loss_arr = []
-
-    #     for step, (texts, labels) in enumerate(train_loader):
-    #         chosen_task = random.choice([0, 1])
-
-    #         # snr = random.uniform(-5, 20) # dB
-    #         # fading = random.choice(['none', 'rayleigh', 'rician'])
-    #         stage = min(epoch // snr_stage_len, len(snr_stages) - 1)  # ensure doesn't go out of bounds
-    #         snr = snr_stages[stage]
-
-    #         fading = 'none'
-
-    #         outputs, input_ids, input_lengths, x_transmitted, y_noisy = model(texts, chosen_task, snr, fading) 
-
-    #         # Consistency loss
-    #         # snr_2 = random.choice([snr, snr-1, snr-2])
-    #         # outputs_2, _, _, _, _ = model(texts, chosen_task, snr_2 , fading)
-    #         # consistency_loss = F.mse_loss(outputs, outputs_2.detach())
-
-
-    #         task_loss = text_loss(
-    #             outputs,
-    #             labels.to(device),
-    #             chosen_task,
-    #             input_ids.to(device),
-    #             input_lengths.to(device)
-    #         )
-
-    #         mi_loss = mutual_information_loss(x_transmitted, y_noisy, mi_critic)
-
-
-    #         total_loss = task_loss + lambda_mi * mi_loss 
-
-    #         total_loss.backward()
-
-    #         optimizer_main.step()
-    #         # scheduler_main.step()
-    #         optimizer_main.zero_grad()
-
-    #         if chosen_task == 0:  # Classification
-    #             logits = outputs
-    #             preds = logits.argmax(dim=-1)    
-
-    #             correct_cls += (preds == labels.to(device)).sum().item()
-    #             total_cls += len(labels)
-    #             cls_loss.append(task_loss.item())
-
-    #         else:  # Reconstruction
-    #             recon_loss.append(task_loss.item())
-
-    #         mi_loss_arr.append(mi_loss.item())
-    #         total_loss_arr.append(total_loss.item())
-
-    #     # Logging for each epoch
-    #     acc = 100 * correct_cls / total_cls if total_cls > 0 else 0.0
-    #     avg_cls = sum(cls_loss) / len(cls_loss) if len(cls_loss) > 0 else 0.0
-    #     print(f"Task: Classification | Acc: {acc:.2f}% | Avg Loss: {avg_cls:.3f}")
-    #     print(f"Task: Reconstruction | Avg Loss: {sum(recon_loss) / len(recon_loss):.3f} ")
-    #     print(f"Mutual Information | Avg Loss: {sum(mi_loss_arr) / len(mi_loss_arr):.5f}")
-    #     print(f"Total Loss | Avg Loss: {sum(total_loss_arr) / len(total_loss_arr):.3f}")
-
-    #     print(f'Time elapsed: {datetime.datetime.now() - time_start}')
-
-
-    #     # Epoch-level evaluation
-    #     eval_every = 10  # Evaluate every 1 epochs
-    #     if (epoch + 1) % eval_every == 0 and log_val:
-    #         model.eval()
-    #         bleu_scores = []
-
-    #         test_loader = get_test_loader_for_epoch(epoch, dataset['validation'], seed=rand_seed, num_samples=3)  # return 3 batches, each batch has 1 sample
-
-    #         for test_step, (texts, labels) in enumerate(test_loader):
-    #             snr = 12.0
-    #             fading = 'none'
-    #             chosen_task = 1
-
-    #             with torch.no_grad():
-    #                 outputs, input_ids, input_lengths, _, _ = model(texts, chosen_task, snr=snr, fading=fading)
-
-    #                 pred_ids_batch = outputs.argmax(dim=-1).cpu().tolist()
-
-    #             for i in range(len(texts)):
-    #                 target_len = input_lengths[i].item()
-
-    #                 pred_ids = pred_ids_batch[i]
-    #                 tgt_ids = input_ids[i][: len(pred_ids)].cpu().tolist()
-
-    #                 pred_text = model.text_encoder.tokenizer.decode(pred_ids, skip_special_tokens=True)
-    #                 target_text = model.text_encoder.tokenizer.decode(tgt_ids, skip_special_tokens=True)
-
-    #                 bleu = sentence_bleu([word_tokenize(target_text)], word_tokenize(pred_text), weights=(1, 0, 0, 0), smoothing_function=SmoothingFunction().method4)
-    #                 bleu_scores.append(bleu)
-
-    #                 print(f'Example {test_step + 1} ---')
-    #                 print("Original text:", target_text)
-    #                 print("Reconstructed text:", pred_text)
-    #                 print(f'Original IDs: {tgt_ids}')
-    #                 print(f'Predicted IDs: {pred_ids}')
-    #                 print("BLEU Score:", f"{bleu:.4f}")
-
-    #         # avg_bleu = sum(bleu_scores) / len(bleu_scores)
-    #         # print(f"[Eval @ Epoch {epoch+1}] Avg BLEU Score: {avg_bleu:.4f}")
-    #         model.train()
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
