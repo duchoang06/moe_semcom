@@ -27,11 +27,11 @@ from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, sn
 # N_HEADS = 4
 # NUM_EXPERTS = 4
 
-MODEL_SIZE = 'M8E'
+MODEL_SIZE = 'M4E'
 NUM_LAYERS = 4
 D_TRANSFORMER = 412
 N_HEADS = 6
-NUM_EXPERTS = 8
+NUM_EXPERTS = 4
 
 
 if __name__ == "__main__":
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     mi_critic = Critic(input_dim=2, hidden_dim=12).to(device)
     lambda_mi = 10 #to-do: revert to 10 for possibly better performance
 
-    lr_main = 2e-4
+    lr_main = 2e-4, # XL: 0.2e-4
     optimizer_main = torch.optim.AdamW(
         # model.parameters(),
         filter(lambda p: p.requires_grad, model.parameters()),
@@ -291,7 +291,7 @@ if __name__ == "__main__":
     print(f"Avg BLEU Score: {sum(all_bleu_scores)/len(all_bleu_scores):.4f}")
 
 
-# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeM8E_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
+# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeM4E_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
 
 
 

@@ -2544,3 +2544,133 @@ Layer 3:
 Time elapsed: 12:26:50.874091
 
  --- Epoch 144
+Task: Classification | Acc: 97.87% | Avg Loss: 0.0583
+Task: Reconstruction | Avg Loss: 2.2874 
+MoE Balancing Loss: 12273.7463
+Mutual Information | Avg Loss: -0.00419
+Total Loss: 3.5878
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276668.41
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275383.41
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275297.19
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275737.56
+Time elapsed: 12:34:33.384996
+
+ --- Epoch 145
+Task: Classification | Acc: 97.88% | Avg Loss: 0.0574
+Task: Reconstruction | Avg Loss: 2.2806 
+MoE Balancing Loss: 12273.1924
+Mutual Information | Avg Loss: -0.00418
+Total Loss: 3.6050
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278255.22
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277102.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278214.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277873.78
+Time elapsed: 12:45:42.713756
+
+ --- Epoch 146
+Task: Classification | Acc: 97.95% | Avg Loss: 0.0553
+Task: Reconstruction | Avg Loss: 2.2893 
+MoE Balancing Loss: 12271.8066
+Mutual Information | Avg Loss: -0.00409
+Total Loss: 3.5582
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277719.78
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277840.75
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277021.97
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277262.66
+Time elapsed: 12:56:51.968397
+
+ --- Epoch 147
+Task: Classification | Acc: 97.91% | Avg Loss: 0.0563
+Task: Reconstruction | Avg Loss: 2.2781 
+MoE Balancing Loss: 12275.6199
+Mutual Information | Avg Loss: -0.00405
+Total Loss: 3.6049
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277106.75
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276862.47
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276572.84
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276786.69
+Time elapsed: 13:08:01.407421
+
+ --- Epoch 148
+Task: Classification | Acc: 97.92% | Avg Loss: 0.0599
+Task: Reconstruction | Avg Loss: 2.2891 
+MoE Balancing Loss: 12272.8717
+Mutual Information | Avg Loss: -0.00406
+Total Loss: 3.5991
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276246.19
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275118.97
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275316.81
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275794.16
+Time elapsed: 13:19:11.343354
+
+ --- Epoch 149
+Task: Classification | Acc: 97.93% | Avg Loss: 0.0577
+Task: Reconstruction | Avg Loss: 2.2709 
+MoE Balancing Loss: 12273.9106
+Mutual Information | Avg Loss: -0.00409
+Total Loss: 3.5719
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276977.94
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276485.56
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276797.12
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276295.03
+Time elapsed: 13:30:21.233036
+
+ --- Epoch 150
+Task: Classification | Acc: 97.96% | Avg Loss: 0.0558
+Task: Reconstruction | Avg Loss: 2.2552 
+MoE Balancing Loss: 12273.3386
+Mutual Information | Avg Loss: -0.00412
+Total Loss: 3.5878
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276494.19
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276990.06
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276262.69
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276181.50
+Time elapsed: 13:41:30.360357
+Example 1 ---
+Original text: pumpkin takes an admirable look at the hypocrisy of political correctness, but it does so with such an uneven tone that you never know when humor ends and tragedy begins.
+Reconstructed text: be more as a deby of in the dufiesten aspects of the movie battles can happen pulls even if they is anything ` time. time.
+Original IDs: [101, 25730, 3138, 2019, 4748, 14503, 3085, 2298, 2012, 1996, 1044, 22571, 10085, 6935, 2100, 1997, 2576, 6149, 2791, 1010, 2021, 2009, 2515, 2061, 2007, 2107, 2019, 17837, 4309, 2008, 2017, 2196, 2113, 2043, 8562, 4515, 1998, 10576, 4269, 1012, 102]
+Predicted IDs: [101, 2022, 2062, 2004, 1037, 2139, 3762, 1997, 1999, 1996, 4241, 14213, 6528, 5919, 1997, 1996, 3185, 2645, 2015, 102, 102, 102, 2064, 4148, 102, 102, 102, 8005, 2130, 2065, 2027, 2003, 2505, 1036, 2051, 1012, 102, 102, 2051, 1012, 102]
+BLEU Score: 0.0923
+Example 2 ---
+Original text: it's a work by an artist so in control of both his medium and his message that he can improvise like a jazzman.
+Reconstructed text: it's not to for the same of the lives of in conde scenario, that that as the never catceraions in the parental villain.
+Original IDs: [101, 2009, 1005, 1055, 1037, 2147, 2011, 2019, 3063, 2061, 1999, 2491, 1997, 2119, 2010, 5396, 1998, 2010, 4471, 2008, 2002, 2064, 17727, 12298, 5562, 2066, 1037, 4166, 2386, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 2025, 2000, 2005, 1996, 2168, 1997, 1996, 3268, 1997, 1999, 24707, 11967, 1010, 2008, 2008, 2004, 1996, 2196, 4937, 19357, 8496, 1999, 1996, 18643, 12700, 1012, 102]
+BLEU Score: 0.2308
+Example 3 ---
+Original text: it's a lovely film with lovely performances by buy and accorsi.
+Reconstructed text: it's a disaster material with a summer is find and desabing.
+Original IDs: [101, 2009, 1005, 1055, 1037, 8403, 2143, 2007, 8403, 4616, 2011, 4965, 1998, 16222, 5668, 2072, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 1037, 7071, 3430, 2007, 1037, 2621, 2003, 2424, 1998, 4078, 7875, 2075, 1012, 102]
+BLEU Score: 0.4615
+
+ --- Epoch 151
