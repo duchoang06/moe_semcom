@@ -6,3 +6,6 @@ datasets
 scipy
 scikit-learn
 pillow
+torchaudio
+torchvision
+
