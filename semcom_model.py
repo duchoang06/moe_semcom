@@ -26,7 +26,7 @@ class Transformer_SemCom(nn.Module):
         self.decoder_transformer = SemanticDecoder(
             input_dim=embed_dim + task_dim,
             vocab_size=self.text_encoder.vocab_size,
-            max_seq_len=1400,  # assuming a max sequence length of 64
+            max_seq_len=300,  # assuming a max sequence length of 64
             nhead=4,
             num_layers=4,
             ffn_dim=(embed_dim + task_dim) * 4,

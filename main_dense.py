@@ -23,23 +23,22 @@ from utils import text_loss, fix_seed, sample_mixed_task_batch, sample_single_ta
 
 # MAIN TRAINING PARAS:
 # SMALL Dense:
-MODEL_SIZE = 'S'  # 'S', 'M', 'L'
-NUM_LAYERS = 2
-D_TRANSFORMER = 232
-N_HEADS = 4
-NUM_EXPERTS = 1
-num_paras = 13.2e6
-lr_main = 1/math.sqrt(num_paras) 
+# MODEL_SIZE = 'S'  # 'S', 'M', 'L'
+# NUM_LAYERS = 2
+# D_TRANSFORMER = 232
+# N_HEADS = 4
+# NUM_EXPERTS = 1
+# num_paras = 13.2e6
+# lr_main = 1/math.sqrt(num_paras) 
 
 # M Dense:
-# MODEL_SIZE = 'M'  # 'S', 'M', 'L'
-# NUM_LAYERS = 4
-# D_TRANSFORMER = 412
-# N_HEADS = 6
-# NUM_EXPERTS = 1
-
-# num_paras = 34.5e6
-# lr_main = 1/math.sqrt(num_paras) 
+MODEL_SIZE = 'M'  # 'S', 'M', 'L'
+NUM_LAYERS = 4
+D_TRANSFORMER = 412
+N_HEADS = 6
+NUM_EXPERTS = 1
+num_paras = 34.5e6
+lr_main = 1/math.sqrt(num_paras) 
 
 
 # L Dense:
@@ -332,4 +331,4 @@ if __name__ == "__main__":
     print(f'Training lasted {datetime.datetime.now() - time_start}')
 
 
-# nohup python -u main_dense.py > ./log/Dense_sizeS_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_dense.py > ./log/Dense_sizeM_$(date +%Y%m%d_%H%M%S).log 2>&1 &
