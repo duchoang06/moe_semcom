@@ -39,8 +39,8 @@ class SNRAwareGating(nn.Module):
         x_flat = x.view(B * L, D)
 
         # Ensure snr is a tensor
-        if isinstance(snr, (int, float)):
-            snr = torch.tensor(snr, dtype=torch.float32, device=x.device).expand(B, 1)
+        # if isinstance(snr, (int, float)):
+        snr = torch.tensor(snr, dtype=torch.float32, device=x.device).expand(B, 1)
 
         snr = snr.view(B, 1).repeat(1, L).view(B * L, 1)  # expand to match token count
         gate_input = torch.cat([x_flat, snr], dim=-1)  # (B*L, D+1)
@@ -224,7 +224,6 @@ class HetereoExpertFFN(nn.Module):
         x_flat = x.view(B * L, D)  # (T, D)
         T = B * L
 
-        #to-do: continue here
         gate_scores = self.gate(x, snr)  # (T, N)
         topk_scores, topk_indices = torch.topk(gate_scores, self.top_k, dim=-1)  # (T, top_k)
 

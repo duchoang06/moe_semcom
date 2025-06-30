@@ -2674,3 +2674,1784 @@ Predicted IDs: [101, 2009, 1005, 1055, 1037, 7071, 3430, 2007, 1037, 2621, 2003,
 BLEU Score: 0.4615
 
  --- Epoch 151
+Task: Classification | Acc: 97.89% | Avg Loss: 0.0570
+Task: Reconstruction | Avg Loss: 2.2525 
+MoE Balancing Loss: 12273.3686
+Mutual Information | Avg Loss: -0.00406
+Total Loss: 3.5918
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276652.16
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276554.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276808.22
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277351.88
+Time elapsed: 13:52:40.703295
+
+ --- Epoch 152
+Task: Classification | Acc: 97.92% | Avg Loss: 0.0590
+Task: Reconstruction | Avg Loss: 2.2401 
+MoE Balancing Loss: 12272.0422
+Mutual Information | Avg Loss: -0.00412
+Total Loss: 3.5524
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276784.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276415.22
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276512.31
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275846.25
+Time elapsed: 14:03:50.083624
+
+ --- Epoch 153
+Task: Classification | Acc: 97.88% | Avg Loss: 0.0582
+Task: Reconstruction | Avg Loss: 2.2398 
+MoE Balancing Loss: 12270.1562
+Mutual Information | Avg Loss: -0.00416
+Total Loss: 3.6462
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276582.22
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276016.66
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277741.09
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277703.28
+Time elapsed: 14:05:38.252185
+
+ --- Epoch 154
+Task: Classification | Acc: 97.87% | Avg Loss: 0.0583
+Task: Reconstruction | Avg Loss: 2.2422 
+MoE Balancing Loss: 12272.5705
+Mutual Information | Avg Loss: -0.00421
+Total Loss: 3.5150
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277618.72
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277457.22
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276889.97
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277288.06
+Time elapsed: 14:07:14.075820
+
+ --- Epoch 155
+Task: Classification | Acc: 97.91% | Avg Loss: 0.0579
+Task: Reconstruction | Avg Loss: 2.2310 
+MoE Balancing Loss: 12275.4727
+Mutual Information | Avg Loss: -0.00416
+Total Loss: 3.5600
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276155.62
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277372.88
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277115.16
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277133.25
+Time elapsed: 14:08:50.167855
+
+ --- Epoch 156
+Task: Classification | Acc: 97.94% | Avg Loss: 0.0552
+Task: Reconstruction | Avg Loss: 2.2379 
+MoE Balancing Loss: 12273.0438
+Mutual Information | Avg Loss: -0.00421
+Total Loss: 3.5653
+Layer 0:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278407.12
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277210.09
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277103.34
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277102.78
+Time elapsed: 14:10:26.116272
+
+ --- Epoch 157
+Task: Classification | Acc: 97.95% | Avg Loss: 0.0586
+Task: Reconstruction | Avg Loss: 2.2361 
+MoE Balancing Loss: 12271.1150
+Mutual Information | Avg Loss: -0.00417
+Total Loss: 3.5620
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276670.88
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275727.44
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276038.56
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276182.47
+Time elapsed: 14:12:02.054827
+
+ --- Epoch 158
+Task: Classification | Acc: 97.95% | Avg Loss: 0.0591
+Task: Reconstruction | Avg Loss: 2.2162 
+MoE Balancing Loss: 12280.1349
+Mutual Information | Avg Loss: -0.00422
+Total Loss: 3.6027
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277190.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276278.25
+Layer 2:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277522.22
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276679.41
+Time elapsed: 14:13:38.852799
+
+ --- Epoch 159
+Task: Classification | Acc: 98.13% | Avg Loss: 0.0556
+Task: Reconstruction | Avg Loss: 2.2223 
+MoE Balancing Loss: 12273.9618
+Mutual Information | Avg Loss: -0.00421
+Total Loss: 3.5619
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277365.19
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277427.34
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277423.25
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276748.84
+Time elapsed: 14:15:15.012640
+
+ --- Epoch 160
+Task: Classification | Acc: 97.94% | Avg Loss: 0.0571
+Task: Reconstruction | Avg Loss: 2.2285 
+MoE Balancing Loss: 12271.4243
+Mutual Information | Avg Loss: -0.00407
+Total Loss: 3.4884
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276818.97
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276567.56
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277583.97
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277264.69
+Time elapsed: 14:16:50.551748
+Example 1 ---
+Original text: the vivid lead performances sustain interest and empathy, but the journey is far more interesting than the final destination.
+Reconstructed text: is it that s than to get well - up to has as a more alien on the own row
+Original IDs: [101, 1996, 14954, 2599, 4616, 15770, 3037, 1998, 26452, 1010, 2021, 1996, 4990, 2003, 2521, 2062, 5875, 2084, 1996, 2345, 7688, 1012, 102]
+Predicted IDs: [101, 2003, 2009, 2008, 1055, 2084, 2000, 2131, 2092, 1011, 2039, 2000, 2038, 2004, 1037, 2062, 7344, 2006, 1996, 2219, 5216, 102, 102]
+BLEU Score: 0.1902
+Example 2 ---
+Original text: the director knows how to apply textural gloss, but his portrait of sex - as - war is strictly sitcom.
+Reconstructed text: the think really likely to downtown a the distance,, a bunch of paint - year - something -
+Original IDs: [101, 1996, 2472, 4282, 2129, 2000, 6611, 3793, 11137, 27068, 1010, 2021, 2010, 6533, 1997, 3348, 1011, 2004, 1011, 2162, 2003, 9975, 13130, 1012, 102]
+Predicted IDs: [101, 1996, 2228, 2428, 3497, 2000, 5116, 1037, 1996, 3292, 1010, 1010, 1037, 9129, 1997, 6773, 1011, 2095, 1011, 2242, 1011, 102, 102, 102, 102]
+BLEU Score: 0.2715
+Example 3 ---
+Original text: some of their jokes work, but most fail miserably and in the end, pumpkin is far more offensive than it is funny.
+Reconstructed text: one of the most plotting and most un untiveved., the the good, that that seem is clever too long to home.
+Original IDs: [101, 2070, 1997, 2037, 13198, 2147, 1010, 2021, 2087, 8246, 28616, 6906, 6321, 1998, 1999, 1996, 2203, 1010, 25730, 2003, 2521, 2062, 5805, 2084, 2009, 2003, 6057, 1012, 102]
+Predicted IDs: [101, 2028, 1997, 1996, 2087, 20699, 1998, 2087, 4895, 4895, 6024, 7178, 1012, 1010, 1996, 1996, 2204, 1010, 2008, 2008, 4025, 2003, 12266, 2205, 2146, 2000, 2188, 1012, 102]
+BLEU Score: 0.3197
+
+ --- Epoch 161
+Task: Classification | Acc: 98.05% | Avg Loss: 0.0524
+Task: Reconstruction | Avg Loss: 2.2059 
+MoE Balancing Loss: 12274.4686
+Mutual Information | Avg Loss: -0.00426
+Total Loss: 3.4862
+Layer 0:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276973.16
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277440.81
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276948.22
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277417.66
+Time elapsed: 14:18:26.366913
+
+ --- Epoch 162
+Task: Classification | Acc: 98.07% | Avg Loss: 0.0546
+Task: Reconstruction | Avg Loss: 2.2151 
+MoE Balancing Loss: 12272.2358
+Mutual Information | Avg Loss: -0.00428
+Total Loss: 3.5772
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278215.41
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277391.06
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277424.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276701.06
+Time elapsed: 14:20:02.634140
+
+ --- Epoch 163
+Task: Classification | Acc: 97.92% | Avg Loss: 0.0582
+Task: Reconstruction | Avg Loss: 2.2067 
+MoE Balancing Loss: 12272.2156
+Mutual Information | Avg Loss: -0.00416
+Total Loss: 3.4658
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275056.09
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275699.28
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276420.59
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276327.66
+Time elapsed: 14:21:38.204927
+
+ --- Epoch 164
+Task: Classification | Acc: 98.08% | Avg Loss: 0.0527
+Task: Reconstruction | Avg Loss: 2.1895 
+MoE Balancing Loss: 12279.3305
+Mutual Information | Avg Loss: -0.00418
+Total Loss: 3.5575
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278329.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277373.59
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276839.50
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276843.59
+Time elapsed: 14:23:14.727559
+
+ --- Epoch 165
+Task: Classification | Acc: 98.04% | Avg Loss: 0.0545
+Task: Reconstruction | Avg Loss: 2.2072 
+MoE Balancing Loss: 12275.1775
+Mutual Information | Avg Loss: -0.00422
+Total Loss: 3.5008
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277993.56
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275231.66
+Layer 2:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277051.38
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276498.56
+Time elapsed: 14:24:50.612323
+
+ --- Epoch 166
+Task: Classification | Acc: 98.01% | Avg Loss: 0.0574
+Task: Reconstruction | Avg Loss: 2.1934 
+MoE Balancing Loss: 12270.8108
+Mutual Information | Avg Loss: -0.00422
+Total Loss: 3.5475
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275420.09
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277418.75
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277563.75
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277109.50
+Time elapsed: 14:26:26.896568
+
+ --- Epoch 167
+Task: Classification | Acc: 98.12% | Avg Loss: 0.0533
+Task: Reconstruction | Avg Loss: 2.2012 
+MoE Balancing Loss: 12271.8591
+Mutual Information | Avg Loss: -0.00432
+Total Loss: 3.5567
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276832.88
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276724.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277415.28
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277089.56
+Time elapsed: 14:28:03.348905
+
+ --- Epoch 168
+Task: Classification | Acc: 98.04% | Avg Loss: 0.0534
+Task: Reconstruction | Avg Loss: 2.1827 
+MoE Balancing Loss: 12276.4082
+Mutual Information | Avg Loss: -0.00440
+Total Loss: 3.5233
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277122.72
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 274748.19
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275367.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275437.09
+Time elapsed: 14:29:39.291649
+
+ --- Epoch 169
+Task: Classification | Acc: 98.11% | Avg Loss: 0.0522
+Task: Reconstruction | Avg Loss: 2.1870 
+MoE Balancing Loss: 12274.9423
+Mutual Information | Avg Loss: -0.00436
+Total Loss: 3.5169
+Layer 0:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276986.75
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277644.69
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276568.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276340.84
+Time elapsed: 14:31:15.269207
+
+ --- Epoch 170
+Task: Classification | Acc: 98.05% | Avg Loss: 0.0547
+Task: Reconstruction | Avg Loss: 2.1616 
+MoE Balancing Loss: 12275.7662
+Mutual Information | Avg Loss: -0.00431
+Total Loss: 3.6022
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277811.56
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277231.31
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277743.19
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277562.50
+Time elapsed: 14:32:52.121531
+Example 1 ---
+Original text: without ever becoming didactic, director carlos carrera expertly weaves this novelistic story of entangled interrelationships and complex morality.
+Reconstructed text: is a a a storyline, a a the film,ss with theobful tract of virtuallyucty meanderings and desire.
+Original IDs: [101, 2302, 2412, 3352, 2106, 28804, 1010, 2472, 5828, 12385, 6906, 6739, 2135, 25308, 2015, 2023, 9974, 2594, 2466, 1997, 4372, 27898, 6970, 16570, 10708, 19801, 1998, 3375, 16561, 1012, 102]
+Predicted IDs: [101, 2003, 1037, 1037, 1037, 9994, 1010, 1037, 1037, 1996, 2143, 1010, 2015, 2015, 2007, 1996, 16429, 3993, 12859, 1997, 8990, 14194, 3723, 2812, 4063, 8613, 1998, 4792, 1012, 102, 102]
+BLEU Score: 0.1905
+Example 2 ---
+Original text: the film's performances are thrilling.
+Reconstructed text: the movie's not is narration.
+Original IDs: [101, 1996, 2143, 1005, 1055, 4616, 2024, 26162, 1012, 102]
+Predicted IDs: [101, 1996, 3185, 1005, 1055, 2025, 2003, 21283, 1012, 102]
+BLEU Score: 0.4286
+Example 3 ---
+Original text: more whiny downer than corruscating commentary.
+Reconstructed text: becomesly coldful band than as an intostaious present.
+Original IDs: [101, 2062, 1059, 10606, 2100, 2091, 2121, 2084, 2522, 12171, 2271, 18252, 8570, 1012, 102]
+Predicted IDs: [101, 4150, 2135, 3147, 3993, 2316, 2084, 2004, 2019, 2046, 9153, 6313, 2556, 1012, 102]
+BLEU Score: 0.2222
+
+ --- Epoch 171
+Task: Classification | Acc: 98.08% | Avg Loss: 0.0540
+Task: Reconstruction | Avg Loss: 2.1756 
+MoE Balancing Loss: 12274.5066
+Mutual Information | Avg Loss: -0.00424
+Total Loss: 3.4569
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277735.03
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276771.34
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277091.31
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277300.78
+Time elapsed: 14:34:28.156136
+
+ --- Epoch 172
+Task: Classification | Acc: 98.16% | Avg Loss: 0.0529
+Task: Reconstruction | Avg Loss: 2.1756 
+MoE Balancing Loss: 12279.0735
+Mutual Information | Avg Loss: -0.00437
+Total Loss: 3.5485
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277757.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275666.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276619.47
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276357.12
+Time elapsed: 14:36:04.487064
+
+ --- Epoch 173
+Task: Classification | Acc: 98.20% | Avg Loss: 0.0516
+Task: Reconstruction | Avg Loss: 2.1581 
+MoE Balancing Loss: 12273.5209
+Mutual Information | Avg Loss: -0.00434
+Total Loss: 3.4742
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275922.56
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277149.53
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276418.41
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276618.94
+Time elapsed: 14:37:40.530500
+
+ --- Epoch 174
+Task: Classification | Acc: 97.98% | Avg Loss: 0.0538
+Task: Reconstruction | Avg Loss: 2.1589 
+MoE Balancing Loss: 12272.4011
+Mutual Information | Avg Loss: -0.00439
+Total Loss: 3.4909
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277682.75
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277500.75
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277687.47
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276807.38
+Time elapsed: 14:39:16.738705
+
+ --- Epoch 175
+Task: Classification | Acc: 98.04% | Avg Loss: 0.0546
+Task: Reconstruction | Avg Loss: 2.1614 
+MoE Balancing Loss: 12275.3043
+Mutual Information | Avg Loss: -0.00440
+Total Loss: 3.4691
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277132.75
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277118.97
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277629.50
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277650.16
+Time elapsed: 14:40:52.763437
+
+ --- Epoch 176
+Task: Classification | Acc: 98.05% | Avg Loss: 0.0517
+Task: Reconstruction | Avg Loss: 2.1555 
+MoE Balancing Loss: 12273.7708
+Mutual Information | Avg Loss: -0.00447
+Total Loss: 3.5556
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276773.12
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277188.53
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276738.12
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277296.53
+Time elapsed: 14:42:29.395545
+
+ --- Epoch 177
+Task: Classification | Acc: 97.86% | Avg Loss: 0.0596
+Task: Reconstruction | Avg Loss: 2.1469 
+MoE Balancing Loss: 12269.9867
+Mutual Information | Avg Loss: -0.00443
+Total Loss: 3.5426
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276118.00
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276372.56
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277053.12
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277169.16
+Time elapsed: 14:44:05.999783
+
+ --- Epoch 178
+Task: Classification | Acc: 97.95% | Avg Loss: 0.0571
+Task: Reconstruction | Avg Loss: 2.1413 
+MoE Balancing Loss: 12270.1722
+Mutual Information | Avg Loss: -0.00437
+Total Loss: 3.5668
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278381.69
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278391.34
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277690.47
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278273.03
+Time elapsed: 14:45:42.804549
+
+ --- Epoch 179
+Task: Classification | Acc: 98.06% | Avg Loss: 0.0538
+Task: Reconstruction | Avg Loss: 2.1320 
+MoE Balancing Loss: 12276.1430
+Mutual Information | Avg Loss: -0.00441
+Total Loss: 3.5099
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277239.88
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276842.09
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277198.84
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276766.16
+Time elapsed: 14:47:19.109471
+
+ --- Epoch 180
+Task: Classification | Acc: 98.02% | Avg Loss: 0.0557
+Task: Reconstruction | Avg Loss: 2.1486 
+MoE Balancing Loss: 12272.4197
+Mutual Information | Avg Loss: -0.00431
+Total Loss: 3.4679
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276601.56
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276193.19
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277280.12
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277327.72
+Time elapsed: 14:48:54.991831
+Example 1 ---
+Original text: it's a much more emotional journey than what shyamalan has given us in his past two movies, and gibson, stepping in for bruce willis, is the perfect actor to take us on the trip.
+Reconstructed text: it's probably scientific effort to have a movie, the,,, except in the hee star,,,, the, than a three around, dramatic and allows wants to be id the neutral.
+Original IDs: [101, 2009, 1005, 1055, 1037, 2172, 2062, 6832, 4990, 2084, 2054, 11004, 8067, 5802, 2038, 2445, 2149, 1999, 2010, 2627, 2048, 5691, 1010, 1998, 9406, 1010, 9085, 1999, 2005, 5503, 12688, 1010, 2003, 1996, 3819, 3364, 2000, 2202, 2149, 2006, 1996, 4440, 1012, 102]
+Predicted IDs: [101, 2009, 1005, 1055, 2763, 4045, 3947, 2000, 2031, 1037, 3185, 1010, 1996, 1010, 1010, 1010, 3272, 1999, 1996, 18235, 2732, 1010, 1010, 1010, 1010, 1996, 1010, 2084, 1037, 2093, 2105, 1010, 6918, 1998, 4473, 4122, 2000, 2022, 8909, 102, 1996, 8699, 1012, 102]
+BLEU Score: 0.3250
+Example 2 ---
+Original text: ... mafia, rap stars and hood rats butt their ugly heads in a regurgitation of cinematic violence that gives brutal birth to an unlikely, but likable, hero. '
+Reconstructed text: a a a performances, good of, presenting, to a genre to a into theish rhythm of the wonderful that so, between the modern telling, proves simultaneously harrowinglifting.
+Original IDs: [101, 1012, 1012, 1012, 13897, 1010, 9680, 3340, 1998, 7415, 11432, 10007, 2037, 9200, 4641, 1999, 1037, 19723, 12514, 18557, 1997, 21014, 4808, 2008, 3957, 12077, 4182, 2000, 2019, 9832, 1010, 2021, 5622, 2912, 3468, 1010, 5394, 1012, 1005, 102]
+Predicted IDs: [101, 1037, 1037, 1037, 4616, 1010, 2204, 1997, 1010, 10886, 1010, 2000, 1037, 6907, 2000, 1037, 2046, 1996, 4509, 6348, 1997, 1996, 6919, 2008, 2061, 1010, 2090, 1996, 2715, 4129, 1010, 16481, 7453, 24560, 2075, 102, 102, 26644, 1012, 102]
+BLEU Score: 0.2424
+Example 3 ---
+Original text: add yet another hat to a talented head, clooney's a good director.
+Reconstructed text: , is iningly with a weak ii and it doesn't a profound one,
+Original IDs: [101, 5587, 2664, 2178, 6045, 2000, 1037, 10904, 2132, 1010, 18856, 7828, 3240, 1005, 1055, 1037, 2204, 2472, 1012, 102]
+Predicted IDs: [101, 1010, 2003, 1999, 15787, 2007, 1037, 5410, 2462, 1998, 2009, 2515, 1050, 1005, 1056, 1037, 13769, 2028, 1010, 102]
+BLEU Score: 0.2000
+
+ --- Epoch 181
+Task: Classification | Acc: 98.11% | Avg Loss: 0.0539
+Task: Reconstruction | Avg Loss: 2.1387 
+MoE Balancing Loss: 12274.3665
+Mutual Information | Avg Loss: -0.00437
+Total Loss: 3.4541
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276763.94
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277092.28
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277187.72
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276799.72
+Time elapsed: 14:50:31.061657
+
+ --- Epoch 182
+Task: Classification | Acc: 98.12% | Avg Loss: 0.0520
+Task: Reconstruction | Avg Loss: 2.1317 
+MoE Balancing Loss: 12274.4559
+Mutual Information | Avg Loss: -0.00434
+Total Loss: 3.5092
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277344.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278071.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277327.97
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276969.25
+Time elapsed: 14:52:07.619732
+
+ --- Epoch 183
+Task: Classification | Acc: 98.06% | Avg Loss: 0.0514
+Task: Reconstruction | Avg Loss: 2.1319 
+MoE Balancing Loss: 12270.7094
+Mutual Information | Avg Loss: -0.00435
+Total Loss: 3.5201
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276300.09
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275518.28
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275780.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276162.81
+Time elapsed: 14:53:43.818152
+
+ --- Epoch 184
+Task: Classification | Acc: 98.11% | Avg Loss: 0.0538
+Task: Reconstruction | Avg Loss: 2.1153 
+MoE Balancing Loss: 12274.3831
+Mutual Information | Avg Loss: -0.00437
+Total Loss: 3.5250
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277255.69
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276232.56
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276779.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276825.19
+Time elapsed: 14:55:20.068419
+
+ --- Epoch 185
+Task: Classification | Acc: 97.99% | Avg Loss: 0.0562
+Task: Reconstruction | Avg Loss: 2.1260 
+MoE Balancing Loss: 12271.4057
+Mutual Information | Avg Loss: -0.00442
+Total Loss: 3.3735
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278306.97
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277303.12
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277126.25
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277141.03
+Time elapsed: 14:56:55.488728
+
+ --- Epoch 186
+Task: Classification | Acc: 98.27% | Avg Loss: 0.0499
+Task: Reconstruction | Avg Loss: 2.1274 
+MoE Balancing Loss: 12272.1176
+Mutual Information | Avg Loss: -0.00440
+Total Loss: 3.5050
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276699.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276274.94
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276971.28
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277223.66
+Time elapsed: 14:58:31.892241
+
+ --- Epoch 187
+Task: Classification | Acc: 98.17% | Avg Loss: 0.0519
+Task: Reconstruction | Avg Loss: 2.1152 
+MoE Balancing Loss: 12276.2920
+Mutual Information | Avg Loss: -0.00451
+Total Loss: 3.5349
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277495.19
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276685.97
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277490.94
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276901.41
+Time elapsed: 15:00:08.665330
+
+ --- Epoch 188
+Task: Classification | Acc: 98.08% | Avg Loss: 0.0539
+Task: Reconstruction | Avg Loss: 2.1106 
+MoE Balancing Loss: 12274.9665
+Mutual Information | Avg Loss: -0.00452
+Total Loss: 3.5135
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277393.91
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277395.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277118.56
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276736.12
+Time elapsed: 15:01:45.213692
+
+ --- Epoch 189
+Task: Classification | Acc: 98.06% | Avg Loss: 0.0528
+Task: Reconstruction | Avg Loss: 2.1110 
+MoE Balancing Loss: 12273.2719
+Mutual Information | Avg Loss: -0.00452
+Total Loss: 3.4386
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278106.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278022.97
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279014.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278495.12
+Time elapsed: 15:03:21.131593
+
+ --- Epoch 190
+Task: Classification | Acc: 98.12% | Avg Loss: 0.0542
+Task: Reconstruction | Avg Loss: 2.1055 
+MoE Balancing Loss: 12272.4816
+Mutual Information | Avg Loss: -0.00450
+Total Loss: 3.5303
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277433.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277046.69
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276840.00
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277292.12
+Time elapsed: 15:04:57.906500
+Example 1 ---
+Original text: this is a shameless sham, calculated to cash in on the popularity of its stars.
+Reconstructed text: may be a kn doingpromising that urge to be oute the all of its own
+Original IDs: [101, 2023, 2003, 1037, 9467, 3238, 25850, 1010, 10174, 2000, 5356, 1999, 2006, 1996, 6217, 1997, 2049, 3340, 1012, 102]
+Predicted IDs: [101, 2089, 2022, 1037, 14161, 2725, 25013, 2008, 9075, 2000, 2022, 2041, 2063, 1996, 2035, 1997, 2049, 2219, 102, 102]
+BLEU Score: 0.2917
+Example 2 ---
+Original text: the film tunes into a grief that could lead a man across centuries.
+Reconstructed text: shirkss about the film that might has a price of excitement, but
+Original IDs: [101, 1996, 2143, 13281, 2046, 1037, 9940, 2008, 2071, 2599, 1037, 2158, 2408, 4693, 1012, 102]
+Predicted IDs: [101, 11895, 19987, 2015, 2055, 1996, 2143, 2008, 2453, 2038, 1037, 3976, 1997, 8277, 1010, 2021]
+BLEU Score: 0.2849
+Example 3 ---
+Original text: one of the smartest takes on singles culture i've seen in a long time.
+Reconstructed text: is that the the previous observation in the ` you've completely sitting this `
+Original IDs: [101, 2028, 1997, 1996, 6047, 4355, 3138, 2006, 3895, 3226, 1045, 1005, 2310, 2464, 1999, 1037, 2146, 2051, 1012, 102]
+Predicted IDs: [101, 2003, 2008, 1996, 1996, 3025, 8089, 1999, 1996, 1036, 2017, 1005, 2310, 3294, 3564, 2023, 102, 1036, 102, 102]
+BLEU Score: 0.1871
+
+ --- Epoch 191
+Task: Classification | Acc: 98.22% | Avg Loss: 0.0510
+Task: Reconstruction | Avg Loss: 2.0917 
+MoE Balancing Loss: 12270.5968
+Mutual Information | Avg Loss: -0.00441
+Total Loss: 3.4872
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277671.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278151.78
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278552.25
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278038.12
+Time elapsed: 15:06:34.612163
+
+ --- Epoch 192
+Task: Classification | Acc: 98.07% | Avg Loss: 0.0524
+Task: Reconstruction | Avg Loss: 2.0974 
+MoE Balancing Loss: 12277.5411
+Mutual Information | Avg Loss: -0.00454
+Total Loss: 3.5179
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278700.47
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277682.56
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277416.47
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277390.25
+Time elapsed: 15:08:11.048041
+
+ --- Epoch 193
+Task: Classification | Acc: 97.98% | Avg Loss: 0.0558
+Task: Reconstruction | Avg Loss: 2.0947 
+MoE Balancing Loss: 12274.1035
+Mutual Information | Avg Loss: -0.00451
+Total Loss: 3.4869
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277051.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275896.84
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276725.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277153.88
+Time elapsed: 15:09:47.381682
+
+ --- Epoch 194
+Task: Classification | Acc: 98.19% | Avg Loss: 0.0507
+Task: Reconstruction | Avg Loss: 2.0966 
+MoE Balancing Loss: 12274.9665
+Mutual Information | Avg Loss: -0.00452
+Total Loss: 3.5243
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277299.41
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277645.28
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277506.78
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277403.06
+Time elapsed: 15:11:24.090505
+
+ --- Epoch 195
+Task: Classification | Acc: 98.18% | Avg Loss: 0.0513
+Task: Reconstruction | Avg Loss: 2.0907 
+MoE Balancing Loss: 12271.7526
+Mutual Information | Avg Loss: -0.00444
+Total Loss: 3.5100
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278290.16
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276597.16
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276954.31
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277016.56
+Time elapsed: 15:13:00.774181
+
+ --- Epoch 196
+Task: Classification | Acc: 98.07% | Avg Loss: 0.0515
+Task: Reconstruction | Avg Loss: 2.0895 
+MoE Balancing Loss: 12273.3995
+Mutual Information | Avg Loss: -0.00460
+Total Loss: 3.5120
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279579.88
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279654.41
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278531.72
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277913.94
+Time elapsed: 15:14:37.611643
+
+ --- Epoch 197
+Task: Classification | Acc: 98.03% | Avg Loss: 0.0530
+Task: Reconstruction | Avg Loss: 2.0843 
+MoE Balancing Loss: 12270.4681
+Mutual Information | Avg Loss: -0.00447
+Total Loss: 3.4993
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275412.34
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276164.53
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276773.12
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277266.75
+Time elapsed: 15:16:14.181148
+
+ --- Epoch 198
+Task: Classification | Acc: 98.03% | Avg Loss: 0.0547
+Task: Reconstruction | Avg Loss: 2.0758 
+MoE Balancing Loss: 12271.3058
+Mutual Information | Avg Loss: -0.00448
+Total Loss: 3.4613
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278066.00
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277257.00
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276817.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276797.56
+Time elapsed: 15:17:50.271632
+
+ --- Epoch 199
+Task: Classification | Acc: 98.02% | Avg Loss: 0.0541
+Task: Reconstruction | Avg Loss: 2.0643 
+MoE Balancing Loss: 12271.1238
+Mutual Information | Avg Loss: -0.00450
+Total Loss: 3.4627
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277635.53
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276783.69
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278373.69
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277628.47
+Time elapsed: 15:19:26.487605
+
+ --- Epoch 200
+Task: Classification | Acc: 98.09% | Avg Loss: 0.0529
+Task: Reconstruction | Avg Loss: 2.0874 
+MoE Balancing Loss: 12275.1653
+Mutual Information | Avg Loss: -0.00450
+Total Loss: 3.5014
+Layer 0:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275710.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276275.31
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276812.00
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276476.81
+Time elapsed: 15:21:02.870642
+Example 1 ---
+Original text: every dance becomes about seduction, where backstabbing and betrayals are celebrated, and sex is currency.
+Reconstructed text: the film has visually evelyn, more romanticie staged, litd as passion, in new relationships
+Original IDs: [101, 2296, 3153, 4150, 2055, 26962, 1010, 2073, 10457, 2696, 23200, 1998, 14583, 2015, 2024, 6334, 1010, 1998, 3348, 2003, 9598, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 2038, 17453, 12903, 1010, 2062, 6298, 2666, 9813, 1010, 5507, 2094, 2004, 6896, 1010, 102, 102, 1999, 2047, 6550, 102]
+BLEU Score: 0.1109
+Example 2 ---
+Original text: turns potentially forgettable formula into something strangely diverting.
+Reconstructed text: , sac figurescre picture passed thisttered annoyinge
+Original IDs: [101, 4332, 9280, 5293, 10880, 5675, 2046, 2242, 13939, 27345, 2075, 1012, 102]
+Predicted IDs: [101, 1010, 17266, 4481, 16748, 3861, 2979, 2023, 14795, 15703, 2063, 102, 102]
+BLEU Score: 0.0000
+Example 3 ---
+Original text: villeneuve spends too much time wallowing in bibi's generic angst ( there are a lot of shots of her gazing out windows ).
+Reconstructed text: a pump life as approaches agent fatal anthony using gary summer's new ecological humor list themaxmax
+Original IDs: [101, 20184, 28104, 15970, 2205, 2172, 2051, 2813, 14138, 1999, 12170, 5638, 1005, 1055, 12391, 17076, 3367, 1006, 2045, 2024, 1037, 2843, 1997, 7171, 1997, 2014, 16448, 2041, 3645, 1007, 1012, 102]
+Predicted IDs: [101, 1037, 10216, 2166, 2004, 8107, 4005, 10611, 4938, 2478, 5639, 2621, 1005, 1055, 2047, 12231, 8562, 102, 102, 102, 102, 2862, 1996, 102, 102, 102, 17848, 17848, 102, 102, 102, 102]
+BLEU Score: 0.0735
+
+ --- Epoch 201
+Task: Classification | Acc: 98.24% | Avg Loss: 0.0505
+Task: Reconstruction | Avg Loss: 2.0724 
+MoE Balancing Loss: 12272.4809
+Mutual Information | Avg Loss: -0.00443
+Total Loss: 3.5120
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275543.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276337.94
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276145.81
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276497.56
+Time elapsed: 15:22:39.601067
+
+ --- Epoch 202
+Task: Classification | Acc: 98.21% | Avg Loss: 0.0514
+Task: Reconstruction | Avg Loss: 2.0673 
+MoE Balancing Loss: 12275.7062
+Mutual Information | Avg Loss: -0.00438
+Total Loss: 3.4343
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278114.34
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277340.41
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278271.34
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278200.59
+Time elapsed: 15:24:15.665100
+
+ --- Epoch 203
+Task: Classification | Acc: 98.10% | Avg Loss: 0.0558
+Task: Reconstruction | Avg Loss: 2.0661 
+MoE Balancing Loss: 12271.1129
+Mutual Information | Avg Loss: -0.00458
+Total Loss: 3.4598
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275152.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276340.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276862.09
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276772.28
+Time elapsed: 15:25:51.949528
+
+ --- Epoch 204
+Task: Classification | Acc: 98.04% | Avg Loss: 0.0545
+Task: Reconstruction | Avg Loss: 2.0766 
+MoE Balancing Loss: 12276.7241
+Mutual Information | Avg Loss: -0.00459
+Total Loss: 3.5268
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276348.72
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276488.69
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277299.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276548.81
+Time elapsed: 15:27:28.688153
+
+ --- Epoch 205
+Task: Classification | Acc: 98.16% | Avg Loss: 0.0519
+Task: Reconstruction | Avg Loss: 2.0601 
+MoE Balancing Loss: 12274.0046
+Mutual Information | Avg Loss: -0.00458
+Total Loss: 3.4555
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278690.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277323.91
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278072.75
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277685.91
+Time elapsed: 15:29:05.095936
+
+ --- Epoch 206
+Task: Classification | Acc: 98.18% | Avg Loss: 0.0514
+Task: Reconstruction | Avg Loss: 2.0523 
+MoE Balancing Loss: 12270.3363
+Mutual Information | Avg Loss: -0.00460
+Total Loss: 3.4314
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277739.88
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277496.00
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277898.84
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277935.19
+Time elapsed: 15:30:41.008738
+
+ --- Epoch 207
+Task: Classification | Acc: 98.14% | Avg Loss: 0.0527
+Task: Reconstruction | Avg Loss: 2.0455 
+MoE Balancing Loss: 12273.2271
+Mutual Information | Avg Loss: -0.00472
+Total Loss: 3.4887
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275865.19
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277137.25
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275830.03
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275860.31
+Time elapsed: 15:32:17.313349
+
+ --- Epoch 208
+Task: Classification | Acc: 98.18% | Avg Loss: 0.0509
+Task: Reconstruction | Avg Loss: 2.0532 
+MoE Balancing Loss: 12273.1415
+Mutual Information | Avg Loss: -0.00463
+Total Loss: 3.4775
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276884.47
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276890.53
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276845.88
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276640.50
+Time elapsed: 15:33:53.657240
+
+ --- Epoch 209
+Task: Classification | Acc: 98.15% | Avg Loss: 0.0519
+Task: Reconstruction | Avg Loss: 2.0382 
+MoE Balancing Loss: 12273.2762
+Mutual Information | Avg Loss: -0.00452
+Total Loss: 3.4753
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275380.00
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275771.41
+Layer 2:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275138.06
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276035.69
+Time elapsed: 15:35:30.087892
+
+ --- Epoch 210
+Task: Classification | Acc: 98.13% | Avg Loss: 0.0547
+Task: Reconstruction | Avg Loss: 2.0354 
+MoE Balancing Loss: 12274.8619
+Mutual Information | Avg Loss: -0.00463
+Total Loss: 3.4894
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276139.47
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276680.28
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276432.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277492.78
+Time elapsed: 15:37:06.759357
+Example 1 ---
+Original text: far more imaginative and ambitious than the trivial, cash - in features nickelodeon has made from its other animated tv series.
+Reconstructed text: is to attempts, despite achieving a slightly,iche - interest kid that it it in a few yorkrk diversion and
+Original IDs: [101, 2521, 2062, 28575, 1998, 12479, 2084, 1996, 20610, 1010, 5356, 1011, 1999, 2838, 20814, 2038, 2081, 2013, 2049, 2060, 6579, 2694, 2186, 1012, 102]
+Predicted IDs: [101, 2003, 2000, 4740, 1010, 2750, 10910, 1037, 3621, 1010, 17322, 1011, 3037, 4845, 2008, 2009, 2009, 1999, 1037, 2261, 2259, 8024, 20150, 1998, 102]
+BLEU Score: 0.1737
+Example 2 ---
+Original text: it gets onto the screen just about as much of the novella as one could reasonably expect, and is engrossing and moving in its own right.
+Reconstructed text: is a has therates of few who in that who earth such more with brand on and it is a strongrocity and siity of fresh in the entire
+Original IDs: [101, 2009, 4152, 3031, 1996, 3898, 2074, 2055, 2004, 2172, 1997, 1996, 20674, 2004, 2028, 2071, 16286, 5987, 1010, 1998, 2003, 25540, 25725, 2075, 1998, 3048, 1999, 2049, 2219, 2157, 1012, 102]
+Predicted IDs: [101, 2003, 1037, 2038, 1996, 20370, 1997, 2261, 2040, 1999, 2008, 2040, 3011, 2107, 2062, 2007, 4435, 2006, 1998, 2009, 2003, 1037, 2844, 21735, 1998, 9033, 3012, 1997, 4840, 1999, 1996, 2972]
+BLEU Score: 0.2500
+Example 3 ---
+Original text: the film's tone and pacing are off almost from the get - go.
+Reconstructed text: the film's hero enough that about can in with a movie - jerking, nerve
+Original IDs: [101, 1996, 2143, 1005, 1055, 4309, 1998, 15732, 2024, 2125, 2471, 2013, 1996, 2131, 1011, 2175, 1012, 102]
+Predicted IDs: [101, 1996, 2143, 1005, 1055, 5394, 2438, 2008, 2055, 2064, 1999, 2007, 1037, 3185, 1011, 22387, 1010, 9113]
+BLEU Score: 0.2500
+
+ --- Epoch 211
+Task: Classification | Acc: 98.17% | Avg Loss: 0.0507
+Task: Reconstruction | Avg Loss: 2.0415 
+MoE Balancing Loss: 12276.6279
+Mutual Information | Avg Loss: -0.00456
+Total Loss: 3.4615
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 280439.94
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277893.97
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277796.00
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277864.72
+Time elapsed: 15:38:43.522239
+
+ --- Epoch 212
+Task: Classification | Acc: 98.23% | Avg Loss: 0.0515
+Task: Reconstruction | Avg Loss: 2.0280 
+MoE Balancing Loss: 12269.6334
+Mutual Information | Avg Loss: -0.00454
+Total Loss: 3.4576
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276506.47
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 274857.03
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276082.88
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275949.00
+Time elapsed: 15:40:19.882056
+
+ --- Epoch 213
+Task: Classification | Acc: 98.23% | Avg Loss: 0.0496
+Task: Reconstruction | Avg Loss: 2.0467 
+MoE Balancing Loss: 12271.4092
+Mutual Information | Avg Loss: -0.00460
+Total Loss: 3.4583
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276610.22
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276672.84
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277470.38
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276507.66
+Time elapsed: 15:41:56.077626
+
+ --- Epoch 214
+Task: Classification | Acc: 98.33% | Avg Loss: 0.0497
+Task: Reconstruction | Avg Loss: 2.0456 
+MoE Balancing Loss: 12271.1958
+Mutual Information | Avg Loss: -0.00458
+Total Loss: 3.4239
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 274733.47
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276785.03
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275981.16
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276699.41
+Time elapsed: 15:43:32.057001
+
+ --- Epoch 215
+Task: Classification | Acc: 98.17% | Avg Loss: 0.0510
+Task: Reconstruction | Avg Loss: 2.0275 
+MoE Balancing Loss: 12272.4235
+Mutual Information | Avg Loss: -0.00448
+Total Loss: 3.4546
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276359.66
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277087.16
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277554.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276982.06
+Time elapsed: 15:45:08.609033
+
+ --- Epoch 216
+Task: Classification | Acc: 98.24% | Avg Loss: 0.0494
+Task: Reconstruction | Avg Loss: 2.0247 
+MoE Balancing Loss: 12271.5439
+Mutual Information | Avg Loss: -0.00455
+Total Loss: 3.4402
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276241.31
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275790.62
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276510.09
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276615.19
+Time elapsed: 15:46:44.802599
+
+ --- Epoch 217
+Task: Classification | Acc: 98.28% | Avg Loss: 0.0484
+Task: Reconstruction | Avg Loss: 2.0115 
+MoE Balancing Loss: 12273.5660
+Mutual Information | Avg Loss: -0.00457
+Total Loss: 3.4259
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276261.84
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275123.97
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275048.91
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275940.94
+Time elapsed: 15:48:20.835866
+
+ --- Epoch 218
+Task: Classification | Acc: 98.26% | Avg Loss: 0.0500
+Task: Reconstruction | Avg Loss: 2.0226 
+MoE Balancing Loss: 12272.0040
+Mutual Information | Avg Loss: -0.00465
+Total Loss: 3.4835
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275341.03
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275636.25
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275576.94
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275749.38
+Time elapsed: 15:49:57.192726
+
+ --- Epoch 219
+Task: Classification | Acc: 98.26% | Avg Loss: 0.0492
+Task: Reconstruction | Avg Loss: 2.0203 
+MoE Balancing Loss: 12272.6626
+Mutual Information | Avg Loss: -0.00460
+Total Loss: 3.4676
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277227.00
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276606.75
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276645.06
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276237.06
+Time elapsed: 15:51:33.707783
+
+ --- Epoch 220
+Task: Classification | Acc: 98.05% | Avg Loss: 0.0523
+Task: Reconstruction | Avg Loss: 2.0126 
+MoE Balancing Loss: 12272.4346
+Mutual Information | Avg Loss: -0.00463
+Total Loss: 3.4388
+Layer 0:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277001.12
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277455.00
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277214.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277332.16
+Time elapsed: 15:53:09.992391
+Example 1 ---
+Original text: a misogynistic piece of filth that attempts to pass itself off as hip, young adult entertainment.
+Reconstructed text: is a belookt out of editing that that want to be his with ferrer black and a disasterros
+Original IDs: [101, 1037, 28616, 15707, 26942, 2594, 3538, 1997, 10882, 24658, 2008, 4740, 2000, 3413, 2993, 2125, 2004, 5099, 1010, 2402, 4639, 4024, 1012, 102]
+Predicted IDs: [101, 2003, 1037, 19337, 14659, 2102, 2041, 1997, 9260, 2008, 2008, 2215, 2000, 2022, 2010, 2007, 28390, 2304, 1998, 1037, 7071, 7352, 102, 102]
+BLEU Score: 0.2222
+Example 2 ---
+Original text: liotta put on 30 pounds for the role, and has completely transformed himself from his smooth, goodfellas image.
+Reconstructed text: detriny and unprooughked the film that are make shake affection about their charactersdquentnce
+Original IDs: [101, 5622, 14517, 2050, 2404, 2006, 2382, 7038, 2005, 1996, 2535, 1010, 1998, 2038, 3294, 8590, 2370, 2013, 2010, 5744, 1010, 2204, 23510, 3022, 3746, 1012, 102]
+Predicted IDs: [101, 2139, 18886, 4890, 1998, 4895, 21572, 10593, 8126, 102, 1996, 2143, 2008, 2024, 2191, 6073, 12242, 2055, 2037, 3494, 102, 102, 2094, 15417, 5897, 102, 102]
+BLEU Score: 0.0831
+Example 3 ---
+Original text: the weight of the piece, the unerring professionalism of the chilly production, and the fascination embedded in the lurid topic prove recommendation enough.
+Reconstructed text: the remarkably the of film and and jarringing art of the modern emotional, and the sincere performance in an usual twistssm se se..
+Original IDs: [101, 1996, 3635, 1997, 1996, 3538, 1010, 1996, 16655, 18807, 2658, 2964, 1997, 1996, 24222, 2537, 1010, 1998, 1996, 18987, 11157, 1999, 1996, 11320, 14615, 8476, 6011, 12832, 2438, 1012, 102]
+Predicted IDs: [101, 1996, 17431, 1996, 1997, 2143, 1998, 1998, 15723, 4892, 2075, 2396, 1997, 1996, 2715, 6832, 1010, 1998, 1996, 18006, 2836, 1999, 2019, 5156, 21438, 6491, 7367, 7367, 1012, 1012, 102]
+BLEU Score: 0.3459
+
+ --- Epoch 221
+Task: Classification | Acc: 98.12% | Avg Loss: 0.0525
+Task: Reconstruction | Avg Loss: 2.0104 
+MoE Balancing Loss: 12272.2248
+Mutual Information | Avg Loss: -0.00471
+Total Loss: 3.5224
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277658.78
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276730.78
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277375.19
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277409.03
+Time elapsed: 15:59:51.638101
+
+ --- Epoch 222
+Task: Classification | Acc: 98.24% | Avg Loss: 0.0496
+Task: Reconstruction | Avg Loss: 2.0119 
+MoE Balancing Loss: 12269.1811
+Mutual Information | Avg Loss: -0.00466
+Total Loss: 3.3803
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278076.31
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276930.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277566.34
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277466.84
+Time elapsed: 16:11:00.978184
+
+ --- Epoch 223
+Task: Classification | Acc: 98.32% | Avg Loss: 0.0501
+Task: Reconstruction | Avg Loss: 2.0050 
+MoE Balancing Loss: 12271.2565
+Mutual Information | Avg Loss: -0.00457
+Total Loss: 3.5195
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277189.88
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277222.59
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277071.91
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277099.50
+Time elapsed: 16:22:12.001120
+
+ --- Epoch 224
+Task: Classification | Acc: 98.28% | Avg Loss: 0.0488
+Task: Reconstruction | Avg Loss: 2.0110 
+MoE Balancing Loss: 12270.8569
+Mutual Information | Avg Loss: -0.00473
+Total Loss: 3.4796
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277830.69
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278141.06
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277580.59
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277903.06
+Time elapsed: 16:33:21.894703
+
+ --- Epoch 225
+Task: Classification | Acc: 98.23% | Avg Loss: 0.0490
+Task: Reconstruction | Avg Loss: 1.9945 
+MoE Balancing Loss: 12277.6263
+Mutual Information | Avg Loss: -0.00468
+Total Loss: 3.4581
+Layer 0:
+-- Expert usage: [0.2, 0.16, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277150.31
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275512.16
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275591.53
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275941.97
+Time elapsed: 16:44:31.456372
+
+ --- Epoch 226
+Task: Classification | Acc: 98.35% | Avg Loss: 0.0475
+Task: Reconstruction | Avg Loss: 1.9977 
+MoE Balancing Loss: 12272.4741
+Mutual Information | Avg Loss: -0.00466
+Total Loss: 3.4139
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279054.56
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277503.81
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278023.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277379.34
+Time elapsed: 16:55:41.093367
+
+ --- Epoch 227
+Task: Classification | Acc: 98.17% | Avg Loss: 0.0510
+Task: Reconstruction | Avg Loss: 1.9945 
+MoE Balancing Loss: 12270.4394
+Mutual Information | Avg Loss: -0.00469
+Total Loss: 3.4318
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276802.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276553.47
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276650.81
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277479.31
+Time elapsed: 17:06:50.011617
+
+ --- Epoch 228
+Task: Classification | Acc: 98.29% | Avg Loss: 0.0481
+Task: Reconstruction | Avg Loss: 1.9984 
+MoE Balancing Loss: 12273.0088
+Mutual Information | Avg Loss: -0.00468
+Total Loss: 3.3922
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275882.34
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277247.47
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276362.47
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276011.81
+Time elapsed: 17:17:07.276154
+
+ --- Epoch 229
+Task: Classification | Acc: 98.12% | Avg Loss: 0.0518
+Task: Reconstruction | Avg Loss: 2.0142 
+MoE Balancing Loss: 12273.9976
+Mutual Information | Avg Loss: -0.00470
+Total Loss: 3.3607
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276826.25
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275357.03
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276926.28
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276334.28
+Time elapsed: 17:27:57.295142
+
+ --- Epoch 230
+Task: Classification | Acc: 98.14% | Avg Loss: 0.0494
+Task: Reconstruction | Avg Loss: 1.9872 
+MoE Balancing Loss: 12272.7987
+Mutual Information | Avg Loss: -0.00469
+Total Loss: 3.4939
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277840.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277656.53
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277365.78
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277514.94
+Time elapsed: 17:38:47.894569
+Example 1 ---
+Original text: paid in full is so stale, in fact, that its most vibrant scene is one that uses clips from brian de palma's scarface.
+Reconstructed text: though the heartbreak developmentndingtou traditional solemn explode obvious, academy shot pay testimony and whether like ass from among capden's shelf.
+Original IDs: [101, 3825, 1999, 2440, 2003, 2061, 26729, 1010, 1999, 2755, 1010, 2008, 2049, 2087, 17026, 3496, 2003, 2028, 2008, 3594, 15281, 2013, 4422, 2139, 23985, 1005, 1055, 18982, 10732, 1012, 102]
+Predicted IDs: [101, 2295, 1996, 27724, 2458, 15683, 24826, 3151, 19487, 15044, 5793, 1010, 2914, 2915, 3477, 10896, 1998, 3251, 2066, 2004, 2015, 2013, 2426, 6178, 4181, 1005, 1055, 11142, 1012, 102, 102]
+BLEU Score: 0.1462
+Example 2 ---
+Original text: the best film about baseball to hit theaters since field of dreams.
+Reconstructed text: a different ideas is slight to be called a kind of masterpiece.
+Original IDs: [101, 1996, 2190, 2143, 2055, 3598, 2000, 2718, 12370, 2144, 2492, 1997, 5544, 1012, 102]
+Predicted IDs: [101, 1037, 2367, 4784, 2003, 7263, 2000, 2022, 2170, 1037, 2785, 1997, 17743, 1012, 102]
+BLEU Score: 0.2308
+Example 3 ---
+Original text: the experience of going to a film festival is a rewarding one ; the experiencing of sampling one through this movie is not.
+Reconstructed text: the refusal of lacks of a film that that can be red dares the world that have, why the first exit can free
+Original IDs: [101, 1996, 3325, 1997, 2183, 2000, 1037, 2143, 2782, 2003, 1037, 10377, 2075, 2028, 1025, 1996, 13417, 1997, 16227, 2028, 2083, 2023, 3185, 2003, 2025, 1012, 102]
+Predicted IDs: [101, 1996, 13948, 1997, 14087, 1997, 1037, 2143, 2008, 2008, 2064, 2022, 2417, 8108, 2015, 1996, 2088, 2008, 2031, 1010, 2339, 1996, 2034, 6164, 2064, 2489, 102]
+BLEU Score: 0.2500
+
+ --- Epoch 231
+Task: Classification | Acc: 98.22% | Avg Loss: 0.0521
+Task: Reconstruction | Avg Loss: 1.9805 
+MoE Balancing Loss: 12273.0358
+Mutual Information | Avg Loss: -0.00471
+Total Loss: 3.4329
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277212.41
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276660.66
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277736.16
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277588.22
+Time elapsed: 17:48:51.501772
+
+ --- Epoch 232
+Task: Classification | Acc: 98.21% | Avg Loss: 0.0493
+Task: Reconstruction | Avg Loss: 1.9856 
+MoE Balancing Loss: 12278.5386
+Mutual Information | Avg Loss: -0.00463
+Total Loss: 3.4250
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279836.66
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278330.44
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277820.84
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277205.94
+Time elapsed: 17:50:28.231778
+
+ --- Epoch 233
+Task: Classification | Acc: 98.17% | Avg Loss: 0.0475
+Task: Reconstruction | Avg Loss: 1.9861 
+MoE Balancing Loss: 12272.4750
+Mutual Information | Avg Loss: -0.00467
+Total Loss: 3.4595
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275504.84
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277249.09
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276354.91
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277371.75
+Time elapsed: 17:52:04.959903
+
+ --- Epoch 234
+Task: Classification | Acc: 98.23% | Avg Loss: 0.0500
+Task: Reconstruction | Avg Loss: 1.9853 
+MoE Balancing Loss: 12279.9463
+Mutual Information | Avg Loss: -0.00469
+Total Loss: 3.4287
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279632.97
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277542.88
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276589.25
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277381.97
+Time elapsed: 17:53:41.496378
+
+ --- Epoch 235
+Task: Classification | Acc: 98.27% | Avg Loss: 0.0508
+Task: Reconstruction | Avg Loss: 1.9636 
+MoE Balancing Loss: 12270.1535
+Mutual Information | Avg Loss: -0.00473
+Total Loss: 3.4411
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 274350.81
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276879.19
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277076.88
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276809.28
+Time elapsed: 17:55:18.254505
+
+ --- Epoch 236
+Task: Classification | Acc: 98.30% | Avg Loss: 0.0482
+Task: Reconstruction | Avg Loss: 1.9734 
+MoE Balancing Loss: 12268.9143
+Mutual Information | Avg Loss: -0.00473
+Total Loss: 3.4154
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275345.72
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275349.91
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276229.88
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275992.09
+Time elapsed: 17:56:54.541573
+
+ --- Epoch 237
+Task: Classification | Acc: 98.27% | Avg Loss: 0.0490
+Task: Reconstruction | Avg Loss: 1.9774 
+MoE Balancing Loss: 12267.9701
+Mutual Information | Avg Loss: -0.00477
+Total Loss: 3.5161
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276016.34
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276689.69
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276824.75
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276461.38
+Time elapsed: 17:58:31.697137
+
+ --- Epoch 238
+Task: Classification | Acc: 98.38% | Avg Loss: 0.0481
+Task: Reconstruction | Avg Loss: 1.9692 
+MoE Balancing Loss: 12269.2483
+Mutual Information | Avg Loss: -0.00481
+Total Loss: 3.4162
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276469.28
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277216.72
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276175.81
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276285.59
+Time elapsed: 18:00:08.114308
+
+ --- Epoch 239
+Task: Classification | Acc: 98.39% | Avg Loss: 0.0456
+Task: Reconstruction | Avg Loss: 1.9626 
+MoE Balancing Loss: 12269.0324
+Mutual Information | Avg Loss: -0.00470
+Total Loss: 3.3763
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276895.56
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275640.44
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276305.22
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276342.41
+Time elapsed: 18:01:44.529337
+
+ --- Epoch 240
+Task: Classification | Acc: 98.41% | Avg Loss: 0.0458
+Task: Reconstruction | Avg Loss: 1.9613 
+MoE Balancing Loss: 12273.4863
+Mutual Information | Avg Loss: -0.00475
+Total Loss: 3.4489
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278562.53
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276849.56
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276963.97
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277423.53
+Time elapsed: 18:03:21.552172
+Example 1 ---
+Original text: looks and feels like a project better suited for the small screen.
+Reconstructed text: is,, in a non - industry way of pointless creates.
+Original IDs: [101, 3504, 1998, 5683, 2066, 1037, 2622, 2488, 10897, 2005, 1996, 2235, 3898, 1012, 102]
+Predicted IDs: [101, 2003, 1010, 1010, 1999, 1037, 2512, 1011, 3068, 2126, 1997, 23100, 9005, 1012, 102]
+BLEU Score: 0.1538
+Example 2 ---
+Original text: the film's hackneyed message is not helped by the thin characterizations, nonexistent plot and pretentious visual style.
+Reconstructed text: a tires's smart, of of proportions top in - core with story, cheat intovent into arts and faylistic sentimentality and
+Original IDs: [101, 1996, 2143, 1005, 1055, 28425, 2098, 4471, 2003, 2025, 3271, 2011, 1996, 4857, 23191, 2015, 1010, 3904, 9048, 16173, 2102, 5436, 1998, 3653, 6528, 20771, 5107, 2806, 1012, 102]
+Predicted IDs: [101, 1037, 13310, 1005, 1055, 6047, 1010, 1997, 1997, 19173, 2327, 1999, 1011, 4563, 2007, 2466, 1010, 21910, 2046, 15338, 2046, 2840, 1998, 6904, 8516, 6553, 23069, 3012, 102, 1998]
+BLEU Score: 0.1304
+Example 3 ---
+Original text: a solid film... but more conscientious than it is truly stirring.
+Reconstructed text: the major done.... instantly disorientable a of
+Original IDs: [101, 1037, 5024, 2143, 1012, 1012, 1012, 2021, 2062, 9530, 11020, 11638, 6313, 2084, 2009, 2003, 5621, 18385, 1012, 102]
+Predicted IDs: [101, 1996, 2350, 2589, 1012, 1012, 1012, 1012, 6880, 4487, 21748, 11638, 3085, 102, 102, 102, 1037, 102, 1997, 102]
+BLEU Score: 0.0669
+
+ --- Epoch 241
+Task: Classification | Acc: 98.25% | Avg Loss: 0.0462
+Task: Reconstruction | Avg Loss: 1.9613 
+MoE Balancing Loss: 12264.8389
+Mutual Information | Avg Loss: -0.00476
+Total Loss: 3.4146
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 273575.41
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 275635.38
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276213.47
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276077.12
+Time elapsed: 18:04:58.163389
+
+ --- Epoch 242
+Task: Classification | Acc: 98.27% | Avg Loss: 0.0474
+Task: Reconstruction | Avg Loss: 1.9539 
+MoE Balancing Loss: 12277.7758
+Mutual Information | Avg Loss: -0.00473
+Total Loss: 3.4722
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 281742.47
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278372.66
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278804.34
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278572.91
+Time elapsed: 18:06:35.313351
+
+ --- Epoch 243
+Task: Classification | Acc: 98.26% | Avg Loss: 0.0496
+Task: Reconstruction | Avg Loss: 1.9422 
+MoE Balancing Loss: 12270.2008
+Mutual Information | Avg Loss: -0.00479
+Total Loss: 3.4218
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277149.75
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277469.66
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277150.09
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277544.81
+Time elapsed: 18:08:12.040898
+
+ --- Epoch 244
+Task: Classification | Acc: 98.09% | Avg Loss: 0.0535
+Task: Reconstruction | Avg Loss: 1.9589 
+MoE Balancing Loss: 12274.2146
+Mutual Information | Avg Loss: -0.00473
+Total Loss: 3.3071
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277746.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276935.09
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277251.28
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277595.97
+Time elapsed: 18:09:48.128728
+
+ --- Epoch 245
+Task: Classification | Acc: 98.21% | Avg Loss: 0.0494
+Task: Reconstruction | Avg Loss: 1.9523 
+MoE Balancing Loss: 12275.5036
+Mutual Information | Avg Loss: -0.00468
+Total Loss: 3.5193
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279720.38
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278743.81
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278049.44
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278489.97
+Time elapsed: 18:11:25.941115
+
+ --- Epoch 246
+Task: Classification | Acc: 98.25% | Avg Loss: 0.0512
+Task: Reconstruction | Avg Loss: 1.9520 
+MoE Balancing Loss: 12274.1311
+Mutual Information | Avg Loss: -0.00471
+Total Loss: 3.4219
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277449.06
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277134.50
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277178.75
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276706.91
+Time elapsed: 18:13:02.927887
+
+ --- Epoch 247
+Task: Classification | Acc: 98.25% | Avg Loss: 0.0512
+Task: Reconstruction | Avg Loss: 1.9469 
+MoE Balancing Loss: 12274.0943
+Mutual Information | Avg Loss: -0.00465
+Total Loss: 3.4524
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276885.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277832.84
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276825.22
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277711.00
+Time elapsed: 18:14:40.072520
+
+ --- Epoch 248
+Task: Classification | Acc: 98.15% | Avg Loss: 0.0522
+Task: Reconstruction | Avg Loss: 1.9509 
+MoE Balancing Loss: 12272.9296
+Mutual Information | Avg Loss: -0.00472
+Total Loss: 3.4540
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276697.84
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277184.78
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278019.62
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277450.00
+Time elapsed: 18:16:17.135263
+
+ --- Epoch 249
+Task: Classification | Acc: 98.14% | Avg Loss: 0.0513
+Task: Reconstruction | Avg Loss: 1.9286 
+MoE Balancing Loss: 12274.4018
+Mutual Information | Avg Loss: -0.00486
+Total Loss: 3.5120
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 279040.22
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278328.69
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 278138.88
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277936.84
+Time elapsed: 18:17:54.897470
+
+ --- Epoch 250
+Task: Classification | Acc: 98.18% | Avg Loss: 0.0504
+Task: Reconstruction | Avg Loss: 1.9462 
+MoE Balancing Loss: 12276.4045
+Mutual Information | Avg Loss: -0.00474
+Total Loss: 3.4151
+Layer 0:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 276960.59
+Layer 1:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277382.34
+Layer 2:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277454.97
+Layer 3:
+-- Expert usage: [0.2, 0.17, 0.14, 0.12, 0.11, 0.1, 0.09, 0.08], std: 277003.06
+Time elapsed: 18:19:31.606958
+Example 1 ---
+Original text: writer / director joe carnahan's grimy crime drama is a manual of precinct cliches, but it moves fast enough to cover its clunky dialogue and lapses in logic.
+Reconstructed text: seemingly in with served ofssenl's )ook of to accused childhooded of saturday undylusus sequences and with future in, comes fl ob resiveble and supermarket tabloid..
+Original IDs: [101, 3213, 1013, 2472, 3533, 2482, 15272, 2319, 1005, 1055, 11844, 2100, 4126, 3689, 2003, 1037, 6410, 1997, 18761, 18856, 17322, 2015, 1010, 2021, 2009, 5829, 3435, 2438, 2000, 3104, 2049, 18856, 16814, 2100, 7982, 1998, 10876, 2229, 1999, 7961, 1012, 102]
+Predicted IDs: [101, 9428, 1999, 2007, 2366, 1997, 14416, 2140, 1005, 1055, 1007, 14659, 1997, 2000, 5496, 5593, 2098, 1997, 5095, 6151, 8516, 2271, 2271, 10071, 1998, 2007, 2925, 1999, 1010, 3310, 13109, 27885, 2128, 12742, 3468, 1998, 17006, 24173, 1012, 102, 1012, 102]
+BLEU Score: 0.1931
+Example 2 ---
+Original text: like you couldn't smell this turkey rotting from miles away.
+Reconstructed text: i just didn't understand the single name responsible day
+Original IDs: [101, 2066, 2017, 2071, 1050, 1005, 1056, 5437, 2023, 4977, 22005, 2013, 2661, 2185, 1012, 102]
+Predicted IDs: [101, 1045, 2074, 2106, 1050, 1005, 1056, 3305, 1996, 2309, 2171, 3625, 2154, 102, 102, 102]
+BLEU Score: 0.0819
+Example 3 ---
+Original text: a gorgeous, high - spirited musical from india that exquisitely blends music, dance, song, and high drama.
+Reconstructed text: a rare, self - down a and but is end funny is darkly drama, suspense, revenge, and surprisingly. wide
+Original IDs: [101, 1037, 9882, 1010, 2152, 1011, 24462, 3315, 2013, 2634, 2008, 19401, 2135, 12586, 2015, 2189, 1010, 3153, 1010, 2299, 1010, 1998, 2152, 3689, 1012, 102]
+Predicted IDs: [101, 1037, 4678, 1010, 2969, 1011, 2091, 1037, 1998, 2021, 2003, 2203, 6057, 2003, 27148, 3689, 1010, 23873, 1010, 7195, 1010, 1998, 10889, 1012, 102, 2898]
+BLEU Score: 0.3750
+
+--- Final Test BLEU Score ---
+Avg BLEU Score: 0.1541

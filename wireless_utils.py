@@ -117,7 +117,7 @@ class ComplexWirelessChannel(nn.Module):
 
         return faded_signal, H
 
-    def forward(self, x, snr=None, fading=None, rician_k=4.0):
+    def forward(self, x, snr=None, fading=None, rician_k=4.0, modal=False):
         """
         x: [batch, seq_len, dim] real-valued input
         """
@@ -149,10 +149,18 @@ class ComplexWirelessChannel(nn.Module):
 
         # Compute noise power
         snr_linear = 10 ** (snr / 10)
-        noise_std = math.sqrt(1 / (2 * snr_linear))  # divide by 2 for complex noise
+        
+        # if modal and not self.training:
+        #     noise_std = math.sqrt(1 / (snr_linear) )
+        # else:
+        #     noise_std = math.sqrt(1 / (2*snr_linear) )
+
+        noise_std = math.sqrt(1 / (2*snr_linear) )
+
 
         # Add AWGN
         noise = noise_std * torch.randn_like(y_complex)
+
         y_noisy = y_complex + noise
 
         y_equalized = torch.matmul(y_noisy, H_inv)
@@ -163,6 +171,6 @@ class ComplexWirelessChannel(nn.Module):
             y_flat = y_flat[:, :-1]
 
         y_out = y_flat.view(original_shape)
-        
+
         return y_out, x_complex.view(original_shape), y_noisy.view(original_shape)
     

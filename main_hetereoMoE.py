@@ -21,17 +21,20 @@ from semcom_model import HetereoMoE_SemCom
 from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, snr_loss, sample_single_task_batch, collate_fn, SST2Dataset, get_test_loader_for_epoch, moe_balancing_loss, moe_balancing_loss_p_penalty, mutual_information_loss, Critic
 
 # Model training configurations
-# MODEL_SIZE = 'S'
-# NUM_LAYERS = 2
-# D_TRANSFORMER = 232
-# N_HEADS = 4
-# NUM_EXPERTS = 4
-
-MODEL_SIZE = 'M4E'
-NUM_LAYERS = 4
-D_TRANSFORMER = 412
-N_HEADS = 6
+MODEL_SIZE = 'S'
+NUM_LAYERS = 2
+D_TRANSFORMER = 232
+N_HEADS = 4
 NUM_EXPERTS = 4
+lr_main = 5e-4
+
+# MODEL_SIZE = 'M12E'
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 12
+
+# XL: 0.2e-4
 
 
 if __name__ == "__main__":
@@ -43,7 +46,7 @@ if __name__ == "__main__":
     # Load SST-2 (binary sentiment classification)
     # dataset = load_dataset("glue", "sst2", cache_dir='/home/necphy/.cache/huggingface/datasets')
     dataset = load_dataset("glue", "sst2")
-    batch_size = 128
+    batch_size = 100
 
     train_dataset = SST2Dataset(dataset['train'])
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
@@ -54,21 +57,19 @@ if __name__ == "__main__":
     mi_critic = Critic(input_dim=2, hidden_dim=12).to(device)
     lambda_mi = 10 #to-do: revert to 10 for possibly better performance
 
-    lr_main = 2e-4, # XL: 0.2e-4
     optimizer_main = torch.optim.AdamW(
         # model.parameters(),
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=lr_main,
-        weight_decay=5e-4,
+        weight_decay=1e-2,
         betas=(0.9, 0.98),
         eps=1e-8,
     )
 
-    lr_mi = 1e-4
+    lr_mi = 5e-4
     optimizer_mi = torch.optim.AdamW(
         mi_critic.parameters(),
         lr=lr_mi,
-        weight_decay=5e-4,
     )
 
     log_val = True
@@ -83,20 +84,21 @@ if __name__ == "__main__":
 
     eval_every = 1
 
-    # num_training_steps = len(train_loader) * (total_epoch)
-    # num_warmup_steps = int(0.1 * num_training_steps)
+    num_training_steps = len(train_loader) * (total_epoch)
+    num_warmup_steps = int(0.05 * num_training_steps)
 
-    # scheduler = get_cosine_schedule_with_warmup(
-    #     optimizer,
-    #     num_warmup_steps=num_warmup_steps,
-    #     num_training_steps=num_training_steps
-    # )
+    scheduler_main = get_cosine_schedule_with_warmup(
+        optimizer_main,
+        num_warmup_steps=num_warmup_steps,
+        num_training_steps=num_training_steps
+    )
 
     time_start = datetime.datetime.now()
     print(f"Training started at {time_start.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f'Training detail: learning rate: 1e-4, weight decay: 5e-3, total epochs: {total_epoch}, batch size: {batch_size}, lambda_moe_lb: {lambda_moe_lb}, seed: {rand_seed}')
+    print(f'Training detail: learning rate: {lr_main}, weight decay: 1e-2, total epochs: {total_epoch}, batch size: {batch_size}, lambda_moe_lb: {lambda_moe_lb}, seed: {rand_seed}')
 
 
+    best_acc = 0.0
     # ------ training phase 1 with perfect channel
     print("Starting training...")
     for epoch in range(total_epoch_1):
@@ -114,7 +116,8 @@ if __name__ == "__main__":
 
         for step, (texts, labels) in enumerate(train_loader):
             total_step = step 
-            chosen_task = random.choice([0, 1])
+            # chosen_task = random.choice([0, 1])
+            chosen_task = 0
 
             snr = 12.0
             fading = 'none'
@@ -144,7 +147,7 @@ if __name__ == "__main__":
             optimizer_main.zero_grad()
             total_loss.backward()
             optimizer_main.step()
-
+            scheduler_main.step()
 
             if chosen_task == 0:  # Classification
                 logits = outputs
@@ -161,7 +164,6 @@ if __name__ == "__main__":
             total_loss_arr.append(total_loss.item())
             mi_loss_arr.append(mi_loss.item())
 
-
             # # Logging for each model update step
             # if step % 20 == 0:
             #     print(f"----- Step {step} | Task: {chosen_task} | SNR: {snr:.2f} dB | Fading: {fading} | Step Loss: {total_loss:.4f}") 
@@ -171,7 +173,7 @@ if __name__ == "__main__":
         avg_cls = sum(cls_loss) / len(cls_loss) if len(cls_loss) > 0 else 0.0
         print(f"Task: Classification | Acc: {acc:.2f}% | Avg Loss: {avg_cls:.4f}")
         avg_recon = sum(recon_loss) / len(recon_loss) if len(recon_loss) > 0 else 0.0
-        print(f"Task: Reconstruction | Avg Loss: {avg_recon:.4f} ")
+        # print(f"Task: Reconstruction | Avg Loss: {avg_recon:.4f} ")
         print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
         print(f"Mutual Information | Avg Loss: {sum(mi_loss_arr) / len(mi_loss_arr):.5f}")
 
@@ -198,100 +200,119 @@ if __name__ == "__main__":
         print(f'Time elapsed: {datetime.datetime.now() - time_start}')
 
         # Epoch-level evaluation
-        eval_every = 10  # Evaluate every 1 epochs
+        eval_every = 1  # Evaluate every 1 epochs
         if (epoch + 1) % eval_every == 0 and log_val == True: 
             model.eval()
             bleu_scores = []
+            correct_cls = 0
+            total_cls = 0
 
-            test_loader = get_test_loader_for_epoch(epoch, dataset['validation'], seed=rand_seed, num_samples=3) # return 3 batches, each batch has 1 sample
+            # test_loader = get_test_loader_for_epoch(epoch, dataset['validation'], seed=rand_seed, num_samples=3) # return 3 batches, each batch has 1 sample
+
+            test_dataset = SST2Dataset(dataset['validation'])
+            test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
 
             for test_step, (texts, labels) in enumerate(test_loader):
                 snr = 12.0
                 fading = 'none'
-                chosen_task = 1
+                chosen_task = 0
 
                 with torch.no_grad():
                     outputs, input_ids, input_lengths, semantic_encoded, semantic_decoded, gate_scores, expert_masks = model(texts, chosen_task, snr, fading) 
 
                     pred_ids_batch = outputs.argmax(dim=-1).cpu().tolist()
 
-                for i in range(len(texts)):
-                    # target_len = input_lengths[i].item()
+                if chosen_task == 0:  # Classification
+                    logits = outputs
+                    preds = logits.argmax(dim=-1)
+                    correct_cls += (preds == labels.to(device)).sum().item()
+                    total_cls += len(labels)
 
-                    # pred_ids = outputs[i].cpu().squeeze().tolist()
-                    # tgt_ids = input_ids[i][1:1 + len(pred_ids)].cpu().tolist()
+                else:
+                    for i in range(len(texts)):
+                        target_len = input_lengths[i].item()
 
-                    target_len = input_lengths[i].item()
-
-                    # Directly align without shift
-                    pred_ids = pred_ids_batch[i]
-                    tgt_ids = input_ids[i][:len(pred_ids)].cpu().tolist()
+                        # Directly align without shift
+                        pred_ids = pred_ids_batch[i]
+                        tgt_ids = input_ids[i][:len(pred_ids)].cpu().tolist()
 
 
-                    pred_text = model.text_encoder.tokenizer.decode(pred_ids, skip_special_tokens=True)
-                    target_text = model.text_encoder.tokenizer.decode(tgt_ids, skip_special_tokens=True)
+                        pred_text = model.text_encoder.tokenizer.decode(pred_ids, skip_special_tokens=True)
+                        target_text = model.text_encoder.tokenizer.decode(tgt_ids, skip_special_tokens=True)
 
-                    bleu = sentence_bleu([word_tokenize(target_text)], word_tokenize(pred_text), weights=(1, 0, 0, 0), smoothing_function=SmoothingFunction().method4)
-                    bleu_scores.append(bleu)
+                        bleu = sentence_bleu([word_tokenize(target_text)], word_tokenize(pred_text), weights=(1, 0, 0, 0), smoothing_function=SmoothingFunction().method4)
+                        bleu_scores.append(bleu)
 
-                    print(f'Example {test_step + 1} ---')
-                    print("Original text:", target_text)
-                    print("Reconstructed text:", pred_text)
-                    print(f'Original IDs: {tgt_ids}')
-                    print(f'Predicted IDs: {pred_ids}')
-                    print("BLEU Score:", f"{bleu:.4f}")
+                        print(f'Example {test_step + 1} ---')
+                        print("Original text:", target_text)
+                        print("Reconstructed text:", pred_text)
+                        print(f'Original IDs: {tgt_ids}')
+                        print(f'Predicted IDs: {pred_ids}')
+                        print("BLEU Score:", f"{bleu:.4f}")
 
             # avg_bleu = sum(bleu_scores) / len(bleu_scores)
             # print(f"[Eval @ Epoch {epoch+1}] Avg BLEU Score: {avg_bleu:.4f}")
+
+            acc = 100 * correct_cls / total_cls if total_cls > 0 else 0.0
+            print(f"[Eval Classification Acc: {acc:.2f}%")
+
+            # save best model with best val acc:
+            if acc > best_acc:
+                best_acc = acc
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_acc{acc:.2f}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
+                print(f"Best model saved with accuracy: {best_acc:.2f}% at {timestamp}")
+
+
             model.train()
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints/HMoE_size{MODEL_SIZE}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
 
     # --------------------
     # Testing (BLEU Score for Reconstruction)
     # --------------------
-    print("\n--- Final Test BLEU Score ---")
-    model.eval()
-    all_bleu_scores = []
-    printed_examples = 0
-    printed_this_batch = False 
+    # print("\n--- Final Test BLEU Score ---")
+    # model.eval()
+    # all_bleu_scores = []
+    # printed_examples = 0
+    # printed_this_batch = False 
 
-    test_dataset = SST2Dataset(dataset['validation'])
-    test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-
-
-    with torch.no_grad():
-        for texts, labels in test_loader:
-            bleu_scores = []
-
-            fading = random.choice(['none', 'rayleigh', 'rician'])
-            snr = random.uniform(0.0, 20.0)
-
-            outputs, input_ids, input_lengths, _, _, _, _ = model(texts, 1, snr, fading) 
-
-            batch_output_preds = outputs.argmax(dim=-1).cpu().tolist()
-
-            pred_ids_batch = batch_output_preds
-            tgt_ids_batch = input_ids[:, :len(pred_ids_batch[0])].cpu().tolist()
-
-            # pred_text = model.text_encoder.tokenizer.decode(pred_ids, skip_special_tokens=True)
-            # target_text = model.text_encoder.tokenizer.decode(tgt_ids, skip_special_tokens=True)
-            pred_texts = tokenizer.batch_decode(pred_ids_batch, skip_special_tokens=True)
-            target_texts = tokenizer.batch_decode(tgt_ids_batch, skip_special_tokens=True)
-
-            for pred_text, target_text in zip(pred_texts, target_texts):
-                bleu = sentence_bleu([word_tokenize(target_text)], word_tokenize(pred_text), weights=(1, 0, 0, 0), smoothing_function=SmoothingFunction().method4)
-                bleu_scores.append(bleu)
-
-            all_bleu_scores.append(sum(bleu_scores) / len(bleu_scores))
-
-    print(f"Avg BLEU Score: {sum(all_bleu_scores)/len(all_bleu_scores):.4f}")
+    # test_dataset = SST2Dataset(dataset['validation'])
+    # test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
+    # tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 
-# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeM4E_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
+    # with torch.no_grad():
+    #     for texts, labels in test_loader:
+    #         bleu_scores = []
+
+    #         fading = random.choice(['none', 'rayleigh', 'rician'])
+    #         snr = random.uniform(0.0, 20.0)
+
+    #         outputs, input_ids, input_lengths, _, _, _, _ = model(texts, 1, snr, fading) 
+
+    #         batch_output_preds = outputs.argmax(dim=-1).cpu().tolist()
+
+    #         pred_ids_batch = batch_output_preds
+    #         tgt_ids_batch = input_ids[:, :len(pred_ids_batch[0])].cpu().tolist()
+
+    #         # pred_text = model.text_encoder.tokenizer.decode(pred_ids, skip_special_tokens=True)
+    #         # target_text = model.text_encoder.tokenizer.decode(tgt_ids, skip_special_tokens=True)
+    #         pred_texts = tokenizer.batch_decode(pred_ids_batch, skip_special_tokens=True)
+    #         target_texts = tokenizer.batch_decode(tgt_ids_batch, skip_special_tokens=True)
+
+    #         for pred_text, target_text in zip(pred_texts, target_texts):
+    #             bleu = sentence_bleu([word_tokenize(target_text)], word_tokenize(pred_text), weights=(1, 0, 0, 0), smoothing_function=SmoothingFunction().method4)
+    #             bleu_scores.append(bleu)
+
+    #         all_bleu_scores.append(sum(bleu_scores) / len(bleu_scores))
+
+    # print(f"Avg BLEU Score: {sum(all_bleu_scores)/len(all_bleu_scores):.4f}")
+
+
+# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeS_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
 
 
 

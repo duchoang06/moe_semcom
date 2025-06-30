@@ -5,6 +5,20 @@ import numpy as np
 import random, os
 from torch.utils.data import Dataset, DataLoader
 
+class QQPPromptDataset(Dataset):
+    def __init__(self, hf_dataset_split):
+        self.q1 = hf_dataset_split["question1"]
+        self.q2 = hf_dataset_split["question2"]
+        self.labels = hf_dataset_split["label"]
+
+    def __len__(self):
+        return len(self.labels)
+
+    def __getitem__(self, idx):
+        # Embed the questions in a prompt-like sentence
+        prompt = f"Are these questions asking the same thing? Question1: {self.q1[idx]} Question2: {self.q2[idx]}"
+        label = self.labels[idx]
+        return prompt, label
 
 def text_loss(outputs, labels, task_id, input_ids=None, input_lengths=None):
     loss = 0.0
@@ -65,6 +79,7 @@ def sample_batch(rec, noise):
     joint = torch.cat((rec_sample1, noise_sample1), 1)
     marg = torch.cat((rec_sample1, noise_sample2), 1)
     return joint, marg
+
 
 
 def moe_balancing_loss_p_penalty(all_gate_scores, all_expert_masks, expert_sizes):
