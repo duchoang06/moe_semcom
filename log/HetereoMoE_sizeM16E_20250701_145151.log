@@ -1,0 +1,6 @@
+nohup: ignoring input
+Training started at 2025-07-01 14:51:55
+Training detail: learning rate: 9.128709291752768e-05, weight decay: 1e-2, total epochs: 5, batch size: 128, lambda_moe_lb: 0.0002, seed: 2006
+Starting training...
+
+ --- Epoch 1

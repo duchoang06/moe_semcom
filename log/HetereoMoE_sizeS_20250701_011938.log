@@ -1,0 +1,16 @@
+nohup: ignoring input
+Training started at 2025-07-01 01:19:46
+Training detail: learning rate: 0.00024922239313961343, weight decay: 1e-2, total epochs: 1, batch size: 128, lambda_moe_lb: 0.0002, seed: 2006
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 79.20% | Avg Loss: 0.4269
+MoE Balancing Loss: 3766.4887
+Mutual Information | Avg Loss: -0.00229
+Total Loss: 1.1573
+Layer 0:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1927875.75
+Layer 1:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1910582.00
+Time elapsed: 0:27:25.217130
+[Eval Classification Acc: 83.25%

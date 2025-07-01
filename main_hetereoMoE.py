@@ -4,7 +4,7 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
 
 import numpy as np
-import torch, random
+import torch, random, math
 from datasets import load_dataset
 import torch.nn.functional as F
 from nltk.tokenize import word_tokenize
@@ -18,23 +18,62 @@ from transformers import BertTokenizer
 
 from semcom_model import HetereoMoE_SemCom
 
-from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, snr_loss, sample_single_task_batch, collate_fn, SST2Dataset, get_test_loader_for_epoch, moe_balancing_loss, moe_balancing_loss_p_penalty, mutual_information_loss, Critic
+from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, snr_loss, sample_single_task_batch, collate_fn, SST2Dataset, get_test_loader_for_epoch, moe_balancing_loss, moe_balancing_loss_p_penalty, mutual_information_loss, Critic, QQPPromptDataset
 
 # Model training configurations
-MODEL_SIZE = 'S'
-NUM_LAYERS = 2
-D_TRANSFORMER = 232
-N_HEADS = 4
-NUM_EXPERTS = 4
-lr_main = 5e-4
+# MODEL_SIZE = 'S' # 1 epoch
+# NUM_LAYERS = 2
+# D_TRANSFORMER = 232
+# N_HEADS = 4
+# NUM_EXPERTS = 4
+# num_paras = 16.1e6
 
-# MODEL_SIZE = 'M12E'
+# MODEL_SIZE = 'M4E' #2 epoch
 # NUM_LAYERS = 4
 # D_TRANSFORMER = 412
 # N_HEADS = 6
-# NUM_EXPERTS = 12
+# NUM_EXPERTS = 4
+# num_paras = 52.2e6
 
-# XL: 0.2e-4
+# MODEL_SIZE = 'M8E' #3 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 8
+# num_paras = 74.8e6
+# total_epoch = 3
+
+MODEL_SIZE = 'M16E', #5 epoch
+NUM_LAYERS = 4
+D_TRANSFORMER = 412
+N_HEADS = 6
+NUM_EXPERTS = 8
+num_paras = 120.0e6 # ~9.13e-5
+total_epoch = 5
+
+# MODEL_SIZE = 'M32E', #7 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 8
+# num_paras = 336.7e6 
+
+# MODEL_SIZE = 'L', 5 epoch
+# NUM_LAYERS = 6
+# D_TRANSFORMER = 632
+# N_HEADS = 8
+# NUM_EXPERTS = 12
+# num_paras = 298.3e6
+
+# MODEL_SIZE = 'XL', 15 epoch
+# NUM_LAYERS = 8
+# D_TRANSFORMER = 1072
+# N_HEADS = 12
+# NUM_EXPERTS = 12
+# num_paras = 1.061e9
+
+
+lr_main = 1/math.sqrt(num_paras)
 
 
 if __name__ == "__main__":
@@ -45,11 +84,15 @@ if __name__ == "__main__":
 
     # Load SST-2 (binary sentiment classification)
     # dataset = load_dataset("glue", "sst2", cache_dir='/home/necphy/.cache/huggingface/datasets')
-    dataset = load_dataset("glue", "sst2")
-    batch_size = 100
+    dataset = load_dataset("glue", "qqp")
+    batch_size = 128
 
-    train_dataset = SST2Dataset(dataset['train'])
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn)
+    train_dataset = QQPPromptDataset(dataset['train'])
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
+    test_dataset = QQPPromptDataset(dataset["validation"])
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=True)
+
 
 
     model = HetereoMoE_SemCom(num_tasks=2, embed_dim=D_TRANSFORMER, task_dim=8, num_experts=NUM_EXPERTS, size_distribution='arithmetic', transmit_dim=128, num_encd_layer=NUM_LAYERS, num_heads=N_HEADS).to(device)
@@ -74,9 +117,9 @@ if __name__ == "__main__":
 
     log_val = True
 
-    total_epoch_1 = 250
-    total_epoch_2 = 0
-    total_epoch = total_epoch_1 + total_epoch_2
+    # total_epoch_1 = 2
+    # total_epoch_2 = 0
+    # total_epoch = total_epoch_1 + total_epoch_2
 
     lambda_moe_lb = 2e-4 # previously 5e-4
 
@@ -101,7 +144,7 @@ if __name__ == "__main__":
     best_acc = 0.0
     # ------ training phase 1 with perfect channel
     print("Starting training...")
-    for epoch in range(total_epoch_1):
+    for epoch in range(total_epoch):
         print(f'\n --- Epoch {epoch+1}')
         model.train()
         correct_cls = 0 # correct classification
@@ -172,7 +215,7 @@ if __name__ == "__main__":
         acc = 100 * correct_cls / total_cls if total_cls > 0 else 0.0
         avg_cls = sum(cls_loss) / len(cls_loss) if len(cls_loss) > 0 else 0.0
         print(f"Task: Classification | Acc: {acc:.2f}% | Avg Loss: {avg_cls:.4f}")
-        avg_recon = sum(recon_loss) / len(recon_loss) if len(recon_loss) > 0 else 0.0
+        # avg_recon = sum(recon_loss) / len(recon_loss) if len(recon_loss) > 0 else 0.0
         # print(f"Task: Reconstruction | Avg Loss: {avg_recon:.4f} ")
         print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
         print(f"Mutual Information | Avg Loss: {sum(mi_loss_arr) / len(mi_loss_arr):.5f}")
@@ -209,8 +252,8 @@ if __name__ == "__main__":
 
             # test_loader = get_test_loader_for_epoch(epoch, dataset['validation'], seed=rand_seed, num_samples=3) # return 3 batches, each batch has 1 sample
 
-            test_dataset = SST2Dataset(dataset['validation'])
-            test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
+            # test_dataset = SST2Dataset(dataset['validation'])
+            # test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
 
             for test_step, (texts, labels) in enumerate(test_loader):
                 snr = 12.0
@@ -257,11 +300,11 @@ if __name__ == "__main__":
             print(f"[Eval Classification Acc: {acc:.2f}%")
 
             # save best model with best val acc:
-            if acc > best_acc:
-                best_acc = acc
-                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_acc{acc:.2f}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
-                print(f"Best model saved with accuracy: {best_acc:.2f}% at {timestamp}")
+            # if acc > best_acc:
+            #     best_acc = acc
+            #     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            #     torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_acc{acc:.2f}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
+            #     print(f"Best model saved with accuracy: {best_acc:.2f}% at {timestamp}")
 
 
             model.train()
@@ -270,49 +313,9 @@ if __name__ == "__main__":
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
 
-    # --------------------
-    # Testing (BLEU Score for Reconstruction)
-    # --------------------
-    # print("\n--- Final Test BLEU Score ---")
-    # model.eval()
-    # all_bleu_scores = []
-    # printed_examples = 0
-    # printed_this_batch = False 
-
-    # test_dataset = SST2Dataset(dataset['validation'])
-    # test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
-    # tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 
-    # with torch.no_grad():
-    #     for texts, labels in test_loader:
-    #         bleu_scores = []
-
-    #         fading = random.choice(['none', 'rayleigh', 'rician'])
-    #         snr = random.uniform(0.0, 20.0)
-
-    #         outputs, input_ids, input_lengths, _, _, _, _ = model(texts, 1, snr, fading) 
-
-    #         batch_output_preds = outputs.argmax(dim=-1).cpu().tolist()
-
-    #         pred_ids_batch = batch_output_preds
-    #         tgt_ids_batch = input_ids[:, :len(pred_ids_batch[0])].cpu().tolist()
-
-    #         # pred_text = model.text_encoder.tokenizer.decode(pred_ids, skip_special_tokens=True)
-    #         # target_text = model.text_encoder.tokenizer.decode(tgt_ids, skip_special_tokens=True)
-    #         pred_texts = tokenizer.batch_decode(pred_ids_batch, skip_special_tokens=True)
-    #         target_texts = tokenizer.batch_decode(tgt_ids_batch, skip_special_tokens=True)
-
-    #         for pred_text, target_text in zip(pred_texts, target_texts):
-    #             bleu = sentence_bleu([word_tokenize(target_text)], word_tokenize(pred_text), weights=(1, 0, 0, 0), smoothing_function=SmoothingFunction().method4)
-    #             bleu_scores.append(bleu)
-
-    #         all_bleu_scores.append(sum(bleu_scores) / len(bleu_scores))
-
-    # print(f"Avg BLEU Score: {sum(all_bleu_scores)/len(all_bleu_scores):.4f}")
-
-
-# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeS_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
+# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeM16E_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
 
 
 

@@ -1,0 +1,12 @@
+nohup: ignoring input
+Training started at 2025-06-30 23:30:51
+Training detail: learning rate: 0.00027524094128159016, weight decay: 1e-2, total epochs: 1, batch size: 256, seed: 2231
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 78.50% | Avg Loss: 0.437
+Mutual Information | Avg Loss: -0.00178
+Total Loss | Avg Loss: 0.419
+Time elapsed: 0:09:54.169464
+[Eval Classification Acc: 82.86%
+Training lasted 0:10:15.954821

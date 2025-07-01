@@ -22,41 +22,41 @@ from utils import text_loss, fix_seed, sample_mixed_task_batch, sample_single_ta
 
 
 # MAIN TRAINING PARAS:
-# SMALL Dense:
+# SMALL Dense, 1 epoch
 # MODEL_SIZE = 'S'  # 'S', 'M', 'L'
 # NUM_LAYERS = 2
 # D_TRANSFORMER = 232
 # N_HEADS = 4
 # NUM_EXPERTS = 1
 # num_paras = 13.2e6
+# lr_main = 1/math.sqrt(num_paras)
+
+# M Dense, 2 epoch 
+# MODEL_SIZE = 'M'  # 'S', 'M', 'L'
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 1
+# num_paras = 34.5e6
 # lr_main = 1/math.sqrt(num_paras) 
 
-# M Dense:
-MODEL_SIZE = 'M'  # 'S', 'M', 'L'
-NUM_LAYERS = 4
-D_TRANSFORMER = 412
-N_HEADS = 6
+# L Dense, 5 epoch 
+MODEL_SIZE = 'L'  
+NUM_LAYERS = 6
+D_TRANSFORMER = 632
+N_HEADS = 8
 NUM_EXPERTS = 1
-num_paras = 34.5e6
+num_paras = 79.3e6
 lr_main = 1/math.sqrt(num_paras) 
 
-
-# L Dense:
-# MODEL_SIZE = 'L'  
-# NUM_LAYERS = 6
-# D_TRANSFORMER = 632
-# N_HEADS = 8
-# NUM_EXPERTS = 1
-
-# num_paras = 79.3e6
-# lr_main = 1/math.sqrt(num_paras) 
-
-# XL Dense:
+# XL Dense, 15 epoch 
 # MODEL_SIZE = 'XL'  # 'S', 'M', 'L'
 # NUM_LAYERS = 8
 # D_TRANSFORMER = 1072
 # N_HEADS = 12
 # NUM_EXPERTS = 1
+# num_paras = 305.0e6
+# lr_main = 1/math.sqrt(num_paras) 
 
 #learning rate: S, M: 2e-4; L: 0.3e-4, XL: 1e-6
 
@@ -116,7 +116,7 @@ if __name__ == "__main__":
     log_val = True
 
     # max_steps_per_epoch = 500
-    total_epoch_1 = 15
+    total_epoch_1 = 5
     total_epoch_2 = 0
     total_epoch = total_epoch_1 + total_epoch_2
 
@@ -331,4 +331,4 @@ if __name__ == "__main__":
     print(f'Training lasted {datetime.datetime.now() - time_start}')
 
 
-# nohup python -u main_dense.py > ./log/Dense_sizeM_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_dense.py > ./log/Dense_sizeL_$(date +%Y%m%d_%H%M%S).log 2>&1 &

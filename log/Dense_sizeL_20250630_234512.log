@@ -1,0 +1,40 @@
+nohup: ignoring input
+Training started at 2025-06-30 23:45:16
+Training detail: learning rate: 0.00011229577231219766, weight decay: 1e-2, total epochs: 5, batch size: 256, seed: 2231
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 77.74% | Avg Loss: 0.453
+Mutual Information | Avg Loss: -0.00140
+Total Loss | Avg Loss: 0.439
+Time elapsed: 0:10:53.813534
+[Eval Classification Acc: 83.53%
+
+ --- Epoch 2
+Task: Classification | Acc: 84.12% | Avg Loss: 0.353
+Mutual Information | Avg Loss: -0.00246
+Total Loss | Avg Loss: 0.328
+Time elapsed: 0:31:39.969785
+[Eval Classification Acc: 85.82%
+
+ --- Epoch 3
+Task: Classification | Acc: 86.43% | Avg Loss: 0.307
+Mutual Information | Avg Loss: -0.00367
+Total Loss | Avg Loss: 0.271
+Time elapsed: 0:49:28.907232
+[Eval Classification Acc: 87.19%
+
+ --- Epoch 4
+Task: Classification | Acc: 88.24% | Avg Loss: 0.272
+Mutual Information | Avg Loss: -0.00359
+Total Loss | Avg Loss: 0.236
+Time elapsed: 1:06:58.310734
+[Eval Classification Acc: 87.83%
+
+ --- Epoch 5
+Task: Classification | Acc: 89.32% | Avg Loss: 0.250
+Mutual Information | Avg Loss: -0.00352
+Total Loss | Avg Loss: 0.215
+Time elapsed: 1:25:20.108641
+[Eval Classification Acc: 88.07%
+Training lasted 1:26:10.013256
