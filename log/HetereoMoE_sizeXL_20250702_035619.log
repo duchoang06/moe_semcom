@@ -1,0 +1,244 @@
+nohup: ignoring input
+Training started at 2025-07-02 03:56:36
+Training detail: learning rate: 1.0233425997425278e-05, weight decay: 1e-2, total epochs: 30, batch size: 128, lambda_moe_lb: 0.0002, seed: 2006
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 70.13% | Avg Loss: 0.5554
+MoE Balancing Loss: 54567.2898
+Mutual Information | Avg Loss: -0.00191
+Total Loss: 11.4498
+Time elapsed: 0:37:40.874178
+[Eval Classification Acc: 73.99%
+
+ --- Epoch 2
+Task: Classification | Acc: 78.97% | Avg Loss: 0.4344
+MoE Balancing Loss: 53578.6813
+Mutual Information | Avg Loss: -0.00200
+Total Loss: 11.1301
+Time elapsed: 1:16:57.742427
+[Eval Classification Acc: 82.33%
+
+ --- Epoch 3
+Task: Classification | Acc: 82.14% | Avg Loss: 0.3862
+MoE Balancing Loss: 53576.1029
+Mutual Information | Avg Loss: -0.00200
+Total Loss: 11.0814
+Time elapsed: 1:56:09.788580
+[Eval Classification Acc: 82.65%
+
+ --- Epoch 4
+Task: Classification | Acc: 83.92% | Avg Loss: 0.3552
+MoE Balancing Loss: 53574.9056
+Mutual Information | Avg Loss: -0.00223
+Total Loss: 11.0478
+Time elapsed: 2:35:30.499028
+[Eval Classification Acc: 83.68%
+
+ --- Epoch 5
+Task: Classification | Acc: 85.36% | Avg Loss: 0.3268
+MoE Balancing Loss: 53575.1871
+Mutual Information | Avg Loss: -0.00329
+Total Loss: 11.0089
+Time elapsed: 3:14:53.950814
+[Eval Classification Acc: 84.88%
+
+ --- Epoch 6
+Task: Classification | Acc: 86.56% | Avg Loss: 0.3043
+MoE Balancing Loss: 53575.6335
+Mutual Information | Avg Loss: -0.00364
+Total Loss: 10.9830
+Time elapsed: 3:54:16.230946
+[Eval Classification Acc: 86.18%
+
+ --- Epoch 7
+Task: Classification | Acc: 87.59% | Avg Loss: 0.2849
+MoE Balancing Loss: 53575.3372
+Mutual Information | Avg Loss: -0.00366
+Total Loss: 10.9634
+Time elapsed: 4:33:39.225940
+[Eval Classification Acc: 86.62%
+
+ --- Epoch 8
+Task: Classification | Acc: 88.55% | Avg Loss: 0.2651
+MoE Balancing Loss: 53575.2260
+Mutual Information | Avg Loss: -0.00362
+Total Loss: 10.9439
+Time elapsed: 5:13:05.292670
+[Eval Classification Acc: 87.50%
+
+ --- Epoch 9
+Task: Classification | Acc: 89.59% | Avg Loss: 0.2457
+MoE Balancing Loss: 53574.9054
+Mutual Information | Avg Loss: -0.00351
+Total Loss: 10.9256
+Time elapsed: 5:52:40.493524
+[Eval Classification Acc: 87.78%
+
+ --- Epoch 10
+Task: Classification | Acc: 90.41% | Avg Loss: 0.2276
+MoE Balancing Loss: 53574.5244
+Mutual Information | Avg Loss: -0.00348
+Total Loss: 10.9078
+Time elapsed: 6:32:15.254936
+[Eval Classification Acc: 87.91%
+
+ --- Epoch 11
+Task: Classification | Acc: 91.32% | Avg Loss: 0.2097
+MoE Balancing Loss: 53573.8225
+Mutual Information | Avg Loss: -0.00334
+Total Loss: 10.8910
+Time elapsed: 7:11:42.069995
+[Eval Classification Acc: 88.75%
+
+ --- Epoch 12
+Task: Classification | Acc: 92.11% | Avg Loss: 0.1926
+MoE Balancing Loss: 53573.5638
+Mutual Information | Avg Loss: -0.00318
+Total Loss: 10.8755
+Time elapsed: 7:51:02.241099
+[Eval Classification Acc: 88.90%
+
+ --- Epoch 13
+Task: Classification | Acc: 92.75% | Avg Loss: 0.1776
+MoE Balancing Loss: 53573.2238
+Mutual Information | Avg Loss: -0.00315
+Total Loss: 10.8608
+Time elapsed: 8:30:19.059129
+[Eval Classification Acc: 88.95%
+
+ --- Epoch 14
+Task: Classification | Acc: 93.49% | Avg Loss: 0.1615
+MoE Balancing Loss: 53572.2567
+Mutual Information | Avg Loss: -0.00299
+Total Loss: 10.8461
+Time elapsed: 9:09:36.647738
+[Eval Classification Acc: 89.16%
+
+ --- Epoch 15
+Task: Classification | Acc: 94.13% | Avg Loss: 0.1477
+MoE Balancing Loss: 53572.2087
+Mutual Information | Avg Loss: -0.00279
+Total Loss: 10.8342
+Time elapsed: 9:48:53.076228
+[Eval Classification Acc: 88.26%
+
+ --- Epoch 16
+Task: Classification | Acc: 94.66% | Avg Loss: 0.1349
+MoE Balancing Loss: 53572.5557
+Mutual Information | Avg Loss: -0.00270
+Total Loss: 10.8224
+Time elapsed: 10:28:08.973220
+[Eval Classification Acc: 88.92%
+
+ --- Epoch 17
+Task: Classification | Acc: 95.15% | Avg Loss: 0.1238
+MoE Balancing Loss: 53571.9525
+Mutual Information | Avg Loss: -0.00251
+Total Loss: 10.8132
+Time elapsed: 11:07:22.490129
+[Eval Classification Acc: 89.08%
+
+ --- Epoch 18
+Task: Classification | Acc: 95.57% | Avg Loss: 0.1138
+MoE Balancing Loss: 53571.7577
+Mutual Information | Avg Loss: -0.00246
+Total Loss: 10.8036
+Time elapsed: 11:46:37.316547
+[Eval Classification Acc: 89.12%
+
+ --- Epoch 19
+Task: Classification | Acc: 95.96% | Avg Loss: 0.1038
+MoE Balancing Loss: 53570.2253
+Mutual Information | Avg Loss: -0.00227
+Total Loss: 10.7951
+Time elapsed: 12:25:54.022092
+[Eval Classification Acc: 89.04%
+
+ --- Epoch 20
+Task: Classification | Acc: 96.30% | Avg Loss: 0.0960
+MoE Balancing Loss: 53571.2397
+Mutual Information | Avg Loss: -0.00221
+Total Loss: 10.7881
+Time elapsed: 13:05:20.906500
+[Eval Classification Acc: 88.76%
+
+ --- Epoch 21
+Task: Classification | Acc: 96.58% | Avg Loss: 0.0891
+MoE Balancing Loss: 53569.9148
+Mutual Information | Avg Loss: -0.00213
+Total Loss: 10.7818
+Time elapsed: 13:44:44.088046
+[Eval Classification Acc: 89.27%
+
+ --- Epoch 22
+Task: Classification | Acc: 96.88% | Avg Loss: 0.0821
+MoE Balancing Loss: 53570.8294
+Mutual Information | Avg Loss: -0.00197
+Total Loss: 10.7766
+Time elapsed: 14:24:00.848606
+[Eval Classification Acc: 89.19%
+
+ --- Epoch 23
+Task: Classification | Acc: 97.07% | Avg Loss: 0.0766
+MoE Balancing Loss: 53571.1770
+Mutual Information | Avg Loss: -0.00190
+Total Loss: 10.7718
+Time elapsed: 15:03:14.851402
+[Eval Classification Acc: 89.22%
+
+ --- Epoch 24
+Task: Classification | Acc: 97.25% | Avg Loss: 0.0723
+MoE Balancing Loss: 53569.3753
+Mutual Information | Avg Loss: -0.00179
+Total Loss: 10.7683
+Time elapsed: 15:42:32.604559
+[Eval Classification Acc: 89.28%
+
+ --- Epoch 25
+Task: Classification | Acc: 97.43% | Avg Loss: 0.0681
+MoE Balancing Loss: 53569.6099
+Mutual Information | Avg Loss: -0.00177
+Total Loss: 10.7643
+Time elapsed: 16:21:49.733294
+[Eval Classification Acc: 89.25%
+
+ --- Epoch 26
+Task: Classification | Acc: 97.59% | Avg Loss: 0.0646
+MoE Balancing Loss: 53570.2491
+Mutual Information | Avg Loss: -0.00176
+Total Loss: 10.7611
+Time elapsed: 17:01:07.515253
+[Eval Classification Acc: 89.18%
+
+ --- Epoch 27
+Task: Classification | Acc: 97.64% | Avg Loss: 0.0628
+MoE Balancing Loss: 53569.6230
+Mutual Information | Avg Loss: -0.00171
+Total Loss: 10.7597
+Time elapsed: 17:40:21.796357
+[Eval Classification Acc: 89.22%
+
+ --- Epoch 28
+Task: Classification | Acc: 97.69% | Avg Loss: 0.0610
+MoE Balancing Loss: 53569.4943
+Mutual Information | Avg Loss: -0.00169
+Total Loss: 10.7580
+Time elapsed: 18:19:37.672845
+[Eval Classification Acc: 89.23%
+
+ --- Epoch 29
+Task: Classification | Acc: 97.74% | Avg Loss: 0.0606
+MoE Balancing Loss: 53570.1043
+Mutual Information | Avg Loss: -0.00165
+Total Loss: 10.7580
+Time elapsed: 18:58:57.939066
+[Eval Classification Acc: 89.24%
+
+ --- Epoch 30
+Task: Classification | Acc: 97.78% | Avg Loss: 0.0595
+MoE Balancing Loss: 53571.7046
+Mutual Information | Avg Loss: -0.00165
+Total Loss: 10.7573
+Time elapsed: 19:38:16.871091
+[Eval Classification Acc: 89.20%

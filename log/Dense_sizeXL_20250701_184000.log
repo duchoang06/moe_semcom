@@ -1,0 +1,110 @@
+nohup: ignoring input
+Training started at 2025-07-01 18:40:14
+Training detail: learning rate: 1e-05, weight decay: 1e-2, total epochs: 15, batch size: 128, seed: 2231
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 73.73% | Avg Loss: 0.507
+Mutual Information | Avg Loss: -0.00163
+Total Loss | Avg Loss: 0.490
+Time elapsed: 0:25:34.487273
+[Eval Classification Acc: 81.71%
+
+ --- Epoch 2
+Task: Classification | Acc: 82.12% | Avg Loss: 0.388
+Mutual Information | Avg Loss: -0.00184
+Total Loss | Avg Loss: 0.370
+Time elapsed: 0:52:26.282403
+[Eval Classification Acc: 84.38%
+
+ --- Epoch 3
+Task: Classification | Acc: 84.43% | Avg Loss: 0.349
+Mutual Information | Avg Loss: -0.00203
+Total Loss | Avg Loss: 0.328
+Time elapsed: 1:19:17.661020
+[Eval Classification Acc: 85.29%
+
+ --- Epoch 4
+Task: Classification | Acc: 85.97% | Avg Loss: 0.319
+Mutual Information | Avg Loss: -0.00293
+Total Loss | Avg Loss: 0.290
+Time elapsed: 1:46:07.980662
+[Eval Classification Acc: 86.67%
+
+ --- Epoch 5
+Task: Classification | Acc: 87.39% | Avg Loss: 0.291
+Mutual Information | Avg Loss: -0.00369
+Total Loss | Avg Loss: 0.254
+Time elapsed: 2:12:57.989190
+[Eval Classification Acc: 87.56%
+
+ --- Epoch 6
+Task: Classification | Acc: 88.34% | Avg Loss: 0.271
+Mutual Information | Avg Loss: -0.00362
+Total Loss | Avg Loss: 0.234
+Time elapsed: 2:39:47.630948
+[Eval Classification Acc: 87.86%
+
+ --- Epoch 7
+Task: Classification | Acc: 89.31% | Avg Loss: 0.251
+Mutual Information | Avg Loss: -0.00354
+Total Loss | Avg Loss: 0.216
+Time elapsed: 3:06:37.600374
+[Eval Classification Acc: 88.46%
+
+ --- Epoch 8
+Task: Classification | Acc: 90.25% | Avg Loss: 0.232
+Mutual Information | Avg Loss: -0.00343
+Total Loss | Avg Loss: 0.198
+Time elapsed: 3:33:27.308566
+[Eval Classification Acc: 88.38%
+
+ --- Epoch 9
+Task: Classification | Acc: 91.00% | Avg Loss: 0.216
+Mutual Information | Avg Loss: -0.00327
+Total Loss | Avg Loss: 0.183
+Time elapsed: 4:00:17.777621
+[Eval Classification Acc: 88.45%
+
+ --- Epoch 10
+Task: Classification | Acc: 91.73% | Avg Loss: 0.200
+Mutual Information | Avg Loss: -0.00323
+Total Loss | Avg Loss: 0.168
+Time elapsed: 4:27:08.641820
+[Eval Classification Acc: 88.43%
+
+ --- Epoch 11
+Task: Classification | Acc: 92.37% | Avg Loss: 0.187
+Mutual Information | Avg Loss: -0.00311
+Total Loss | Avg Loss: 0.156
+Time elapsed: 4:54:00.094764
+[Eval Classification Acc: 88.98%
+
+ --- Epoch 12
+Task: Classification | Acc: 92.89% | Avg Loss: 0.175
+Mutual Information | Avg Loss: -0.00298
+Total Loss | Avg Loss: 0.145
+Time elapsed: 5:20:51.869048
+[Eval Classification Acc: 89.17%
+
+ --- Epoch 13
+Task: Classification | Acc: 93.25% | Avg Loss: 0.167
+Mutual Information | Avg Loss: -0.00289
+Total Loss | Avg Loss: 0.138
+Time elapsed: 5:47:43.654865
+[Eval Classification Acc: 89.25%
+
+ --- Epoch 14
+Task: Classification | Acc: 93.48% | Avg Loss: 0.162
+Mutual Information | Avg Loss: -0.00283
+Total Loss | Avg Loss: 0.134
+Time elapsed: 6:14:35.906447
+[Eval Classification Acc: 89.18%
+
+ --- Epoch 15
+Task: Classification | Acc: 93.58% | Avg Loss: 0.159
+Mutual Information | Avg Loss: -0.00284
+Total Loss | Avg Loss: 0.131
+Time elapsed: 6:41:28.679675
+[Eval Classification Acc: 89.20%
+Training lasted 6:42:46.714040

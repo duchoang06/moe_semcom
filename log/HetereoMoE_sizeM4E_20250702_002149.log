@@ -1,0 +1,36 @@
+nohup: ignoring input
+Training started at 2025-07-02 00:21:54
+Training detail: learning rate: 4.6136377696522204e-05, weight decay: 1e-2, total epochs: 2, batch size: 128, lambda_moe_lb: 0.0002, seed: 2006
+Starting training...
+
+ --- Epoch 1
+Task: Classification | Acc: 76.91% | Avg Loss: 0.4618
+MoE Balancing Loss: 13184.8639
+Mutual Information | Avg Loss: -0.00172
+Total Loss: 3.0816
+Layer 0:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1891251.50
+Layer 1:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1885085.25
+Layer 2:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1893761.75
+Layer 3:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1909730.25
+Time elapsed: 0:21:04.951854
+[Eval Classification Acc: 81.82%
+
+ --- Epoch 2
+Task: Classification | Acc: 82.97% | Avg Loss: 0.3688
+MoE Balancing Loss: 13176.3492
+Mutual Information | Avg Loss: -0.00252
+Total Loss: 2.9789
+Layer 0:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1923046.12
+Layer 1:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1909899.50
+Layer 2:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1918229.75
+Layer 3:
+-- Expert usage: [0.3, 0.26, 0.23, 0.21], std: 1914575.00
+Time elapsed: 0:29:23.665082
+[Eval Classification Acc: 84.07%

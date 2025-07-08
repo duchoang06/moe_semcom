@@ -23,13 +23,13 @@ from utils import text_loss, fix_seed, sample_mixed_task_batch, sample_single_ta
 
 # MAIN TRAINING PARAS:
 # SMALL Dense, 1 epoch
-# MODEL_SIZE = 'S'  # 'S', 'M', 'L'
-# NUM_LAYERS = 2
-# D_TRANSFORMER = 232
-# N_HEADS = 4
-# NUM_EXPERTS = 1
-# num_paras = 13.2e6
-# lr_main = 1/math.sqrt(num_paras)
+MODEL_SIZE = 'S'  # 'S', 'M', 'L'
+NUM_LAYERS = 2
+D_TRANSFORMER = 232
+N_HEADS = 4
+NUM_EXPERTS = 1
+num_paras = 13.2e6
+lr_main = 1/math.sqrt(num_paras)
 
 # M Dense, 2 epoch 
 # MODEL_SIZE = 'M'  # 'S', 'M', 'L'
@@ -41,13 +41,13 @@ from utils import text_loss, fix_seed, sample_mixed_task_batch, sample_single_ta
 # lr_main = 1/math.sqrt(num_paras) 
 
 # L Dense, 5 epoch 
-MODEL_SIZE = 'L'  
-NUM_LAYERS = 6
-D_TRANSFORMER = 632
-N_HEADS = 8
-NUM_EXPERTS = 1
-num_paras = 79.3e6
-lr_main = 1/math.sqrt(num_paras) 
+# MODEL_SIZE = 'L'  
+# NUM_LAYERS = 6
+# D_TRANSFORMER = 632
+# N_HEADS = 8
+# NUM_EXPERTS = 1
+# num_paras = 79.3e6
+# lr_main = 1/math.sqrt(num_paras) 
 
 # XL Dense, 15 epoch 
 # MODEL_SIZE = 'XL'  # 'S', 'M', 'L'
@@ -286,7 +286,7 @@ if __name__ == "__main__":
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints_new/Dense_size{MODEL_SIZE}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints_new/Dense_size{MODEL_SIZE}_len300_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
 
     # # --------------------
     # # Testing (BLEU Score for Reconstruction)
@@ -331,4 +331,4 @@ if __name__ == "__main__":
     print(f'Training lasted {datetime.datetime.now() - time_start}')
 
 
-# nohup python -u main_dense.py > ./log/Dense_sizeL_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_dense.py > ./log/Dense_sizeS_$(date +%Y%m%d_%H%M%S).log 2>&1 &

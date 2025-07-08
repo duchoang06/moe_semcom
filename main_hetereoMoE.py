@@ -43,27 +43,29 @@ from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, sn
 # num_paras = 74.8e6
 # total_epoch = 3
 
-MODEL_SIZE = 'M16E', #5 epoch
-NUM_LAYERS = 4
-D_TRANSFORMER = 412
-N_HEADS = 6
-NUM_EXPERTS = 8
-num_paras = 120.0e6 # ~9.13e-5
-total_epoch = 5
+# MODEL_SIZE = 'M16E' #5 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 8
+# num_paras = 120.0e6 # ~9.13e-5
+# total_epoch = 5
 
-# MODEL_SIZE = 'M32E', #7 epoch
+# MODEL_SIZE = 'M32E' #7 epoch
 # NUM_LAYERS = 4
 # D_TRANSFORMER = 412
 # N_HEADS = 6
 # NUM_EXPERTS = 8
 # num_paras = 336.7e6 
+# total_epoch = 7
 
-# MODEL_SIZE = 'L', 5 epoch
-# NUM_LAYERS = 6
-# D_TRANSFORMER = 632
-# N_HEADS = 8
-# NUM_EXPERTS = 12
-# num_paras = 298.3e6
+MODEL_SIZE = 'L' # 15 epoch
+NUM_LAYERS = 6
+D_TRANSFORMER = 632
+N_HEADS = 8
+NUM_EXPERTS = 12
+num_paras = 298.3e6
+total_epoch = 15
 
 # MODEL_SIZE = 'XL', 15 epoch
 # NUM_LAYERS = 8
@@ -73,7 +75,7 @@ total_epoch = 5
 # num_paras = 1.061e9
 
 
-lr_main = 1/math.sqrt(num_paras)
+lr_main = 1/(3*math.sqrt(num_paras))
 
 
 if __name__ == "__main__":
@@ -166,7 +168,7 @@ if __name__ == "__main__":
             fading = 'none'
 
             outputs, input_ids, input_lengths, x_complex, y_noisy, gate_scores, expert_masks = model(texts, chosen_task, snr, fading) 
-            epoch_expert_mask.append(expert_masks)
+            # epoch_expert_mask.append(expert_masks)
 
             # phase 1: Mutual Information Loss
             mi_loss = mutual_information_loss(x_complex.detach(), y_noisy.detach(), mi_critic) 
@@ -223,22 +225,22 @@ if __name__ == "__main__":
         print(f'Total Loss: {sum(total_loss_arr) / len(total_loss_arr):.4f}')
 
         # Print expert load distribution for the epoch
-        mask_epoch = epoch_expert_mask  # List of expert masks for each batch in the epoch
-        num_layers = len(mask_epoch[0])        # Number of layers
-        num_experts = mask_epoch[0][0].shape[1]
+        # mask_epoch = epoch_expert_mask  # List of expert masks for each batch in the epoch
+        # num_layers = len(mask_epoch[0])        # Number of layers
+        # num_experts = mask_epoch[0][0].shape[1]
 
-        # Prepare to aggregate per layer
-        usage_per_layer = [torch.zeros(num_experts, device=mask_epoch[0][0].device) for _ in range(num_layers)]
+        # # Prepare to aggregate per layer
+        # usage_per_layer = [torch.zeros(num_experts, device=mask_epoch[0][0].device) for _ in range(num_layers)]
 
-        for batch in mask_epoch:  # batch: list of layer tensors
-            for layer_idx, mask in enumerate(batch):
-                # mask: (num_tokens_in_batch, num_experts)
-                usage_per_layer[layer_idx] += mask.sum(dim=0)
+        # for batch in mask_epoch:  # batch: list of layer tensors
+        #     for layer_idx, mask in enumerate(batch):
+        #         # mask: (num_tokens_in_batch, num_experts)
+        #         usage_per_layer[layer_idx] += mask.sum(dim=0)
 
-        # Print out expert usage for each layer
-        for layer_idx, usage in enumerate(usage_per_layer):
-            print(f"Layer {layer_idx}:")
-            print(f"-- Expert usage: {[round(x, 2) for x in (usage / usage.sum()).tolist()]}, std: {usage.std().item():.2f}")
+        # # Print out expert usage for each layer
+        # for layer_idx, usage in enumerate(usage_per_layer):
+        #     print(f"Layer {layer_idx}:")
+        #     print(f"-- Expert usage: {[round(x, 2) for x in (usage / usage.sum()).tolist()]}, std: {usage.std().item():.2f}")
 
         print(f'Time elapsed: {datetime.datetime.now() - time_start}')
 
@@ -315,15 +317,4 @@ if __name__ == "__main__":
 
 
 
-# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeM16E_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
-
-
-
-    
-
-
-
-
-
-
-    
+# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeL_$(date +%Y%m%d_%H%M%S).log 2>&1 & 

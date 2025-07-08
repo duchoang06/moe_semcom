@@ -40,28 +40,32 @@ class SimpleWirelessChannel(nn.Module):
         self.fading = fading.lower()
         self.rician_k = rician_k  # Ratio of LOS to scattered power
 
-    def forward(self, x, snr, fading='none'): # x in [batch, seq_len, dim]
+    def forward(self, x, snr, fading='none', rician_k=3.0, modal=False): # x in [batch, seq_len, dim]
         snr_linear = 10 ** (snr / 10)
         noise_std = math.sqrt(1 / snr_linear)
 
         if self.fading == 'rayleigh':
-            h = torch.randn_like(x)  # Real-valued Rayleigh fading
+            h = torch.randn_like(x) 
+
         elif self.fading == 'rician':
             # Rician fading: LOS + Rayleigh
             los = torch.ones_like(x)  # deterministic LOS component
             rayleigh = torch.randn_like(x)
-            factor = math.sqrt(self.rician_k / (self.rician_k + 1))
-            scatter = math.sqrt(1 / (self.rician_k + 1))
+            factor = math.sqrt(rician_k / (rician_k + 1))
+            scatter = math.sqrt(1 / (rician_k + 1))
             h = factor * los + scatter * rayleigh
+
         elif self.fading == 'none':
             h = torch.ones_like(x)  # No fading = gain of 1
+
         else:
             raise ValueError(f'Unknown fading type: {self.fading}')
 
         x_faded = x * h
         noise = noise_std * torch.randn_like(x)
         y = x_faded + noise
-        return y 
+        y_equalized = y / h
+        return y_equalized
 
 class ComplexWirelessChannel(nn.Module):
     def __init__(self, snr_dB=15, fading='none', rician_k=4.0):
@@ -108,11 +112,6 @@ class ComplexWirelessChannel(nn.Module):
             torch.stack([h_imag,  h_real], dim=-1)
         ], dim=-2)  # (batch, 2, 2)
 
-        # # Batch-consistent fading matrix H for static fading
-        # h_real = torch.normal(0, math.sqrt(1/2), size=[1]).to(device)
-        # h_imag = torch.normal(0, math.sqrt(1/2), size=[1]).to(device)
-        # H = torch.Tensor([[h_real, -h_imag], [h_imag,  h_real]]).to(device)  # (batch, 2, 2)
-
         faded_signal = torch.matmul(signal, H)  # (batch, num_symbols, 2)
 
         return faded_signal, H
@@ -121,7 +120,7 @@ class ComplexWirelessChannel(nn.Module):
         """
         x: [batch, seq_len, dim] real-valued input
         """
-        batch_size, seq_len, dim = x.shape
+        batch_size = x.shape[0]
         snr = self.snr_dB if snr is None else snr
         fading = self.fading if fading is None else fading.lower()
 
@@ -151,12 +150,11 @@ class ComplexWirelessChannel(nn.Module):
         snr_linear = 10 ** (snr / 10)
         
         # if modal and not self.training:
-        #     noise_std = math.sqrt(1 / (snr_linear) )
+        #     noise_std = 1.3*math.sqrt(1 / (snr_linear) )
         # else:
         #     noise_std = math.sqrt(1 / (2*snr_linear) )
 
         noise_std = math.sqrt(1 / (2*snr_linear) )
-
 
         # Add AWGN
         noise = noise_std * torch.randn_like(y_complex)

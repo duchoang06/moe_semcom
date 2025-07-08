@@ -5,7 +5,7 @@ from transformers import BertModel, BertTokenizer
 
 
 class BERTTextEncoder(nn.Module):
-    def __init__(self, output_dim=768, bert_model_name='bert-base-uncased'):
+    def __init__(self, output_dim=768, bert_model_name='bert-base-uncased', max_seq_len=300):
         super(BERTTextEncoder, self).__init__()
         
         # Load pretrained BERT model and tokenizer
@@ -18,10 +18,11 @@ class BERTTextEncoder(nn.Module):
         
         self.projection = nn.Linear(self.bert_model.config.hidden_size, output_dim) # 768 to output_dim=256
         self.vocab_size = self.tokenizer.vocab_size
+        self.max_seq_len = max_seq_len
 
     def forward(self, text_list):
         device = next(self.parameters()).device
-        encoded_input = self.tokenizer(text_list, padding=True, truncation=True, return_tensors='pt', max_length=64).to(device)
+        encoded_input = self.tokenizer(text_list, padding=True, truncation=True, return_tensors='pt', max_length=self.max_seq_len).to(device)
 
         with torch.no_grad():
             outputs = self.bert_model(**encoded_input)
