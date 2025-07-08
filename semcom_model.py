@@ -165,7 +165,8 @@ class MoE_SemCom(nn.Module):
         self.decoder_transformer = SemanticDecoder(
             input_dim=embed_dim + task_dim,
             vocab_size=self.text_encoder.vocab_size,
-            max_seq_len=64,  # assuming a max sequence length of 64
+            ffn_dim=(embed_dim + task_dim) * 4,
+            max_seq_len=300, 
             nhead=4,
             num_layers=4,
             pad_token_id=self.text_encoder.tokenizer.pad_token_id
@@ -186,8 +187,8 @@ class MoE_SemCom(nn.Module):
             nn.ReLU(),
             nn.Linear(int((embed_dim + task_dim)*4), embed_dim + task_dim)
         )
-        self.expert_sizes = self.encoder_transformer.expert_sizes
 
+        self.expert_sizes = self.encoder_transformer.expert_sizes
 
 
     def forward(self, text_list, task_id, snr, fading, rician_k=4.0):
@@ -202,7 +203,7 @@ class MoE_SemCom(nn.Module):
         fused = torch.cat([text_feat, task_feat], dim=-1) # fused: (batch, seq_len, embed_dim + task_dim): (64, seq_len, 784)
 
         # semantic encoded features
-        semantic_encoded, encoder_gate_scores, encoder_expert_masks = self.encoder_transformer(fused, snr) # (64, seq_len, 784)
+        semantic_encoded, encoder_gate_scores, encoder_expert_masks = self.encoder_transformer(fused) # no snrawaregating here
 
         channel_encoded = self.channel_encoder(semantic_encoded) # (64, seq_len, 784) -> (64, seq_len, transmit_dim)
 

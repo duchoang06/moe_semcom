@@ -47,6 +47,34 @@ class SNRAwareGating(nn.Module):
         logits = self.gate(gate_input)  # (B*L, num_experts)
         return self.gumbel_softmax(logits)  # (B*L, num_experts)
 
+class LinearGating(nn.Module):
+    def __init__(self, input_dim, num_experts, tau=1.0, hard=False):
+        super().__init__()
+        self.gate = nn.Sequential(
+            nn.Linear(input_dim + 1, input_dim),
+            nn.ReLU(),
+            nn.Linear(input_dim, num_experts)
+        )
+        self.tau = tau
+        self.hard = hard
+
+    def gumbel_softmax(self, logits):
+        gumbel_noise = -torch.log(-torch.log(torch.rand_like(logits) + 1e-9) + 1e-9)
+        y = F.softmax((logits + gumbel_noise) / self.tau, dim=-1)
+
+        if self.hard:
+            y_hard = torch.zeros_like(y)
+            y_hard.scatter_(1, y.argmax(dim=-1, keepdim=True), 1.0)
+            y = (y_hard - y).detach() + y  # Straight-through estimator
+        return y
+
+    def forward(self, x, snr):
+        B, L, D = x.shape
+        x_flat = x.view(B * L, D)
+
+        logits = self.gate(x_flat)  # (B*L, num_experts)
+        return self.gumbel_softmax(logits)  # (B*L, num_experts)
+
 # ----------  MoE Transformer ----------
 class ExpertFFN(nn.Module):
     def __init__(self, input_dim, hidden_dim, num_experts=4, top_k=2, tau=1.0, hard=False):
@@ -65,12 +93,11 @@ class ExpertFFN(nn.Module):
 
         self.gate = SNRAwareGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
 
-    def forward(self, x, snr):
+    def forward(self, x):
         B, L, D = x.shape
         x_flat = x.view(B * L, D)
-        gate_scores = self.gate(x, snr)  # (B*L, num_experts)
+        gate_scores = self.gate(x)  # (B*L, num_experts)
         T = B * L
-
 
         # Compute the softmax probabilities by the gating, based on that select the top-k experts.
         topk_scores, topk_indices = torch.topk(gate_scores, self.top_k, dim=-1)  # (B*L, top_k)
@@ -111,11 +138,11 @@ class MoETransformerEncoderLayer(nn.Module):
             hard=hard
         )
 
-    def forward(self, x, snr):
+    def forward(self, x):
         x2, _ = self.self_attn(x, x, x)
         x = self.norm1(x + x2)
 
-        x2, gate_scores, expert_mask = self.moe_ffn(x, snr)
+        x2, gate_scores, expert_mask = self.moe_ffn(x)
         x = self.norm2(x + x2)
 
         return x, gate_scores, expert_mask
@@ -140,12 +167,12 @@ class MoETransformer(nn.Module):
         self.expert_sizes.fill_(dim_feedforward)
 
 
-    def forward(self, x, snr):
+    def forward(self, x):
         all_gate_scores = []
         all_expert_masks = []
 
         for layer in self.layers:
-            x, gate_scores, expert_mask = layer(x, snr)
+            x, gate_scores, expert_mask = layer(x)
             all_gate_scores.append(gate_scores)
             all_expert_masks.append(expert_mask)
         return x, all_gate_scores, all_expert_masks

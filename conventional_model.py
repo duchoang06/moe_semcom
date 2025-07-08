@@ -14,6 +14,7 @@ from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence, pad_packed_se
 from base_models import BERTTextEncoder
 from multiprocessing import Pool
 import os
+from joblib import Parallel, delayed
 
 def _get_message_wrapper(args):
     G, i = args
@@ -105,12 +106,15 @@ class LDPCDecoder(nn.Module):
         #     decoded = decode(self.H, i, snr=snr, maxiter=self.max_iter)
         #     x = get_message(self.G, decoded)
         #     decoded_arr.append(x)
-        num_cores = os.cpu_count()
-        
+
         args_list = [(self.H, self.G, i, snr, self.max_iter) for i in y]
 
-        with Pool(processes=num_cores - 1) as pool:
-            decoded_arr = pool.map(_decode_and_get_message, args_list)
+        # with Pool(processes=os.cpu_count()) as pool:
+            # decoded_arr = pool.map(_decode_and_get_message, args_list)
+
+        decoded_arr = Parallel(n_jobs=32 - 1, backend='loky')(
+            delayed(_decode_and_get_message)(args) for args in args_list
+        )
 
         return np.stack(decoded_arr, axis=0)
 
@@ -132,7 +136,7 @@ class LDPCDecoder(nn.Module):
         # return np.stack(decoded_arr, axis=0)
 
 class Conventional_Com(nn.Module):
-    def __init__(self, max_char_len=600, emded_dim=128):
+    def __init__(self, max_char_len=600, emded_dim=512):
         super().__init__()
         self.max_bits_codeword = max_char_len * 8
 
@@ -151,13 +155,15 @@ class Conventional_Com(nn.Module):
 
         self.text_encoder = BERTTextEncoder(output_dim=emded_dim, max_seq_len=64)
 
-        self.classifer = RNNClassifier(
-            vocab_size=self.text_encoder.vocab_size,
-            emb_dim=emded_dim,
-            hidden_dim=emded_dim*2,
-            n_classes=2,
-            pad_idx=self.text_encoder.tokenizer.pad_token_id
-        )
+        self.classifier_head = nn.Linear(emded_dim, 2) 
+
+        # self.classifer = RNNClassifier(
+        #     vocab_size=self.text_encoder.vocab_size,
+        #     emb_dim=emded_dim,
+        #     hidden_dim=emded_dim*2,
+        #     n_classes=2,
+        #     pad_idx=self.text_encoder.tokenizer.pad_token_id
+        # # 
         
     def forward(self, x, snr=12.0, fading='none', rician_k=3.0):
         device = next(self.parameters()).device
@@ -183,9 +189,9 @@ class Conventional_Com(nn.Module):
 
         text_feat, input_ids, attn_mask = self.text_encoder(rcvd_strings)
 
-        lengths = attn_mask.sum(dim=1)
+        seq_repr = text_feat.mean(dim=1)  
 
-        logits = self.classifer(input_ids.to(device), lengths.to(device))
+        logits = self.classifier_head(seq_repr) 
 
         return logits
 

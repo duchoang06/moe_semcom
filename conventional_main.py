@@ -7,6 +7,7 @@ import torch, random, math
 from datasets import load_dataset, load_from_disk
 import torch.nn.functional as F
 import torch.nn as nn
+from joblib import Parallel, delayed
 
 
 from nltk.tokenize import word_tokenize
@@ -27,15 +28,22 @@ if __name__ == "__main__":
     # fix_seed(42)
 
     dataset = load_dataset('glue' , 'qqp')
-    batch_size = 1024
+    batch_size = 256
 
-    train_dataset = QQPPromptDataset(dataset['train'])
+    # train_dataset = QQPPromptDataset(dataset['train'])
+    # train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
+    full_train_dataset = dataset['train']
+    small_indices = random.sample(range(len(full_train_dataset)), len(full_train_dataset) // 5)
+    small_train_dataset = full_train_dataset.select(small_indices)
+    train_dataset = QQPPromptDataset(small_train_dataset)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
 
     test_dataset = QQPPromptDataset(dataset['validation'])
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-    model = Conventional_Com(emded_dim=512).to(device)
+    model = Conventional_Com(emded_dim=512).to(device) # 2 means 2 classes
 
     lr_main = 5e-4
     optimizer = torch.optim.AdamW(
@@ -79,7 +87,7 @@ if __name__ == "__main__":
             correct_cls += (preds == labels.to(device)).sum().item()
             total_cls += len(labels)
 
-            print(f'batch correct cls: {(preds == labels.to(device)).sum().item()}')
+            print(f'batch acc : {(preds == labels.to(device)).sum().item()/batch_size * 100:.2f}%')
             print(f'time now: {datetime.datetime.now()}')
 
 
@@ -113,7 +121,7 @@ if __name__ == "__main__":
         model.train()
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-torch.save(model.state_dict(), f"./checkpoints_new/Conv_Model_{timestamp}.pt")
+torch.save(model.state_dict(), f"./checkpoints_new/Conv_Bert_{timestamp}.pt")
 
-# nohup python -u conventional_main.py > ./logs/conv.log 2>&1 &
+# nohup python -u conventional_main.py > ./log/conv_bert.log 2>&1 &
 
