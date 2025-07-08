@@ -91,7 +91,7 @@ class ExpertFFN(nn.Module):
             ) for _ in range(num_experts)
         ])
 
-        self.gate = SNRAwareGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
+        self.gate = LinearGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
 
     def forward(self, x):
         B, L, D = x.shape
