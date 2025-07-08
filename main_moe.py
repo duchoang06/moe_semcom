@@ -66,7 +66,6 @@ if __name__ == "__main__":
         mi_critic.parameters(),
         lr=lr_mi,
     )
-
     
     log_val = True
 
@@ -75,6 +74,7 @@ if __name__ == "__main__":
 
     num_training_steps = len(train_loader) * (total_epoch)
     num_warmup_steps = int(0.05 * num_training_steps)
+
     scheduler_main = get_cosine_schedule_with_warmup(
         optimizer_main,
         num_warmup_steps=num_warmup_steps,
@@ -102,7 +102,6 @@ if __name__ == "__main__":
 
         for step, (texts, labels) in enumerate(train_loader):
             total_step = step 
-            # chosen_task = random.choice([0, 1])
 
             chosen_task = 0
 
@@ -110,14 +109,13 @@ if __name__ == "__main__":
             fading = 'none'
 
             outputs, input_ids, input_lengths, x_complex, y_noisy, gate_scores, expert_masks = model(texts, chosen_task, snr, fading) 
-            epoch_expert_mask.append(expert_masks)
+            # epoch_expert_mask.append(expert_masks)
 
             # phase 1: Mutual Information Loss
             mi_loss = mutual_information_loss(x_complex.detach(), y_noisy.detach(), mi_critic)
             optimizer_mi.zero_grad()
             mi_loss.backward()
             optimizer_mi.step()
-            # scheduler_mi.step()
 
             # phase : 2: main loss calculation
             task_loss = text_loss(
@@ -128,9 +126,10 @@ if __name__ == "__main__":
                 input_lengths.to(device)
             )
 
-            moe_lb_loss = moe_balancing_loss_p_penalty(gate_scores, expert_masks, model.expert_sizes.to(device))
+            # moe_lb_loss = moe_balancing_loss_p_penalty(gate_scores, expert_masks, model.expert_sizes.to(device))
 
-            total_loss = task_loss + lambda_moe_lb * moe_lb_loss + lambda_mi * mi_loss.detach()
+            # total_loss = task_loss + lambda_moe_lb * moe_lb_loss + lambda_mi*mi_loss.detach()
+            total_loss = task_loss
 
             optimizer_main.zero_grad()
             total_loss.backward()
@@ -148,7 +147,7 @@ if __name__ == "__main__":
             else:  # Reconstruction
                 recon_loss.append(task_loss.item())
 
-            moe_lb_loss_arr.append(moe_lb_loss.item())
+            # moe_lb_loss_arr.append(moe_lb_loss.item())
             total_loss_arr.append(total_loss.item())
             mi_loss_arr.append(mi_loss.item())
 
@@ -164,7 +163,7 @@ if __name__ == "__main__":
         # avg_recon = sum(recon_loss) / len(recon_loss) if len(recon_loss) > 0 else 0.0
         # print(f"Task: Reconstruction | Avg Loss: {avg_recon:.4f} ")
         print(f"Mutual Information | Avg Loss: {sum(mi_loss_arr) / len(mi_loss_arr):.5f}")
-        print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
+        # print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
 
         print(f'Total Loss: {sum(total_loss_arr) / len(total_loss_arr):.4f}')
 

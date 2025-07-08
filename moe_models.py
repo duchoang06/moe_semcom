@@ -51,7 +51,7 @@ class LinearGating(nn.Module):
     def __init__(self, input_dim, num_experts, tau=1.0, hard=False):
         super().__init__()
         self.gate = nn.Sequential(
-            nn.Linear(input_dim + 1, input_dim),
+            nn.Linear(input_dim , input_dim),
             nn.ReLU(),
             nn.Linear(input_dim, num_experts)
         )
@@ -68,7 +68,7 @@ class LinearGating(nn.Module):
             y = (y_hard - y).detach() + y  # Straight-through estimator
         return y
 
-    def forward(self, x, snr):
+    def forward(self, x):
         B, L, D = x.shape
         x_flat = x.view(B * L, D)
 

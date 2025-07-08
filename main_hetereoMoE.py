@@ -119,13 +119,7 @@ if __name__ == "__main__":
 
     log_val = True
 
-    # total_epoch_1 = 2
-    # total_epoch_2 = 0
-    # total_epoch = total_epoch_1 + total_epoch_2
-
     lambda_moe_lb = 2e-4 # previously 5e-4
-
-    # max_steps_per_epoch = 500
 
     eval_every = 1
 
