@@ -3,22 +3,61 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 # os.environ['HF_DATASETS_OFFLINE'] = '1'
 os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
 
-
 import numpy as np
 import torch, random, math
 from datasets import load_dataset
 import torch.nn.functional as F
 from nltk.tokenize import word_tokenize
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-from transformers import BertTokenizer
 
 import datetime
 from transformers import get_cosine_schedule_with_warmup
 
 from torch.utils.data import Dataset, DataLoader
+from transformers import BertTokenizer
 
-from semcom_model import Transformer_SemCom, MoE_SemCom
-from utils import text_loss, fix_seed, sample_single_task_batch, collate_fn, SST2Dataset, get_test_loader_for_epoch, moe_balancing_loss, moe_balancing_loss_p_penalty, mutual_information_loss, Critic, QQPPromptDataset
+from semcom_model import HetereoMoE_SemCom
+
+from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, snr_loss, sample_single_task_batch, collate_fn, SST2Dataset, get_test_loader_for_epoch, moe_balancing_loss, moe_balancing_loss_p_penalty, mutual_information_loss, Critic, QQPPromptDataset
+
+# Model training configurations
+# MODEL_SIZE = 'S' # 1 epoch
+# NUM_LAYERS = 2
+# D_TRANSFORMER = 232
+# N_HEADS = 4
+# NUM_EXPERTS = 4
+# num_paras = 16.1e6
+
+# MODEL_SIZE = 'M4E' #2 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 4
+# num_paras = 52.2e6
+
+# MODEL_SIZE = 'M8E' #3 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 8
+# num_paras = 74.8e6
+# total_epoch = 3
+
+# MODEL_SIZE = 'M16E' #5 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 8
+# num_paras = 120.0e6 # ~9.13e-5
+# total_epoch = 5
+
+# MODEL_SIZE = 'M32E' #7 epoch
+# NUM_LAYERS = 4
+# D_TRANSFORMER = 412
+# N_HEADS = 6
+# NUM_EXPERTS = 8
+# num_paras = 336.7e6 
+# total_epoch = 7
 
 MODEL_SIZE = 'L' # 15 epoch
 NUM_LAYERS = 6
@@ -26,9 +65,22 @@ D_TRANSFORMER = 632
 N_HEADS = 8
 NUM_EXPERTS = 12
 num_paras = 298.3e6
-total_epoch = 10
+total_epoch = 15
+
+lambda_moe_lb = 2e-4 # original
+lambda_mi = 10 
+
+
+# MODEL_SIZE = 'XL', 15 epoch
+# NUM_LAYERS = 8
+# D_TRANSFORMER = 1072
+# N_HEADS = 12
+# NUM_EXPERTS = 12
+# num_paras = 1.061e9
+
 
 lr_main = 1/(3*math.sqrt(num_paras))
+
 
 if __name__ == "__main__":
     # data and model preparation
@@ -37,8 +89,9 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load SST-2 (binary sentiment classification)
+    # dataset = load_dataset("glue", "sst2", cache_dir='/home/necphy/.cache/huggingface/datasets')
     dataset = load_dataset("glue", "qqp")
-    batch_size = 256
+    batch_size = 128
 
     train_dataset = QQPPromptDataset(dataset['train'])
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -47,13 +100,12 @@ if __name__ == "__main__":
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=True)
 
 
-    model = MoE_SemCom(num_tasks=2, embed_dim=D_TRANSFORMER, task_dim=8, num_experts=NUM_EXPERTS, num_encd_layer=NUM_LAYERS, transmit_dim=128, num_heads=N_HEADS).to(device)
+    model = HetereoMoE_SemCom(num_tasks=2, embed_dim=D_TRANSFORMER, task_dim=8, num_experts=NUM_EXPERTS, size_distribution='arithmetic', transmit_dim=128, num_encd_layer=NUM_LAYERS, num_heads=N_HEADS, snr_aware=True).to(device)
 
     mi_critic = Critic(input_dim=2, hidden_dim=12).to(device)
-    lambda_mi = 10 
-
 
     optimizer_main = torch.optim.AdamW(
+        # model.parameters(),
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=lr_main,
         weight_decay=1e-2,
@@ -66,10 +118,9 @@ if __name__ == "__main__":
         mi_critic.parameters(),
         lr=lr_mi,
     )
-    
-    log_val = True
 
-    lambda_moe_lb = 2e-4
+    # lambda_moe_lb = 2e-4 
+
     eval_every = 1
 
     num_training_steps = len(train_loader) * (total_epoch)
@@ -78,17 +129,19 @@ if __name__ == "__main__":
     scheduler_main = get_cosine_schedule_with_warmup(
         optimizer_main,
         num_warmup_steps=num_warmup_steps,
-        num_training_steps=num_training_steps,
+        num_training_steps=num_training_steps
     )
 
     time_start = datetime.datetime.now()
     print(f"Training started at {time_start.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f'Training detail: learning rate: {lr_main}, weight decay: 5e-3, total epochs: {total_epoch}, batch size: {batch_size}, lambda_moe_lb: {lambda_moe_lb}, seed: {rand_seed}')
-    
+    print(f'Training detail: learning rate: {lr_main}, weight decay: 1e-2, total epochs: {total_epoch}, batch size: {batch_size}, lambda_moe_lb: {lambda_moe_lb}, seed: {rand_seed}')
+
+
+    best_acc = 0.0
     # ------ training phase 1 with perfect channel
     print("Starting training...")
     for epoch in range(total_epoch):
-        print(f'\n --- Epoch {epoch+1}')
+        print(f'\n ------- Epoch {epoch+1}')
         model.train()
         correct_cls = 0 # correct classification
         total_cls = 0
@@ -102,7 +155,7 @@ if __name__ == "__main__":
 
         for step, (texts, labels) in enumerate(train_loader):
             total_step = step 
-
+            # chosen_task = random.choice([0, 1])
             chosen_task = 0
 
             snr = 12.0
@@ -112,12 +165,12 @@ if __name__ == "__main__":
             # epoch_expert_mask.append(expert_masks)
 
             # phase 1: Mutual Information Loss
-            mi_loss = mutual_information_loss(x_complex.detach(), y_noisy.detach(), mi_critic)
+            mi_loss = mutual_information_loss(x_complex.detach(), y_noisy.detach(), mi_critic) 
             optimizer_mi.zero_grad()
             mi_loss.backward()
             optimizer_mi.step()
 
-            # phase : 2: main loss calculation
+            # phase 2: Total Loss
             task_loss = text_loss(
                 outputs,
                 labels.to(device),
@@ -128,7 +181,9 @@ if __name__ == "__main__":
 
             moe_lb_loss = moe_balancing_loss_p_penalty(gate_scores, expert_masks, model.expert_sizes.to(device))
 
-            total_loss = task_loss + lambda_mi*mi_loss.detach() + lambda_moe_lb * moe_lb_loss 
+            # total_loss = task_loss + lambda_mi*mi_loss.detach()
+            total_loss = task_loss + lambda_moe_lb * moe_lb_loss + lambda_mi*mi_loss.detach()
+
 
             optimizer_main.zero_grad()
             total_loss.backward()
@@ -146,14 +201,13 @@ if __name__ == "__main__":
             else:  # Reconstruction
                 recon_loss.append(task_loss.item())
 
-            moe_lb_loss_arr.append(moe_lb_loss.item())
+            # moe_lb_loss_arr.append(moe_lb_loss.item())
             total_loss_arr.append(total_loss.item())
             mi_loss_arr.append(mi_loss.item())
 
-
             # # Logging for each model update step
-            # if step % 20 == 0:
-            #     print(f"----- Step {step} | Task: {chosen_task} | SNR: {snr:.2f} dB | Fading: {fading} | Step Loss: {total_loss:.4f}") 
+            if step % 50 == 0:
+                print(f"---- Step {step} | Task: {chosen_task} | SNR: {snr:.2f} dB | Fading: {fading} | Step Loss: {total_loss:.4f}") 
 
         # Logging for each epoch
         acc = 100 * correct_cls / total_cls if total_cls > 0 else 0.0
@@ -161,8 +215,8 @@ if __name__ == "__main__":
         print(f"Task: Classification | Acc: {acc:.2f}% | Avg Loss: {avg_cls:.4f}")
         # avg_recon = sum(recon_loss) / len(recon_loss) if len(recon_loss) > 0 else 0.0
         # print(f"Task: Reconstruction | Avg Loss: {avg_recon:.4f} ")
+        # print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
         print(f"Mutual Information | Avg Loss: {sum(mi_loss_arr) / len(mi_loss_arr):.5f}")
-        print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
 
         print(f'Total Loss: {sum(total_loss_arr) / len(total_loss_arr):.4f}')
 
@@ -188,11 +242,18 @@ if __name__ == "__main__":
 
         # Epoch-level evaluation
         eval_every = 1  # Evaluate every 1 epochs
+        log_val = True
+
         if (epoch + 1) % eval_every == 0 and log_val == True: 
             model.eval()
             bleu_scores = []
             correct_cls = 0
             total_cls = 0
+
+            # test_loader = get_test_loader_for_epoch(epoch, dataset['validation'], seed=rand_seed, num_samples=3) # return 3 batches, each batch has 1 sample
+
+            # test_dataset = SST2Dataset(dataset['validation'])
+            # test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, collate_fn=collate_fn)
 
             for test_step, (texts, labels) in enumerate(test_loader):
                 snr = 12.0
@@ -238,14 +299,19 @@ if __name__ == "__main__":
             acc = 100 * correct_cls / total_cls if total_cls > 0 else 0.0
             print(f"[Eval Classification Acc: {acc:.2f}%")
 
+            # save best model with best val acc:
+            # if acc > best_acc:
+            #     best_acc = acc
+            #     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            #     torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_acc{acc:.2f}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
+            #     print(f"Best model saved with accuracy: {best_acc:.2f}% at {timestamp}")
 
-            # avg_bleu = sum(bleu_scores) / len(bleu_scores)
-            # print(f"[Eval @ Epoch {epoch+1}] Avg BLEU Score: {avg_bleu:.4f}")
+
             model.train()
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints_new/MoE_sizeL_wLB_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints_revision/HMoE_size{MODEL_SIZE}_weight_ablation_mi{lambda_mi}_moe{lambda_moe_lb}_{timestamp}.pt")
 
 
-# nohup python -u main_moe.py > ./log/MoE_sizeL_wLB_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+# nohup python -u main_hetereoMoE_weight_ablation.py > ./log_revision/HetereoMoE_sizeL_weight_ablation_mi10_moe0.0002_$(date +%Y%m%d_%H%M%S).log 2>&1 & 

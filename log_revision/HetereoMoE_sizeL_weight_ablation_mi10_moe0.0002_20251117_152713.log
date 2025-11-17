@@ -1,0 +1,45 @@
+nohup: ignoring input
+Training started at 2025-11-17 15:27:18
+Training detail: learning rate: 1.9299769340185087e-05, weight decay: 1e-2, total epochs: 15, batch size: 128, lambda_moe_lb: 0.0002, seed: 2006
+Starting training...
+
+ ------- Epoch 1
+---- Step 0 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 6.9948
+---- Step 50 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 6.7924
+---- Step 100 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 6.3756
+---- Step 150 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 6.0311
+---- Step 200 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.6936
+---- Step 250 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.5394
+---- Step 300 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.4786
+---- Step 350 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.4590
+---- Step 400 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3850
+---- Step 450 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3925
+---- Step 500 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3788
+---- Step 550 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.4132
+---- Step 600 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3680
+---- Step 650 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3702
+---- Step 700 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3197
+---- Step 750 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2864
+---- Step 800 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2587
+---- Step 850 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3080
+---- Step 900 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2234
+---- Step 950 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3316
+---- Step 1000 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2594
+---- Step 1050 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3278
+---- Step 1100 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2551
+---- Step 1150 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2103
+---- Step 1200 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3083
+---- Step 1250 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2982
+---- Step 1300 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3158
+---- Step 1350 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2461
+---- Step 1400 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.3314
+---- Step 1450 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2005
+---- Step 1500 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2167
+---- Step 1550 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2586
+---- Step 1600 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.1777
+---- Step 1650 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.1443
+---- Step 1700 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2719
+---- Step 1750 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.1873
+---- Step 1800 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.1718
+---- Step 1850 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2335
+---- Step 1900 | Task: 0 | SNR: 12.00 dB | Fading: none | Step Loss: 5.2550

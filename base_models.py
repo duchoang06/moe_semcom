@@ -3,6 +3,8 @@ import torch.nn as nn
 import numpy as np 
 from transformers import BertModel, BertTokenizer
 
+import os 
+
 
 class BERTTextEncoder(nn.Module):
     def __init__(self, output_dim=768, bert_model_name='bert-base-uncased', max_seq_len=300):

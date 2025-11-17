@@ -20,7 +20,7 @@ class SNRAwareGating(nn.Module):
             nn.Linear(input_dim + 1, input_dim),
             nn.ReLU(),
             nn.Linear(input_dim, num_experts)
-        )
+        ) 
         self.tau = tau
         self.hard = hard
 
@@ -58,7 +58,7 @@ class LinearGating(nn.Module):
         self.tau = tau
         self.hard = hard
 
-    def gumbel_softmax(self, logits):
+    def gumbel_softmax(self, logits, snr=None):
         gumbel_noise = -torch.log(-torch.log(torch.rand_like(logits) + 1e-9) + 1e-9)
         y = F.softmax((logits + gumbel_noise) / self.tau, dim=-1)
 
@@ -68,7 +68,7 @@ class LinearGating(nn.Module):
             y = (y_hard - y).detach() + y  # Straight-through estimator
         return y
 
-    def forward(self, x):
+    def forward(self, x, snr=None):
         B, L, D = x.shape
         x_flat = x.view(B * L, D)
 
@@ -184,7 +184,10 @@ class HetereoExpertFFN(nn.Module):
     '''
         Design: each expert has its own hid_dim, size variation following the arithmetic, geometric series  
     '''
-    def __init__(self, input_dim, hidden_dim, num_experts=4, top_k=2, tau=1.0, hard=False, size_distribution='uniform'):
+    def __init__(self, input_dim, hidden_dim, num_experts=4, top_k=2, tau=1.0, hard=False, size_distribution='uniform', snr_aware=True):
+        '''
+            size_distribution: 'uniform', 'arithmetic', 'geometric'
+        '''
         super().__init__()
         self.num_experts = num_experts
         self.top_k = top_k
@@ -221,16 +224,6 @@ class HetereoExpertFFN(nn.Module):
                 ) for expert_dim in self.expert_sizes
             ])
 
-        # elif size_distribution == 'arithmetic':
-            # self.experts = nn.ModuleList([
-            #     nn.Sequential(
-            #         nn.Linear(input_dim, hidden_dim + i * hidden_dim),
-            #         nn.ReLU(),
-            #         nn.Linear(hidden_dim + i * hidden_dim, input_dim)
-            #     ) for i in range(num_experts)
-            # ])
-            # self.expert_sizes = torch.arange(hidden_dim, hidden_dim + num_experts * hidden_dim, hidden_dim, dtype=torch.int32)
-
         elif size_distribution == 'geometric':
             self.experts = nn.ModuleList([
                 nn.Sequential(
@@ -244,7 +237,11 @@ class HetereoExpertFFN(nn.Module):
         else:
             raise ValueError("Invalid size distribution. Choose 'uniform', 'arithmetic', or 'geometric'.")
         
-        self.gate = SNRAwareGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
+        if snr_aware:
+            self.gate = SNRAwareGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
+        else:
+            self.gate = LinearGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
+        # self.gate = SNRAwareGating(input_dim=input_dim, num_experts=num_experts, tau=tau, hard=hard)
 
     def forward(self, x, snr):
         B, L, D = x.shape
@@ -275,7 +272,7 @@ class HetereoExpertFFN(nn.Module):
         return output.view(B, L, D), gate_scores, expert_mask
 
 class HetereoMoETransformerEncoderLayer(nn.Module):
-    def __init__(self, d_model, nhead, dim_feedforward=2048, num_experts=4, top_k=2, tau=1.0, hard=False, size_distribution='arithmetic'):
+    def __init__(self, d_model, nhead, dim_feedforward=2048, num_experts=4, top_k=2, tau=1.0, hard=False, size_distribution='arithmetic', snr_aware=True):
         super().__init__()
         self.self_attn = nn.MultiheadAttention(d_model, nhead, batch_first=True)
         self.norm1 = nn.LayerNorm(d_model)
@@ -289,6 +286,7 @@ class HetereoMoETransformerEncoderLayer(nn.Module):
             tau=tau,
             hard=hard,
             size_distribution=size_distribution,
+            snr_aware=snr_aware,
         )
 
         self.expert_sizes = self.hetereo_moe_ffn.expert_sizes
@@ -303,7 +301,7 @@ class HetereoMoETransformerEncoderLayer(nn.Module):
         return x, gate_scores, expert_mask
 
 class HetereoMoETransformer(nn.Module):
-    def __init__(self, input_dim, nhead=4, num_layers=2, num_experts=4, top_k=2, dim_feedforward=2048, tau=1.0, hard=False, size_distribution='arithmetic'):
+    def __init__(self, input_dim, nhead=4, num_layers=2, num_experts=4, top_k=2, dim_feedforward=2048, tau=1.0, hard=False, size_distribution='arithmetic', snr_aware=True):
         super().__init__()
         self.layers = nn.ModuleList([
             HetereoMoETransformerEncoderLayer(
@@ -314,7 +312,8 @@ class HetereoMoETransformer(nn.Module):
                 top_k=top_k,
                 tau=tau,
                 hard=hard,
-                size_distribution=size_distribution
+                size_distribution=size_distribution,
+                snr_aware=snr_aware,
             ) for _ in range(num_layers)
         ])
 

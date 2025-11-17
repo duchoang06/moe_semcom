@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
 
 
-    model = HetereoMoE_SemCom(num_tasks=2, embed_dim=D_TRANSFORMER, task_dim=8, num_experts=NUM_EXPERTS, size_distribution='arithmetic', transmit_dim=128, num_encd_layer=NUM_LAYERS, num_heads=N_HEADS).to(device)
+    model = HetereoMoE_SemCom(num_tasks=2, embed_dim=D_TRANSFORMER, task_dim=8, num_experts=NUM_EXPERTS, size_distribution='arithmetic', transmit_dim=128, num_encd_layer=NUM_LAYERS, num_heads=N_HEADS, snr_aware=False).to(device)
 
     mi_critic = Critic(input_dim=2, hidden_dim=12).to(device)
     lambda_mi = 10 #to-do: revert to 10 for possibly better performance
@@ -179,9 +179,11 @@ if __name__ == "__main__":
                 input_lengths.to(device)
             )
 
-            moe_lb_loss = moe_balancing_loss_p_penalty(gate_scores, expert_masks, model.expert_sizes.to(device))
+            # moe_lb_loss = moe_balancing_loss_p_penalty(gate_scores, expert_masks, model.expert_sizes.to(device))
 
-            total_loss = task_loss + lambda_moe_lb * moe_lb_loss + lambda_mi*mi_loss.detach()
+            total_loss = task_loss + lambda_mi*mi_loss.detach()
+            # total_loss = task_loss + lambda_moe_lb * moe_lb_loss + lambda_mi*mi_loss.detach()
+
 
             optimizer_main.zero_grad()
             total_loss.backward()
@@ -199,7 +201,7 @@ if __name__ == "__main__":
             else:  # Reconstruction
                 recon_loss.append(task_loss.item())
 
-            moe_lb_loss_arr.append(moe_lb_loss.item())
+            # moe_lb_loss_arr.append(moe_lb_loss.item())
             total_loss_arr.append(total_loss.item())
             mi_loss_arr.append(mi_loss.item())
 
@@ -213,7 +215,7 @@ if __name__ == "__main__":
         print(f"Task: Classification | Acc: {acc:.2f}% | Avg Loss: {avg_cls:.4f}")
         # avg_recon = sum(recon_loss) / len(recon_loss) if len(recon_loss) > 0 else 0.0
         # print(f"Task: Reconstruction | Avg Loss: {avg_recon:.4f} ")
-        print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
+        # print(f'MoE Balancing Loss: {sum(moe_lb_loss_arr) / len(moe_lb_loss_arr):.4f}')
         print(f"Mutual Information | Avg Loss: {sum(mi_loss_arr) / len(mi_loss_arr):.5f}")
 
         print(f'Total Loss: {sum(total_loss_arr) / len(total_loss_arr):.4f}')
@@ -307,8 +309,7 @@ if __name__ == "__main__":
 
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
+    torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_woCA_woLB_{timestamp}.pt")
 
 
-
-# nohup python -u main_hetereoMoE.py > ./log/HetereoMoE_sizeL_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
+# nohup python -u main_hetereoMoE_wo_channelaware.py > ./log/HetereoMoE_sizeL_woCA_woLB_$(date +%Y%m%d_%H%M%S).log 2>&1 & 

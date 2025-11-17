@@ -8,4 +8,4 @@ scikit-learn
 pillow
 torchaudio
 torchvision
-
+matplotlib

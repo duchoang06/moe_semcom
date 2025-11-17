@@ -49,7 +49,7 @@ class Transformer_SemCom(nn.Module):
 
         self.physical_channel = ComplexWirelessChannel(snr_dB=15, fading='none', rician_k=3.0)
 
-    def forward(self, text_list, task_id, snr, fading, rician_k=3.0):
+    def forward(self, text_list, task_id, snr, fading, rician_k=3.0, modal=False):
         text_feat, input_ids, attn_mask = self.text_encoder(text_list)
 
         input_lengths = attn_mask.sum(dim=1) # text_feat: (64, seq_len, 768)
@@ -65,7 +65,7 @@ class Transformer_SemCom(nn.Module):
 
         channel_encoded = self.channel_encoder(semantic_encoded) # (64, seq_len, 784) -> (64, seq_len, transmit_dim)
 
-        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k, modal=True) # (64, seq_len, 784)
+        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k, modal=modal) # (64, seq_len, 784)
 
         channel_decoded = self.channel_decoder(rx_signal) # (64, seq_len, transmit_dim) -> (64, seq_len, 784)
         
@@ -116,7 +116,7 @@ class Transformer_SemCom_XL(nn.Module):
 
         self.physical_channel = ComplexWirelessChannel(snr_dB=15, fading='none', rician_k=3.0)
 
-    def forward(self, text_list, task_id, snr, fading, rician_k=3.0):
+    def forward(self, text_list, task_id, snr, fading, rician_k=3.0, modal=False):
         text_feat, input_ids, attn_mask = self.text_encoder(text_list)
 
         input_lengths = attn_mask.sum(dim=1) # text_feat: (64, seq_len, 768)
@@ -132,7 +132,7 @@ class Transformer_SemCom_XL(nn.Module):
 
         channel_encoded = self.channel_encoder(semantic_encoded) # (64, seq_len, 784) -> (64, seq_len, transmit_dim)
 
-        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k, modal=True) # (64, seq_len, 784)
+        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k, modal=modal) # (64, seq_len, 784)
 
         channel_decoded = self.channel_decoder(rx_signal) # (64, seq_len, transmit_dim) -> (64, seq_len, 784)
         
@@ -191,7 +191,7 @@ class MoE_SemCom(nn.Module):
         self.expert_sizes = self.encoder_transformer.expert_sizes
 
 
-    def forward(self, text_list, task_id, snr, fading, rician_k=4.0):
+    def forward(self, text_list, task_id, snr, fading, rician_k=4.0, modal=False):
         text_feat, input_ids, attn_mask = self.text_encoder(text_list)
 
         input_lengths = attn_mask.sum(dim=1) # text_feat: (64, seq_len, 768)
@@ -207,7 +207,7 @@ class MoE_SemCom(nn.Module):
 
         channel_encoded = self.channel_encoder(semantic_encoded) # (64, seq_len, 784) -> (64, seq_len, transmit_dim)
 
-        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k=rician_k) # (64, seq_len, 784)
+        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k=rician_k, modal=modal) # (64, seq_len, 784)
 
         channel_decoded = self.channel_decoder(rx_signal) # (64, seq_len, transmit_dim) -> (64, seq_len, 784)
 
@@ -220,13 +220,15 @@ class MoE_SemCom(nn.Module):
 
 
 class HetereoMoE_SemCom(nn.Module):
-    def __init__(self, num_tasks, embed_dim, task_dim, transmit_dim, num_encd_layer, num_experts=4, size_distribution='arithmetic', num_heads=4):
+    def __init__(self, num_tasks, embed_dim, task_dim, transmit_dim, num_encd_layer, num_experts=4, size_distribution='arithmetic', num_heads=4, snr_aware=True):
         super().__init__()
         self.text_encoder = BERTTextEncoder(output_dim=embed_dim, max_seq_len=64)
         self.task_prompt = TaskPrompt(num_tasks, task_dim)
 
         dim_feedforward = (embed_dim + task_dim) * 4
         top_k = 2
+
+        self.snr_aware = snr_aware
 
         self.encoder_transformer = HetereoMoETransformer(
             input_dim=embed_dim + task_dim,
@@ -236,6 +238,7 @@ class HetereoMoE_SemCom(nn.Module):
             top_k=top_k,
             dim_feedforward=dim_feedforward,
             size_distribution=size_distribution,
+            snr_aware=snr_aware,
         )
 
         self.decoder_transformer = SemanticDecoder(
@@ -265,7 +268,7 @@ class HetereoMoE_SemCom(nn.Module):
         self.physical_channel = ComplexWirelessChannel(snr_dB=15, fading='none', rician_k=3.0)
         self.expert_sizes = self.encoder_transformer.expert_sizes
 
-    def forward(self, text_list, task_id, snr, fading, rician_k=4.0):
+    def forward(self, text_list, task_id, snr, fading, rician_k=4.0, modal=False):
         text_feat, input_ids, attn_mask = self.text_encoder(text_list)
 
         input_lengths = attn_mask.sum(dim=1) # text_feat: (64, seq_len, 768)
@@ -276,12 +279,13 @@ class HetereoMoE_SemCom(nn.Module):
 
         fused = torch.cat([text_feat, task_feat], dim=-1) # fused: (batch, seq_len, embed_dim + task_dim): (64, seq_len, 784)
 
-        # semantic encoded features
+
         semantic_encoded, encoder_gate_scores, encoder_expert_masks = self.encoder_transformer(fused, snr) # (64, seq_len, 784)
+
 
         channel_encoded = self.channel_encoder(semantic_encoded) # (64, seq_len, 784) -> (64, seq_len, transmit_dim)
 
-        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k=rician_k) # (64, seq_len, 784)
+        rx_signal, x_complex, y_noisy = self.physical_channel(channel_encoded, snr, fading, rician_k=rician_k, modal=modal) # (64, seq_len, 784)
 
         channel_decoded = self.channel_decoder(rx_signal) # (64, seq_len, transmit_dim) -> (64, seq_len, 784)
 

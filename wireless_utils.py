@@ -44,10 +44,10 @@ class SimpleWirelessChannel(nn.Module):
         snr_linear = 10 ** (snr / 10)
         noise_std = math.sqrt(1 / snr_linear)
 
-        if self.fading == 'rayleigh':
+        if fading == 'rayleigh':
             h = torch.randn_like(x) 
 
-        elif self.fading == 'rician':
+        elif fading == 'rician':
             # Rician fading: LOS + Rayleigh
             los = torch.ones_like(x)  # deterministic LOS component
             rayleigh = torch.randn_like(x)
@@ -55,17 +55,22 @@ class SimpleWirelessChannel(nn.Module):
             scatter = math.sqrt(1 / (rician_k + 1))
             h = factor * los + scatter * rayleigh
 
-        elif self.fading == 'none':
+        elif fading == 'none':
             h = torch.ones_like(x)  # No fading = gain of 1
 
         else:
-            raise ValueError(f'Unknown fading type: {self.fading}')
+            raise ValueError(f'Unknown fading type: {fading}')
 
         x_faded = x * h
         noise = noise_std * torch.randn_like(x)
         y = x_faded + noise
         y_equalized = y / h
-        return y_equalized
+
+        h_codeword = torch.mean(h**2, dim=-1) 
+
+        snr_fading_arr = 10 * torch.log10( h_codeword/ (noise_std ** 2) )
+
+        return y_equalized, snr_fading_arr.numpy()
 
 class ComplexWirelessChannel(nn.Module):
     def __init__(self, snr_dB=15, fading='none', rician_k=4.0):
@@ -149,12 +154,12 @@ class ComplexWirelessChannel(nn.Module):
         # Compute noise power
         snr_linear = 10 ** (snr / 10)
         
-        # if modal and not self.training:
-        #     noise_std = 1.3*math.sqrt(1 / (snr_linear) )
-        # else:
-        #     noise_std = math.sqrt(1 / (2*snr_linear) )
+        if modal:
+            noise_std = 1.25*math.sqrt(1 / (snr_linear) )
+        else:
+            noise_std = math.sqrt(1 / (2*snr_linear) )
 
-        noise_std = math.sqrt(1 / (2*snr_linear) )
+        # noise_std = math.sqrt(1 / (2*snr_linear) )
 
         # Add AWGN
         noise = noise_std * torch.randn_like(y_complex)

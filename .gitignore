@@ -1,7 +1,11 @@
 checkpoints/
 checkpoints_new/
+checkpoints_revision/
+log/
 __pycache__/
 *.pyc
 data/
 results/
 *.zip
+tools/
+moe_env/
