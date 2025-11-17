@@ -35,13 +35,13 @@ from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, sn
 # NUM_EXPERTS = 4
 # num_paras = 52.2e6
 
-# MODEL_SIZE = 'M8E' #3 epoch
-# NUM_LAYERS = 4
-# D_TRANSFORMER = 412
-# N_HEADS = 6
-# NUM_EXPERTS = 8
-# num_paras = 74.8e6
-# total_epoch = 3
+MODEL_SIZE = 'M8E' #3 epoch
+NUM_LAYERS = 4
+D_TRANSFORMER = 412
+N_HEADS = 6
+NUM_EXPERTS = 8
+num_paras = 74.8e6
+total_epoch = 3
 
 # MODEL_SIZE = 'M16E' #5 epoch
 # NUM_LAYERS = 4
@@ -59,13 +59,13 @@ from utils import text_loss, fix_seed, sample_batch, sample_mixed_task_batch, sn
 # num_paras = 336.7e6 
 # total_epoch = 7
 
-MODEL_SIZE = 'L' # 15 epoch
-NUM_LAYERS = 6
-D_TRANSFORMER = 632
-N_HEADS = 8
-NUM_EXPERTS = 12
-num_paras = 298.3e6
-total_epoch = 15
+# MODEL_SIZE = 'L' # 15 epoch
+# NUM_LAYERS = 6
+# D_TRANSFORMER = 632
+# N_HEADS = 8
+# NUM_EXPERTS = 12
+# num_paras = 298.3e6
+# total_epoch = 15
 
 lambda_moe_lb = 2e-4 # original
 lambda_mi = 10 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
             mi_loss_arr.append(mi_loss.item())
 
             # # Logging for each model update step
-            if step % 50 == 0:
+            if step % 100 == 0:
                 print(f"---- Step {step} | Task: {chosen_task} | SNR: {snr:.2f} dB | Fading: {fading} | Step Loss: {total_loss:.4f}") 
 
         # Logging for each epoch
@@ -306,7 +306,6 @@ if __name__ == "__main__":
             #     torch.save(model.state_dict(), f"./checkpoints_new/HMoE_size{MODEL_SIZE}_acc{acc:.2f}_{NUM_LAYERS}_{NUM_EXPERTS}_{N_HEADS}_{D_TRANSFORMER}_{timestamp}.pt")
             #     print(f"Best model saved with accuracy: {best_acc:.2f}% at {timestamp}")
 
-
             model.train()
 
 
@@ -314,4 +313,4 @@ if __name__ == "__main__":
     torch.save(model.state_dict(), f"./checkpoints_revision/HMoE_size{MODEL_SIZE}_weight_ablation_mi{lambda_mi}_moe{lambda_moe_lb}_{timestamp}.pt")
 
 
-# nohup python -u main_hetereoMoE_weight_ablation.py > ./log_revision/HetereoMoE_sizeL_weight_ablation_mi10_moe0.0002_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
+# nohup python -u main_hetereoMoE_weight_ablation.py > ./log_revision/HetereoMoE_sizeM8E_weight_ablation_mi10_moe0.0002_$(date +%Y%m%d_%H%M%S).log 2>&1 & 
